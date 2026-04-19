@@ -164,12 +164,12 @@ My focus is not just shipping features, but structuring products that are scalab
 	<tr>
 		<td width="50%" align="center">
 			<p>
-				- 🧱 Clean architecture over incidental complexity.
-				- 🔄 End-to-end typing as a design constraint, not an afterthought.
-				- 🧩 Clear separation of responsibilities across UI, services, data and infrastructure.
-				- 🤖 Automation wherever repetition introduces friction or risk.
-				- 📦 Deployable systems should be reproducible, observable and maintainable.
-				- 🎯 Technical elegance means clarity under scale, not decorative complexity.
+				🧱 Clean architecture over incidental complexity.<br/>
+				🔄 End-to-end typing as a design constraint, not an afterthought.<br/>
+				🧩 Clear separation of responsibilities across UI, services, data and infrastructure.<br/>
+				🤖 Automation wherever repetition introduces friction or risk.<br/>
+				📦 Deployable systems should be reproducible, observable and maintainable.<br/>
+				🎯 Technical elegance means clarity under scale, not decorative complexity.
 			</p>
 		</td>
 		<td width="50%" align="center">
