@@ -204,9 +204,9 @@ These signals translate engineering identity into motion: contribution constella
 ## Live Timeline
 
 <!--live_timeline:start-->
-- **[OmniVoice](https://github.com/HexAbyss/OmniVoice)** — Voice cloning stack with Docker delivery, web UI and CPU or GPU execution paths. • Python • updated live after workflow activation.
-- **[Atlas](https://github.com/HexAbyss/Atlas)** — Local agent architecture for automating system workflows and operational routines. • TypeScript • updated live after workflow activation.
-- **[Sophya](https://github.com/HexAbyss/Sophya)** — Remote intelligence layer designed to integrate with Atlas and orchestrate AI behavior. • TypeScript • updated live after workflow activation.
+- **[OmniVoice](https://github.com/HexAbyss/OmniVoice)** — Voice cloning stack with Docker delivery, web UI and CPU or GPU execution paths. • Python • updated Apr 19.
+- **[Atlas](https://github.com/HexAbyss/Atlas)** — Local agent architecture for automating system workflows and operational routines. • TypeScript • updated Apr 19.
+- **[Sophya](https://github.com/HexAbyss/Sophya)** — Remote intelligence layer designed to integrate with Atlas and orchestrate AI behavior. • TypeScript • updated Apr 19.
 <!--live_timeline:end-->
 
 ---

@@ -10,7 +10,7 @@
     </linearGradient>
     <linearGradient id="pulseArea" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#2F6FEB" stop-opacity="0.38"/>
-      <stop offset="1" stop-color="#2F6FEB" stop-opacity="0.03"/>
+      <stop offset="1" stop-color="#2F6FEB" stop-opacity="0.02"/>
     </linearGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="8"/>
@@ -18,30 +18,62 @@
   </defs>
   <rect width="960" height="320" rx="28" fill="url(#pulseBg)"/>
   <text x="52" y="48" fill="#E6F1FF" font-size="26" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Neural Pulse</text>
-  <text x="52" y="68" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">A synthetic live pulse that will be replaced by real weekly activity</text>
-  <g stroke="rgba(110,168,254,0.12)" stroke-width="1">
-    <line x1="54" y1="92" x2="906" y2="92"/>
-    <line x1="54" y1="142" x2="906" y2="142"/>
-    <line x1="54" y1="192" x2="906" y2="192"/>
-    <line x1="54" y1="242" x2="906" y2="242"/>
-  </g>
-  <path d="M54 224L131.45 202L208.9 210L286.36 168L363.81 182L441.27 140L518.72 148L596.18 114L673.63 126L751.09 92L828.54 106L906 84L906 266L54 266Z" fill="url(#pulseArea)"/>
-  <path d="M54 224L131.45 202L208.9 210L286.36 168L363.81 182L441.27 140L518.72 148L596.18 114L673.63 126L751.09 92L828.54 106L906 84" stroke="url(#pulseLine)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
-  <path d="M54 224L131.45 202L208.9 210L286.36 168L363.81 182L441.27 140L518.72 148L596.18 114L673.63 126L751.09 92L828.54 106L906 84" stroke="#EAF4FF" stroke-opacity="0.7" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-  <g fill="#EAF4FF">
-    <circle cx="54" cy="224" r="5"/>
-    <circle cx="131.45" cy="202" r="5"/>
-    <circle cx="208.9" cy="210" r="5"/>
-    <circle cx="286.36" cy="168" r="5"/>
-    <circle cx="363.81" cy="182" r="5"/>
-    <circle cx="441.27" cy="140" r="5"/>
-    <circle cx="518.72" cy="148" r="5"/>
-    <circle cx="596.18" cy="114" r="5"/>
-    <circle cx="673.63" cy="126" r="5"/>
-    <circle cx="751.09" cy="92" r="5"/>
-    <circle cx="828.54" cy="106" r="5"/>
-    <circle cx="906" cy="84" r="5"/>
-  </g>
+  <text x="52" y="68" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">Weekly contribution voltage for HexAbyss</text>
+  <line x1="54" y1="72.00" x2="906" y2="72.00" stroke="rgba(110,168,254,0.12)" stroke-width="1"/>
+<line x1="54" y1="136.67" x2="906" y2="136.67" stroke="rgba(110,168,254,0.12)" stroke-width="1"/>
+<line x1="54" y1="201.33" x2="906" y2="201.33" stroke="rgba(110,168,254,0.12)" stroke-width="1"/>
+<line x1="54" y1="266.00" x2="906" y2="266.00" stroke="rgba(110,168,254,0.12)" stroke-width="1"/>
+  <path d="M 54.00 266.00 L 131.45 266.00 L 208.91 266.00 L 286.36 266.00 L 363.82 266.00 L 441.27 266.00 L 518.73 266.00 L 596.18 266.00 L 673.64 266.00 L 751.09 266.00 L 828.55 266.00 L 906.00 84.00 L 906.00 266.00 L 54.00 266.00 Z" fill="url(#pulseArea)"/>
+  <path d="M 54.00 266.00 L 131.45 266.00 L 208.91 266.00 L 286.36 266.00 L 363.82 266.00 L 441.27 266.00 L 518.73 266.00 L 596.18 266.00 L 673.64 266.00 L 751.09 266.00 L 828.55 266.00 L 906.00 84.00" stroke="url(#pulseLine)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  <path d="M 54.00 266.00 L 131.45 266.00 L 208.91 266.00 L 286.36 266.00 L 363.82 266.00 L 441.27 266.00 L 518.73 266.00 L 596.18 266.00 L 673.64 266.00 L 751.09 266.00 L 828.55 266.00 L 906.00 84.00" stroke="#EAF4FF" stroke-opacity="0.75" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  
+    <circle cx="54.00" cy="266.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="54.00" cy="266.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+  
+
+    <circle cx="131.45" cy="266.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="131.45" cy="266.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+  
+
+    <circle cx="208.91" cy="266.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="208.91" cy="266.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+  
+
+    <circle cx="286.36" cy="266.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="286.36" cy="266.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+  
+
+    <circle cx="363.82" cy="266.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="363.82" cy="266.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+  
+
+    <circle cx="441.27" cy="266.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="441.27" cy="266.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+  
+
+    <circle cx="518.73" cy="266.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="518.73" cy="266.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+  
+
+    <circle cx="596.18" cy="266.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="596.18" cy="266.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+  
+
+    <circle cx="673.64" cy="266.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="673.64" cy="266.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+  
+
+    <circle cx="751.09" cy="266.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="751.09" cy="266.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+  
+
+    <circle cx="828.55" cy="266.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="828.55" cy="266.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+  
+
+    <circle cx="906.00" cy="84.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="906.00" cy="84.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+  
   <text x="52" y="286" fill="#C9D1D9" font-size="13" font-family="Segoe UI, Arial, sans-serif">12-week pulse window</text>
-  <text x="744" y="286" fill="#6EA8FE" font-size="13" font-family="Segoe UI, Arial, sans-serif">peak intensity: adaptive</text>
+  <text x="782" y="286" fill="#6EA8FE" font-size="13" font-family="Segoe UI, Arial, sans-serif">peak intensity: 4</text>
 </svg>
