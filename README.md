@@ -36,16 +36,29 @@ My focus is not just shipping features, but structuring products that are scalab
 
 <table>
 	<tr>
+		<tr>
 		<td width="33%" valign="top">
-			<h3 align="center">OmniVoice</h3>
-			<p align="center"><strong>Voice Cloning · Docker · Web UI · CPU/GPU</strong></p>
+			<h3 align="center">Project N.O.U.S</h3>
+			<p align="center"><strong>AI Platform · Distributed Architecture</strong></p>
 			<p>
-				Multilingual voice infrastructure built for practical deployment, configurable inference and accessible control through a clean web interface.
+				A modular intelligent system structured around distributed services, interface orchestration and an operational architecture designed to connect Sophya, frontend workflows and deployable infrastructure.
 			</p>
 			<p>
-				<img src="https://img.shields.io/badge/Voice%20Cloning-103A63?style=flat-square" alt="Voice Cloning" />
-				<img src="https://img.shields.io/badge/Dockerized-1F6FEB?style=flat-square&logo=docker&logoColor=EAF4FF" alt="Dockerized" />
-				<img src="https://img.shields.io/badge/CPU%20%2F%20GPU-0B1F33?style=flat-square&logo=nvidia&logoColor=8EC5FF" alt="CPU GPU" />
+				<img src="https://img.shields.io/badge/AI%20Platform-103A63?style=flat-square" alt="AI Platform" />
+				<img src="https://img.shields.io/badge/Distributed%20Services-1A5A8C?style=flat-square" alt="Distributed Services" />
+				<img src="https://img.shields.io/badge/Operational%20Architecture-1F6FEB?style=flat-square" alt="Operational Architecture" />
+			</p>
+		</td>
+		<td width="33%" valign="top">
+			<h3 align="center">Enigma das Tres Caixas</h3>
+			<p align="center"><strong>Interactive Experience · Narrative Logic</strong></p>
+			<p>
+				An interactive project focused on puzzle structure, user flow and narrative logic, built to turn abstract reasoning into a clear, engaging digital experience.
+			</p>
+			<p>
+				<img src="https://img.shields.io/badge/Interactive%20System-103A63?style=flat-square" alt="Interactive System" />
+				<img src="https://img.shields.io/badge/Puzzle%20Design-1A5A8C?style=flat-square" alt="Puzzle Design" />
+				<img src="https://img.shields.io/badge/Narrative%20Logic-1F6FEB?style=flat-square" alt="Narrative Logic" />
 			</p>
 		</td>
 		<td width="33%" valign="top">
@@ -72,28 +85,33 @@ My focus is not just shipping features, but structuring products that are scalab
 				<img src="https://img.shields.io/badge/Distributed%20Logic-1F6FEB?style=flat-square" alt="Distributed Logic" />
 			</p>
 		</td>
+		<td width="33%" valign="top">
+			<h3 align="center">Lyzandra</h3>
+			<p align="center"><strong>Network Infrastructure · Control Server</strong></p>
+			<p>
+				A dedicated infrastructure control server built to manage network behavior, centralize operational routines and provide a reliable orchestration point for connected services.
+			</p>
+			<p>
+				<img src="https://img.shields.io/badge/Infrastructure%20Server-103A63?style=flat-square" alt="Infrastructure Server" />
+				<img src="https://img.shields.io/badge/Network%20Control-1A5A8C?style=flat-square" alt="Network Control" />
+				<img src="https://img.shields.io/badge/Operations-1F6FEB?style=flat-square" alt="Operations" />
+			</p>
+		</td>
+	</tr>
+	<td width="33%" valign="top">
+			<h3 align="center">Logic App</h3>
+			<p align="center"><strong>Logic Interface · Decision Flow</strong></p>
+			<p>
+				A lightweight logic-driven application created to translate structured reasoning into a direct interface, emphasizing clarity, flow control and practical interaction design.
+			</p>
+			<p>
+				<img src="https://img.shields.io/badge/Logic%20Interface-103A63?style=flat-square" alt="Logic Interface" />
+				<img src="https://img.shields.io/badge/Decision%20Flow-1A5A8C?style=flat-square" alt="Decision Flow" />
+				<img src="https://img.shields.io/badge/Interaction%20Design-1F6FEB?style=flat-square" alt="Interaction Design" />
+			</p>
+		</td>
 	</tr>
 </table>
-
----
-
-## Architecture Stack
-
-```text
-Next.js
-   ↓
-NestJS
-   ↓
-Prisma
-   ↓
-PostgreSQL
-   ↓
-Docker
-   ↓
-Deploy: Vercel + Railway / DigitalOcean
-```
-
-This stack reflects how I like to engineer products: fast interfaces, modular services, typed persistence, reproducible infrastructure and production-aware deployment.
 
 ---
 
@@ -127,8 +145,8 @@ This stack reflects how I like to engineer products: fast interfaces, modular se
 <p>
 	<img src="https://img.shields.io/badge/Docker-0B1F33?style=for-the-badge&logo=docker&logoColor=8EC5FF" alt="Docker" />
 	<img src="https://img.shields.io/badge/Vercel-103A63?style=for-the-badge&logo=vercel&logoColor=9ED0FF" alt="Vercel" />
-	<img src="https://img.shields.io/badge/Railway-1A5A8C?style=for-the-badge&logo=railway&logoColor=C6E6FF" alt="Railway" />
-	<img src="https://img.shields.io/badge/DigitalOcean-1F6FEB?style=for-the-badge&logo=digitalocean&logoColor=EAF4FF" alt="DigitalOcean" />
+	<img src="https://img.shields.io/badge/Apps%20Script-1A5A8C?style=for-the-badge&logo=googleappsscript&logoColor=C6E6FF" alt="Apps Script" />
+	<img src="https://img.shields.io/badge/Hostinger-1F6FEB?style=for-the-badge&logo=hostinger&logoColor=EAF4FF" alt="Hostinger" />
 </p>
 
 ### Quality
@@ -204,9 +222,12 @@ These signals translate engineering identity into motion: contribution constella
 ## Live Timeline
 
 <!--live_timeline:start-->
-- **[OmniVoice](https://github.com/HexAbyss/OmniVoice)** — Voice cloning stack with Docker delivery, web UI and CPU or GPU execution paths. • Python • updated Apr 19.
-- **[Atlas](https://github.com/HexAbyss/Atlas)** — Local agent architecture for automating system workflows and operational routines. • TypeScript • updated Apr 19.
-- **[Sophya](https://github.com/HexAbyss/Sophya)** — Remote intelligence layer designed to integrate with Atlas and orchestrate AI behavior. • TypeScript • updated Apr 19.
+- **Project N.O.U.S** — Distributed AI platform connecting interface, orchestration and deployable service architecture. • TypeScript/Python • structured for modular evolution.
+- **Atlas** — Local agent architecture for automating system workflows and operational routines. • TypeScript • updated live after workflow activation.
+- **Sophya** — Remote intelligence layer designed to integrate with Atlas and orchestrate AI behavior. • TypeScript • updated live after workflow activation.
+- **Lyzandra** — Network infrastructure control server built to centralize operational routines and service coordination. • Infrastructure/Automation • production-oriented.
+- **Enigma das Tres Caixas** — Interactive logic experience focused on puzzle flow, narrative structure and user engagement. • Next.js • concept-driven build.
+- **Logic App** — Logic-first interface project translating structured reasoning into a practical interactive application. • JavaScript • lightweight and direct.
 <!--live_timeline:end-->
 
 ---
