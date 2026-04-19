@@ -1,0 +1,65 @@
+<svg width="960" height="420" viewBox="0 0 960 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="960" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#08101A"/>
+      <stop offset="0.55" stop-color="#0D1B2A"/>
+      <stop offset="1" stop-color="#103A63"/>
+    </linearGradient>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+  <rect width="960" height="420" rx="28" fill="url(#bg)"/>
+  <circle cx="760" cy="76" r="124" fill="#2F6FEB" opacity="0.12" filter="url(#blur)"/>
+  <circle cx="184" cy="334" r="136" fill="#6EA8FE" opacity="0.08" filter="url(#blur)"/>
+  <text x="52" y="52" fill="#E6F1FF" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Constellation Graph</text>
+  <text x="52" y="74" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">Signal map of software activity, rendered as an engineered night sky</text>
+  <g stroke="#6EA8FE" stroke-opacity="0.28" stroke-width="1.2" stroke-linecap="round" fill="none">
+    <path d="M108 116Q140 94 174 118T246 130T318 116T390 144T462 136T534 164T606 150T678 176T750 166T822 196"/>
+    <path d="M174 118Q200 152 244 152T312 176T384 170T456 198T528 194T600 224T672 222T744 244"/>
+    <path d="M246 130Q270 92 318 116T390 108T462 132T534 126T606 146T678 144T750 166"/>
+    <path d="M140 214Q182 182 226 202T314 216T404 236T492 230T580 252T668 248T756 274"/>
+  </g>
+  <g>
+    <circle cx="108" cy="116" r="18" fill="#2F6FEB" opacity="0.14" filter="url(#blur)"/>
+    <circle cx="108" cy="116" r="4.4" fill="#EAF4FF"/>
+    <circle cx="174" cy="118" r="16" fill="#2F6FEB" opacity="0.12" filter="url(#blur)"/>
+    <circle cx="174" cy="118" r="3.8" fill="#EAF4FF"/>
+    <circle cx="246" cy="130" r="22" fill="#2F6FEB" opacity="0.18" filter="url(#blur)"/>
+    <circle cx="246" cy="130" r="5.2" fill="#EAF4FF"/>
+    <circle cx="318" cy="116" r="14" fill="#2F6FEB" opacity="0.10" filter="url(#blur)"/>
+    <circle cx="318" cy="116" r="3.4" fill="#EAF4FF"/>
+    <circle cx="390" cy="144" r="20" fill="#2F6FEB" opacity="0.16" filter="url(#blur)"/>
+    <circle cx="390" cy="144" r="4.8" fill="#EAF4FF"/>
+    <circle cx="462" cy="136" r="14" fill="#2F6FEB" opacity="0.10" filter="url(#blur)"/>
+    <circle cx="462" cy="136" r="3.4" fill="#EAF4FF"/>
+    <circle cx="534" cy="164" r="22" fill="#2F6FEB" opacity="0.18" filter="url(#blur)"/>
+    <circle cx="534" cy="164" r="5.1" fill="#EAF4FF"/>
+    <circle cx="606" cy="150" r="16" fill="#2F6FEB" opacity="0.12" filter="url(#blur)"/>
+    <circle cx="606" cy="150" r="3.7" fill="#EAF4FF"/>
+    <circle cx="678" cy="176" r="24" fill="#2F6FEB" opacity="0.18" filter="url(#blur)"/>
+    <circle cx="678" cy="176" r="5.4" fill="#EAF4FF"/>
+    <circle cx="750" cy="166" r="18" fill="#2F6FEB" opacity="0.14" filter="url(#blur)"/>
+    <circle cx="750" cy="166" r="4.2" fill="#EAF4FF"/>
+    <circle cx="822" cy="196" r="16" fill="#2F6FEB" opacity="0.12" filter="url(#blur)"/>
+    <circle cx="822" cy="196" r="3.8" fill="#EAF4FF"/>
+    <circle cx="140" cy="214" r="18" fill="#2F6FEB" opacity="0.14" filter="url(#blur)"/>
+    <circle cx="140" cy="214" r="4.2" fill="#EAF4FF"/>
+    <circle cx="226" cy="202" r="20" fill="#2F6FEB" opacity="0.16" filter="url(#blur)"/>
+    <circle cx="226" cy="202" r="4.8" fill="#EAF4FF"/>
+    <circle cx="314" cy="216" r="15" fill="#2F6FEB" opacity="0.10" filter="url(#blur)"/>
+    <circle cx="314" cy="216" r="3.4" fill="#EAF4FF"/>
+    <circle cx="404" cy="236" r="23" fill="#2F6FEB" opacity="0.18" filter="url(#blur)"/>
+    <circle cx="404" cy="236" r="5.3" fill="#EAF4FF"/>
+    <circle cx="492" cy="230" r="17" fill="#2F6FEB" opacity="0.12" filter="url(#blur)"/>
+    <circle cx="492" cy="230" r="3.9" fill="#EAF4FF"/>
+    <circle cx="580" cy="252" r="22" fill="#2F6FEB" opacity="0.16" filter="url(#blur)"/>
+    <circle cx="580" cy="252" r="5.1" fill="#EAF4FF"/>
+    <circle cx="668" cy="248" r="14" fill="#2F6FEB" opacity="0.10" filter="url(#blur)"/>
+    <circle cx="668" cy="248" r="3.4" fill="#EAF4FF"/>
+    <circle cx="756" cy="274" r="26" fill="#2F6FEB" opacity="0.20" filter="url(#blur)"/>
+    <circle cx="756" cy="274" r="5.8" fill="#EAF4FF"/>
+  </g>
+  <text x="52" y="392" fill="#C9D1D9" font-size="13" font-family="Segoe UI, Arial, sans-serif">Live contribution sky, ready for workflow-driven updates</text>
+  <text x="718" y="392" fill="#6EA8FE" font-size="13" font-family="Segoe UI, Arial, sans-serif">architecture • systems • intelligence</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg width="620" height="620" viewBox="0 0 620 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="radarBg" x1="0" y1="0" x2="620" y2="620" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#08101A"/>
+      <stop offset="1" stop-color="#102A43"/>
+    </linearGradient>
+    <linearGradient id="radarFill" x1="120" y1="80" x2="500" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6EA8FE" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#2F6FEB" stop-opacity="0.18"/>
+    </linearGradient>
+    <filter id="radarGlow">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+  <rect width="620" height="620" rx="28" fill="url(#radarBg)"/>
+  <text x="42" y="52" fill="#E6F1FF" font-size="26" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Architecture Radar</text>
+  <text x="42" y="72" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">Current engineering profile shape across core system dimensions</text>
+  <g stroke-width="1" fill="none">
+    <polygon points="310,282.4 344.29,301.8 344.29,341.4 310,360.8 275.71,341.4 275.71,301.8" stroke="rgba(110,168,254,0.14)"/>
+    <polygon points="310,242.8 378.57,281.6 378.57,360.8 310,399.6 241.43,360.8 241.43,281.6" stroke="rgba(110,168,254,0.18)"/>
+    <polygon points="310,203.2 412.86,261.4 412.86,380.2 310,438.8 207.14,380.2 207.14,261.4" stroke="rgba(110,168,254,0.22)"/>
+    <polygon points="310,163.6 447.14,241.2 447.14,399.6 310,477.4 172.86,399.6 172.86,241.2" stroke="rgba(110,168,254,0.26)"/>
+    <polygon points="310,124 481.43,221 481.43,419 310,516 138.57,419 138.57,221" stroke="rgba(110,168,254,0.3)"/>
+  </g>
+  <g stroke="rgba(110,168,254,0.24)" stroke-width="1">
+    <line x1="310" y1="320" x2="310" y2="124"/>
+    <line x1="310" y1="320" x2="481.43" y2="221"/>
+    <line x1="310" y1="320" x2="481.43" y2="419"/>
+    <line x1="310" y1="320" x2="310" y2="516"/>
+    <line x1="310" y1="320" x2="138.57" y2="419"/>
+    <line x1="310" y1="320" x2="138.57" y2="221"/>
+  </g>
+  <polygon points="310,143.6 471.14,226.94 464.29,413.06 310,508.08 165.99,409.1 150.57,239.82" fill="url(#radarFill)" stroke="#6EA8FE" stroke-width="2.2"/>
+  <polygon points="310,143.6 471.14,226.94 464.29,413.06 310,508.08 165.99,409.1 150.57,239.82" fill="#2F6FEB" opacity="0.18" filter="url(#radarGlow)"/>
+  <g fill="#EAF4FF">
+    <circle cx="310" cy="143.6" r="5"/>
+    <circle cx="471.14" cy="226.94" r="5"/>
+    <circle cx="464.29" cy="413.06" r="5"/>
+    <circle cx="310" cy="508.08" r="5"/>
+    <circle cx="165.99" cy="409.1" r="5"/>
+    <circle cx="150.57" cy="239.82" r="5"/>
+  </g>
+  <g fill="#C9D1D9" font-size="14" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle" dominant-baseline="middle">
+    <text x="310" y="84">Frontend</text>
+    <text x="522" y="204">Backend</text>
+    <text x="524" y="438">AI</text>
+    <text x="310" y="554">Automation</text>
+    <text x="102" y="438">Infra</text>
+    <text x="98" y="204">Integration</text>
+  </g>
+</svg>

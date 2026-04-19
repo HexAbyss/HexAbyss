@@ -175,12 +175,39 @@ This stack reflects how I like to engineer products: fast interfaces, modular se
 </p>
 
 <p align="center">
-	<img src="https://github-readme-activity-graph.vercel.app/graph?username=HexAbyss&bg_color=0d1117&color=c9d1d9&line=2f6feb&point=6ea8fe&area=true&area_color=103a63&title_color=6ea8fe&hide_border=true" width="100%" alt="Activity graph" />
-</p>
-
-<p align="center">
 	<img src="https://github.com/HexAbyss/HexAbyss/blob/output/github-snake-dark.svg" width="100%" alt="Contribution snake" />
 </p>
+
+---
+
+## Signal Layer
+
+<p align="center">
+	<img src="./media/constellation-graph.svg" width="100%" alt="Constellation Graph" />
+</p>
+
+<table>
+	<tr>
+		<td width="50%" align="center">
+			<img src="./media/architecture-radar.svg" width="100%" alt="Architecture Radar" />
+		</td>
+		<td width="50%" align="center">
+			<img src="./media/neural-pulse.svg" width="100%" alt="Neural Pulse" />
+		</td>
+	</tr>
+</table>
+
+These signals translate engineering identity into motion: contribution constellations, system-shape radar and a living activity pulse.
+
+---
+
+## Live Timeline
+
+<!--live_timeline:start-->
+- **[OmniVoice](https://github.com/HexAbyss/OmniVoice)** — Voice cloning stack with Docker delivery, web UI and CPU or GPU execution paths. • Python • updated live after workflow activation.
+- **[Atlas](https://github.com/HexAbyss/Atlas)** — Local agent architecture for automating system workflows and operational routines. • TypeScript • updated live after workflow activation.
+- **[Sophya](https://github.com/HexAbyss/Sophya)** — Remote intelligence layer designed to integrate with Atlas and orchestrate AI behavior. • TypeScript • updated live after workflow activation.
+<!--live_timeline:end-->
 
 ---
 
