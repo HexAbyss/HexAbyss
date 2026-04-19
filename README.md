@@ -36,7 +36,6 @@ My focus is not just shipping features, but structuring products that are scalab
 
 <table>
 	<tr>
-		<tr>
 		<td width="33%" valign="top">
 			<h3 align="center">Project N.O.U.S</h3>
 			<p align="center"><strong>AI Platform · Distributed Architecture</strong></p>
@@ -73,6 +72,8 @@ My focus is not just shipping features, but structuring products that are scalab
 				<img src="https://img.shields.io/badge/System%20Control-1F6FEB?style=flat-square" alt="System Control" />
 			</p>
 		</td>
+	</tr>
+	<tr>
 		<td width="33%" valign="top">
 			<h3 align="center">Sophya</h3>
 			<p align="center"><strong>Remote AI · Atlas Integration</strong></p>
@@ -97,8 +98,7 @@ My focus is not just shipping features, but structuring products that are scalab
 				<img src="https://img.shields.io/badge/Operations-1F6FEB?style=flat-square" alt="Operations" />
 			</p>
 		</td>
-	</tr>
-	<td width="33%" valign="top">
+		<td width="33%" valign="top">
 			<h3 align="center">Logic App</h3>
 			<p align="center"><strong>Logic Interface · Decision Flow</strong></p>
 			<p>
@@ -160,12 +160,23 @@ My focus is not just shipping features, but structuring products that are scalab
 
 ## Engineering Principles
 
-- 🧱 Clean architecture over incidental complexity.
-- 🔄 End-to-end typing as a design constraint, not an afterthought.
-- 🧩 Clear separation of responsibilities across UI, services, data and infrastructure.
-- 🤖 Automation wherever repetition introduces friction or risk.
-- 📦 Deployable systems should be reproducible, observable and maintainable.
-- 🎯 Technical elegance means clarity under scale, not decorative complexity.
+<table>
+	<tr>
+		<td width="50%" align="center">
+			<p>
+				- 🧱 Clean architecture over incidental complexity.
+				- 🔄 End-to-end typing as a design constraint, not an afterthought.
+				- 🧩 Clear separation of responsibilities across UI, services, data and infrastructure.
+				- 🤖 Automation wherever repetition introduces friction or risk.
+				- 📦 Deployable systems should be reproducible, observable and maintainable.
+				- 🎯 Technical elegance means clarity under scale, not decorative complexity.
+			</p>
+		</td>
+		<td width="50%" align="center">
+			<img src="./media/architecture-radar.svg" width="100%" alt="Architecture Radar" />
+		</td>
+	</tr>
+</table>
 
 ---
 
@@ -204,16 +215,9 @@ My focus is not just shipping features, but structuring products that are scalab
 	<img src="./media/constellation-graph.svg" width="100%" alt="Constellation Graph" />
 </p>
 
-<table>
-	<tr>
-		<td width="50%" align="center">
-			<img src="./media/architecture-radar.svg" width="100%" alt="Architecture Radar" />
-		</td>
-		<td width="50%" align="center">
-			<img src="./media/neural-pulse.svg" width="100%" alt="Neural Pulse" />
-		</td>
-	</tr>
-</table>
+<p align="center">
+	<img src="./media/neural-pulse.svg" width="100%" alt="Neural Pulse" />
+</p>
 
 These signals translate engineering identity into motion: contribution constellations, system-shape radar and a living activity pulse.
 
