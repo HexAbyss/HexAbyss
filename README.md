@@ -25,10 +25,10 @@
 I design and build software systems with an architecture-first mindset.
 My focus is not just shipping features, but structuring products that are scalable, typed end-to-end, operationally clear, and ready to evolve.
 
-- 🧠 Focused on intelligent systems, software architecture, automation and AI-driven workflows.
-- 🏗️ Building solutions that connect interface, backend, data, infrastructure and deployment as one coherent system.
-- ⚙️ Working with modern TypeScript stacks, containerized environments and integration-oriented design.
-- 🌌 Guided by clarity, depth and precision: elegant software should be both expressive and dependable.
+- Focused on intelligent systems, software architecture, automation and AI-driven workflows.
+- Building solutions that connect interface, backend, data, infrastructure and deployment as one coherent system.
+- Working with modern TypeScript stacks, containerized environments and integration-oriented design.
+- Guided by clarity, depth and precision: elegant software should be both expressive and dependable.
 
 ---
 
