@@ -215,10 +215,6 @@ My focus is not just shipping features, but structuring products that are scalab
 	<img src="./media/constellation-graph.svg" width="100%" alt="Constellation Graph" />
 </p>
 
-<p align="center">
-	<img src="./media/neural-pulse.svg" width="100%" alt="Neural Pulse" />
-</p>
-
 These signals translate engineering identity into motion: contribution constellations, system-shape radar and a living activity pulse.
 
 ---
