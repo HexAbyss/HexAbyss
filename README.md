@@ -49,15 +49,15 @@ My focus is not just shipping features, but structuring products that are scalab
 			</p>
 		</td>
 		<td width="33%" valign="top">
-			<h3 align="center">Enigma das Tres Caixas</h3>
-			<p align="center"><strong>Interactive Experience · Narrative Logic</strong></p>
+			<h3 align="center">Sophya</h3>
+			<p align="center"><strong>Remote AI · Atlas Integration</strong></p>
 			<p>
-				An interactive project focused on puzzle structure, user flow and narrative logic, built to turn abstract reasoning into a clear, engaging digital experience.
+				A remote intelligence component built to extend Atlas with higher-level reasoning, external connectivity and coordinated system behavior.
 			</p>
 			<p>
-				<img src="https://img.shields.io/badge/Interactive%20System-103A63?style=flat-square" alt="Interactive System" />
-				<img src="https://img.shields.io/badge/Puzzle%20Design-1A5A8C?style=flat-square" alt="Puzzle Design" />
-				<img src="https://img.shields.io/badge/Narrative%20Logic-1F6FEB?style=flat-square" alt="Narrative Logic" />
+				<img src="https://img.shields.io/badge/Remote%20AI-103A63?style=flat-square" alt="Remote AI" />
+				<img src="https://img.shields.io/badge/Integration%20Layer-1A5A8C?style=flat-square&logo=apachekafka&logoColor=C6E6FF" alt="Integration Layer" />
+				<img src="https://img.shields.io/badge/Distributed%20Logic-1F6FEB?style=flat-square" alt="Distributed Logic" />
 			</p>
 		</td>
 		<td width="33%" valign="top">
@@ -74,18 +74,6 @@ My focus is not just shipping features, but structuring products that are scalab
 		</td>
 	</tr>
 	<tr>
-		<td width="33%" valign="top">
-			<h3 align="center">Sophya</h3>
-			<p align="center"><strong>Remote AI · Atlas Integration</strong></p>
-			<p>
-				A remote intelligence component built to extend Atlas with higher-level reasoning, external connectivity and coordinated system behavior.
-			</p>
-			<p>
-				<img src="https://img.shields.io/badge/Remote%20AI-103A63?style=flat-square" alt="Remote AI" />
-				<img src="https://img.shields.io/badge/Integration%20Layer-1A5A8C?style=flat-square&logo=apachekafka&logoColor=C6E6FF" alt="Integration Layer" />
-				<img src="https://img.shields.io/badge/Distributed%20Logic-1F6FEB?style=flat-square" alt="Distributed Logic" />
-			</p>
-		</td>
 		<td width="33%" valign="top">
 			<h3 align="center">Lyzandra</h3>
 			<p align="center"><strong>Network Infrastructure · Control Server</strong></p>
@@ -108,6 +96,18 @@ My focus is not just shipping features, but structuring products that are scalab
 				<img src="https://img.shields.io/badge/Logic%20Interface-103A63?style=flat-square" alt="Logic Interface" />
 				<img src="https://img.shields.io/badge/Decision%20Flow-1A5A8C?style=flat-square" alt="Decision Flow" />
 				<img src="https://img.shields.io/badge/Interaction%20Design-1F6FEB?style=flat-square" alt="Interaction Design" />
+			</p>
+		</td>
+		<td width="33%" valign="top">
+			<h3 align="center">Enigma das Tres Caixas</h3>
+			<p align="center"><strong>Interactive Experience · Narrative Logic</strong></p>
+			<p>
+				An interactive project focused on puzzle structure, user flow and narrative logic, built to turn abstract reasoning into a clear, engaging digital experience.
+			</p>
+			<p>
+				<img src="https://img.shields.io/badge/Interactive%20System-103A63?style=flat-square" alt="Interactive System" />
+				<img src="https://img.shields.io/badge/Puzzle%20Design-1A5A8C?style=flat-square" alt="Puzzle Design" />
+				<img src="https://img.shields.io/badge/Narrative%20Logic-1F6FEB?style=flat-square" alt="Narrative Logic" />
 			</p>
 		</td>
 	</tr>
@@ -223,11 +223,11 @@ These signals translate engineering identity into motion: contribution constella
 
 <!--live_timeline:start-->
 - **Project N.O.U.S** — Distributed AI platform connecting interface, orchestration and deployable service architecture. • TypeScript/Python • structured for modular evolution.
-- **Atlas** — Local agent architecture for automating system workflows and operational routines. • TypeScript • updated live after workflow activation.
 - **Sophya** — Remote intelligence layer designed to integrate with Atlas and orchestrate AI behavior. • TypeScript • updated live after workflow activation.
+- **Atlas** — Local agent architecture for automating system workflows and operational routines. • TypeScript • updated live after workflow activation.
 - **Lyzandra** — Network infrastructure control server built to centralize operational routines and service coordination. • Infrastructure/Automation • production-oriented.
-- **Enigma das Tres Caixas** — Interactive logic experience focused on puzzle flow, narrative structure and user engagement. • Next.js • concept-driven build.
 - **Logic App** — Logic-first interface project translating structured reasoning into a practical interactive application. • JavaScript • lightweight and direct.
+- **Enigma das Tres Caixas** — Interactive logic experience focused on puzzle flow, narrative structure and user engagement. • Next.js • concept-driven build.
 <!--live_timeline:end-->
 
 ---
