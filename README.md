@@ -163,14 +163,14 @@ My focus is not just shipping features, but structuring products that are scalab
 <table>
 	<tr>
 		<td width="50%" align="center">
-			<p>
+			<div align="left">
 				🧱 Clean architecture over incidental complexity.<br/>
 				🔄 End-to-end typing as a design constraint, not an afterthought.<br/>
 				🧩 Clear separation of responsibilities across UI, services, data and infrastructure.<br/>
 				🤖 Automation wherever repetition introduces friction or risk.<br/>
 				📦 Deployable systems should be reproducible, observable and maintainable.<br/>
 				🎯 Technical elegance means clarity under scale, not decorative complexity.
-			</p>
+			</div>
 		</td>
 		<td width="50%" align="center">
 			<img src="./media/architecture-radar.svg" width="100%" alt="Architecture Radar" />
