@@ -156,6 +156,12 @@ My focus is not just shipping features, but structuring products that are scalab
 	<img src="https://img.shields.io/badge/Playwright-1F6FEB?style=for-the-badge&logo=playwright&logoColor=EAF4FF" alt="Playwright" />
 </p>
 
+### Language Distribution
+
+<p align="center">
+	<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HexAbyss&layout=compact&theme=github_dark&count_private=true&hide_border=true&langs_count=8" width="500" alt="Top languages" />
+</p>
+
 ---
 
 ## Engineering Principles
@@ -194,27 +200,14 @@ My focus is not just shipping features, but structuring products that are scalab
 
 ## GitHub Analytics
 
-<table align="center" style="border: none; border-collapse: collapse;">
-	<tr>
-		<td align="center" style="border: none;">
-			<img src="https://streak-stats.demolab.com?user=HexAbyss&theme=github-dark-blue&hide_border=true" height="170" alt="GitHub streak" />
-		</td>
-		<td align="center" style="border: none;">
-			<img src="https://github-readme-stats.vercel.app/api?username=HexAbyss&show_icons=true&hide_title=true&rank_icon=github&theme=github_dark&hide_border=true" height="170" alt="GitHub stats" />
-		</td>
-	</tr>
-</table>
+<p align="center">
+	<img src="https://streak-stats.demolab.com?user=HexAbyss&theme=github-dark-blue&hide_border=true" height="170" alt="GitHub streak" />
+	<img src="https://github-readme-stats.vercel.app/api?username=HexAbyss&show_icons=true&hide_title=true&rank_icon=github&theme=github_dark&hide_border=true" height="170" alt="GitHub stats" />
+</p>
 
-<table align="center" style="border: none; border-collapse: collapse;">
-	<tr>
-		<td align="center" style="border: none;">
-			<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HexAbyss&layout=compact&theme=github_dark&count_private=true&hide_border=true&langs_count=8" width="420" alt="Top languages" />
-		</td>
-		<td align="center" style="border: none;">
-			<img src="https://github.com/HexAbyss/HexAbyss/blob/output/github-snake-dark.svg" width="420" alt="Contribution snake" />
-		</td>	
-	</tr>
-</table>
+<p align="center">
+	<img src="https://github.com/HexAbyss/HexAbyss/blob/output/github-snake-dark.svg" width="100%" alt="Contribution snake" />
+</p>
 
 ---
 
