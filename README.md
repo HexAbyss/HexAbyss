@@ -156,9 +156,7 @@ My focus is not just shipping features, but structuring products that are scalab
 	<img src="https://img.shields.io/badge/Playwright-1F6FEB?style=for-the-badge&logo=playwright&logoColor=EAF4FF" alt="Playwright" />
 </p>
 
----
-
-### Language Distribution
+## Language Distribution
 
 <p align="left">
 	<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HexAbyss&layout=compact&theme=github_dark&count_private=true&hide_border=true&langs_count=8" width="360" alt="Top languages" />
