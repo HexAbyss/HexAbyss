@@ -203,13 +203,16 @@ My focus is not just shipping features, but structuring products that are scalab
 			<img src="https://github-readme-stats.vercel.app/api?username=HexAbyss&show_icons=true&hide_title=true&rank_icon=github&theme=github_dark&border_color=1F6FEB&icon_color=58A6FF&title_color=6EA8FE&text_color=C9D1D9&bg_color=0D1117" height="170" alt="GitHub stats" />
 		</td>
 	</tr>
+</table>
+
+<table align="center" style="border: none; border-collapse: collapse;">
 	<tr>
 		<td align="center" style="border: none;">
-			<img src="https://github.com/HexAbyss/HexAbyss/blob/output/github-snake-dark.svg" style="max-width: 100%;" alt="Contribution snake" />
+			<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HexAbyss&layout=compact&theme=github_dark&count_private=true&border_color=1F6FEB&title_color=6EA8FE&text_color=C9D1D9&bg_color=0D1117" height="165" alt="Top languages" />
 		</td>
 		<td align="center" style="border: none;">
-			<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HexAbyss&layout=compact&theme=github_dark&count_private=true&border_color=1F6FEB&title_color=6EA8FE&text_color=C9D1D9&bg_color=0D1117" height="165" alt="Top languages" />
-		</td>		
+			<img src="https://github.com/HexAbyss/HexAbyss/blob/output/github-snake-dark.svg" style="max-width: 100%;" alt="Contribution snake" />
+		</td>	
 	</tr>
 </table>
 
