@@ -219,14 +219,6 @@ These signals translate engineering identity into motion: contribution constella
 
 ---
 
-## Live Timeline
-
-<!--live_timeline:start-->
-- **[OmniVoiceWebUI](https://github.com/HexAbyss/OmniVoiceWebUI)** — Open-source WebUI for OmniVoice — dockerized, with a modern interface and full CPU/GPU support for easy voice cloning (TTS) • JavaScript • updated Apr 20.
-<!--live_timeline:end-->
-
----
-
 ## Current Direction
 
 - Intelligent systems with real operational utility.
