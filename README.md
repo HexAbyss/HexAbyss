@@ -222,12 +222,7 @@ These signals translate engineering identity into motion: contribution constella
 ## Live Timeline
 
 <!--live_timeline:start-->
-- **Project N.O.U.S** — Distributed AI platform connecting interface, orchestration and deployable service architecture. • TypeScript/Python • structured for modular evolution.
-- **Sophya** — Remote intelligence layer designed to integrate with Atlas and orchestrate AI behavior. • TypeScript • updated live after workflow activation.
-- **Atlas** — Local agent architecture for automating system workflows and operational routines. • TypeScript • updated live after workflow activation.
-- **Lyzandra** — Network infrastructure control server built to centralize operational routines and service coordination. • Infrastructure/Automation • production-oriented.
-- **Logic App** — Logic-first interface project translating structured reasoning into a practical interactive application. • JavaScript • lightweight and direct.
-- **Enigma das Tres Caixas** — Interactive logic experience focused on puzzle flow, narrative structure and user engagement. • Next.js • concept-driven build.
+- **[OmniVoiceWebUI](https://github.com/HexAbyss/OmniVoiceWebUI)** — Open-source WebUI for OmniVoice — dockerized, with a modern interface and full CPU/GPU support for easy voice cloning (TTS) • JavaScript • updated Apr 20.
 <!--live_timeline:end-->
 
 ---
