@@ -197,10 +197,10 @@ My focus is not just shipping features, but structuring products that are scalab
 <table align="center" style="border: none; border-collapse: collapse;">
 	<tr>
 		<td align="center" style="border: none;">
-			<img src="https://streak-stats.demolab.com?user=HexAbyss&theme=github-dark-blue&hide_border=false&border=1F6FEB&stroke=58A6FF&ring=6EA8FE&fire=6EA8FE&currStreakLabel=C9D1D9" height="170" alt="GitHub streak" />
+			<img src="https://streak-stats.demolab.com?user=HexAbyss&theme=github-dark-blue&hide_border=true" height="170" alt="GitHub streak" />
 		</td>
 		<td align="center" style="border: none;">
-			<img src="https://github-readme-stats.vercel.app/api?username=HexAbyss&show_icons=true&hide_title=true&rank_icon=github&theme=github_dark&border_color=1F6FEB&icon_color=58A6FF&title_color=6EA8FE&text_color=C9D1D9&bg_color=0D1117" height="170" alt="GitHub stats" />
+			<img src="https://github-readme-stats.vercel.app/api?username=HexAbyss&show_icons=true&hide_title=true&rank_icon=github&theme=github_dark&hide_border=true" height="170" alt="GitHub stats" />
 		</td>
 	</tr>
 </table>
@@ -208,10 +208,10 @@ My focus is not just shipping features, but structuring products that are scalab
 <table align="center" style="border: none; border-collapse: collapse;">
 	<tr>
 		<td align="center" style="border: none;">
-			<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HexAbyss&layout=compact&theme=github_dark&count_private=true&border_color=1F6FEB&title_color=6EA8FE&text_color=C9D1D9&bg_color=0D1117" height="165" alt="Top languages" />
+			<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HexAbyss&layout=compact&theme=github_dark&count_private=true&hide_border=true&langs_count=8" width="420" alt="Top languages" />
 		</td>
 		<td align="center" style="border: none;">
-			<img src="https://github.com/HexAbyss/HexAbyss/blob/output/github-snake-dark.svg" style="max-width: 100%;" alt="Contribution snake" />
+			<img src="https://github.com/HexAbyss/HexAbyss/blob/output/github-snake-dark.svg" width="420" alt="Contribution snake" />
 		</td>	
 	</tr>
 </table>
