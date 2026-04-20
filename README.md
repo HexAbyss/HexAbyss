@@ -194,20 +194,20 @@ My focus is not just shipping features, but structuring products that are scalab
 
 ## GitHub Analytics
 
-<table align="center">
+<table align="center" width="100%">
 	<tr>
-		<td>
+		<td width="50%" align="center">
 			<img src="https://github-readme-stats.vercel.app/api?username=HexAbyss&show_icons=true&hide_title=true&rank_icon=github&theme=github_dark&border_color=1F6FEB&icon_color=58A6FF&title_color=6EA8FE&text_color=C9D1D9&bg_color=0D1117" height="170" alt="GitHub stats" />
 		</td>
-		<td>
+		<td width="50%" align="center">
 			<img src="https://streak-stats.demolab.com?user=HexAbyss&theme=github-dark-blue&hide_border=false&border=1F6FEB&stroke=58A6FF&ring=6EA8FE&fire=6EA8FE&currStreakLabel=C9D1D9" height="170" alt="GitHub streak" />
 		</td>
 	</tr>
 	<tr>
-		<td>
+		<td width="50%" align="center">
 			<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HexAbyss&layout=compact&theme=github_dark&border_color=1F6FEB&title_color=6EA8FE&text_color=C9D1D9&bg_color=0D1117" height="165" alt="Top languages" />
 		</td>
-		<td>
+		<td width="50%" align="center">
 			<img src="https://github.com/HexAbyss/HexAbyss/blob/output/github-snake-dark.svg" width="100%" alt="Contribution snake" />
 		</td>
 	</tr>
