@@ -243,4 +243,3 @@ These signals translate engineering identity into motion: contribution constella
 <p align="center">
 	<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:06121f,45:0b2f5b,100:2f6feb" width="100%" alt="Footer banner" />
 </p>
- 
