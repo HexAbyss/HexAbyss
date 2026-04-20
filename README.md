@@ -205,7 +205,7 @@ My focus is not just shipping features, but structuring products that are scalab
 	</tr>
 	<tr>
 		<td width="50%" align="center">
-			<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HexAbyss&layout=compact&theme=github_dark&border_color=1F6FEB&title_color=6EA8FE&text_color=C9D1D9&bg_color=0D1117" height="165" alt="Top languages" />
+			<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HexAbyss&layout=compact&theme=github_dark&count_private=true&border_color=1F6FEB&title_color=6EA8FE&text_color=C9D1D9&bg_color=0D1117" height="165" alt="Top languages" />
 		</td>
 		<td width="50%" align="center">
 			<img src="https://github.com/HexAbyss/HexAbyss/blob/output/github-snake-dark.svg" width="100%" alt="Contribution snake" />
