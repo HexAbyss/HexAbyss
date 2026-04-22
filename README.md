@@ -160,7 +160,6 @@ My focus is not just shipping features, but structuring products that are scalab
 
 <p align="left">
 	<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HexAbyss&layout=compact&theme=github_dark&count_private=true&hide_border=true&langs_count=8" width="360" alt="Top languages" />
-	[![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=HexAbyss)](https://github.com/HexAbyss/github-readme-stats)
 </p>
 
 ---
