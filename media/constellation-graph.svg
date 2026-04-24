@@ -21,16 +21,16 @@
   <text x="52" y="74" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">Contribution signals rendered as a live engineering sky for HexAbyss</text>
   <path d="M 810 148.15137769360487 Q 846 140.32185430085593 882 152.49233090810702" stroke="rgba(110,168,254,0.54)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
 <path d="M 810 190.15137769360487 Q 846 182.32185430085593 882 194.49233090810702" stroke="rgba(110,168,254,0.54)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-<path d="M 810 232.15137769360487 Q 846 224.32185430085593 882 236.49233090810702" stroke="rgba(110,168,254,0.20)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-<path d="M 810 274.15137769360484 Q 846 266.32185430085593 882 278.492330908107" stroke="rgba(110,168,254,0.38)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M 810 232.15137769360487 Q 846 224.32185430085593 882 236.49233090810702" stroke="rgba(110,168,254,0.25)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M 810 274.15137769360484 Q 846 266.32185430085593 882 278.492330908107" stroke="rgba(110,168,254,0.34)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
 <path d="M 810 316.15137769360484 Q 846 308.32185430085593 882 320.492330908107" stroke="rgba(110,168,254,0.20)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-<path d="M 810 358.15137769360484 Q 846 350.32185430085593 882 362.492330908107" stroke="rgba(110,168,254,0.43)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M 810 358.15137769360484 Q 846 350.32185430085593 882 362.492330908107" stroke="rgba(110,168,254,0.47)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
 <path d="M 882 110.49233090810704 Q 882 121.49233090810702 882 152.49233090810702" stroke="rgba(110,168,254,0.54)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
 <path d="M 882 152.49233090810702 Q 882 163.49233090810702 882 194.49233090810702" stroke="rgba(110,168,254,0.54)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
 <path d="M 882 194.49233090810702 Q 882 205.49233090810702 882 236.49233090810702" stroke="rgba(110,168,254,0.54)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-<path d="M 882 236.49233090810702 Q 882 247.49233090810702 882 278.492330908107" stroke="rgba(110,168,254,0.38)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-<path d="M 882 278.492330908107 Q 882 289.492330908107 882 320.492330908107" stroke="rgba(110,168,254,0.38)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-<path d="M 882 320.492330908107 Q 882 331.492330908107 882 362.492330908107" stroke="rgba(110,168,254,0.43)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M 882 236.49233090810702 Q 882 247.49233090810702 882 278.492330908107" stroke="rgba(110,168,254,0.34)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M 882 278.492330908107 Q 882 289.492330908107 882 320.492330908107" stroke="rgba(110,168,254,0.34)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M 882 320.492330908107 Q 882 331.492330908107 882 362.492330908107" stroke="rgba(110,168,254,0.47)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
   <circle cx="90" cy="112.18149783144527" r="4.20" fill="rgba(47,111,235,0.03)" filter="url(#blur)"/><circle cx="90" cy="112.18149783144527" r="1.50" fill="rgba(234,244,255,0.14)"/>
 <circle cx="90" cy="154.18149783144528" r="4.20" fill="rgba(47,111,235,0.03)" filter="url(#blur)"/><circle cx="90" cy="154.18149783144528" r="1.50" fill="rgba(234,244,255,0.14)"/>
 <circle cx="90" cy="196.18149783144528" r="4.20" fill="rgba(47,111,235,0.03)" filter="url(#blur)"/><circle cx="90" cy="196.18149783144528" r="1.50" fill="rgba(234,244,255,0.14)"/>
@@ -111,10 +111,10 @@
 <circle cx="882" cy="110.49233090810704" r="4.20" fill="rgba(47,111,235,0.03)" filter="url(#blur)"/><circle cx="882" cy="110.49233090810704" r="1.50" fill="rgba(234,244,255,0.14)"/>
 <circle cx="882" cy="152.49233090810702" r="14.06" fill="rgba(47,111,235,0.18)" filter="url(#blur)"/><circle cx="882" cy="152.49233090810702" r="5.02" fill="rgba(234,244,255,0.98)"/>
 <circle cx="882" cy="194.49233090810702" r="12.82" fill="rgba(47,111,235,0.18)" filter="url(#blur)"/><circle cx="882" cy="194.49233090810702" r="4.58" fill="rgba(234,244,255,0.98)"/>
-<circle cx="882" cy="236.49233090810702" r="4.82" fill="rgba(47,111,235,0.07)" filter="url(#blur)"/><circle cx="882" cy="236.49233090810702" r="1.72" fill="rgba(234,244,255,0.36)"/>
-<circle cx="882" cy="278.492330908107" r="7.28" fill="rgba(47,111,235,0.13)" filter="url(#blur)"/><circle cx="882" cy="278.492330908107" r="2.60" fill="rgba(234,244,255,0.70)"/>
+<circle cx="882" cy="236.49233090810702" r="5.43" fill="rgba(47,111,235,0.08)" filter="url(#blur)"/><circle cx="882" cy="236.49233090810702" r="1.94" fill="rgba(234,244,255,0.45)"/>
+<circle cx="882" cy="278.492330908107" r="6.66" fill="rgba(47,111,235,0.11)" filter="url(#blur)"/><circle cx="882" cy="278.492330908107" r="2.38" fill="rgba(234,244,255,0.61)"/>
 <circle cx="882" cy="320.492330908107" r="4.82" fill="rgba(47,111,235,0.07)" filter="url(#blur)"/><circle cx="882" cy="320.492330908107" r="1.72" fill="rgba(234,244,255,0.36)"/>
-<circle cx="882" cy="362.492330908107" r="7.90" fill="rgba(47,111,235,0.14)" filter="url(#blur)"/><circle cx="882" cy="362.492330908107" r="2.82" fill="rgba(234,244,255,0.78)"/>
-  <text x="52" y="390" fill="#C9D1D9" font-size="13" font-family="Segoe UI, Arial, sans-serif">Last 84 days · 45 visible contribution impulses</text>
+<circle cx="882" cy="362.492330908107" r="8.51" fill="rgba(47,111,235,0.16)" filter="url(#blur)"/><circle cx="882" cy="362.492330908107" r="3.04" fill="rgba(234,244,255,0.86)"/>
+  <text x="52" y="390" fill="#C9D1D9" font-size="13" font-family="Segoe UI, Arial, sans-serif">Last 84 days · 46 visible contribution impulses</text>
   <text x="742" y="390" fill="#6EA8FE" font-size="13" font-family="Segoe UI, Arial, sans-serif">architecture • systems • intelligence</text>
 </svg>
