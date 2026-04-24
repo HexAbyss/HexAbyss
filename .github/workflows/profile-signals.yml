@@ -1,9 +1,18 @@
 name: Profile Signals
 
 on:
+  push:
+    branches:
+      - main
+      - master
+    paths-ignore:
+      - media/**
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "15 * * * *"
   workflow_dispatch:
+  repository_dispatch:
+    types:
+      - profile-refresh
 
 permissions:
   contents: write
@@ -18,6 +27,7 @@ jobs:
 
       - name: Generate profile signals
         env:
+          PROFILE_SIGNAL_TOKEN: ${{ secrets.PROFILE_SIGNAL_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
         run: node .github/scripts/profile-signals.mjs
@@ -30,6 +40,6 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md media/constellation-graph.svg media/neural-pulse.svg media/architecture-radar.svg
+          git add README.md media/constellation-graph.svg media/neural-pulse.svg media/architecture-radar.svg media/top-languages.svg
           git commit -m "signals"
           git push
