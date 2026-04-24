@@ -11,7 +11,7 @@ const readmePath = path.join(rootDir, "README.md");
 await fs.mkdir(mediaDir, { recursive: true });
 
 const contributionDays = await getContributionDays(owner, token);
-const repositories = await getRepositories(owner, token);
+const repositories = await getRepositories(owner, token, hasUserToken);
 const languageStats = await getLanguageStats(owner, token, hasUserToken);
 
 const latest84Days = normalizeContributionDays(contributionDays).slice(-84);
@@ -72,7 +72,7 @@ async function getContributionDays(login, authToken) {
   }
 }
 
-async function getRepositories(login, authToken) {
+async function getRepositories(login, authToken, useAuthenticatedUserEndpoint) {
   const headers = {
     Accept: "application/vnd.github+json",
     "User-Agent": "profile-signals",
@@ -83,7 +83,11 @@ async function getRepositories(login, authToken) {
   }
 
   try {
-    const response = await fetch(`https://api.github.com/users/${login}/repos?sort=updated&per_page=6&type=owner`, {
+    const repoEndpoint = useAuthenticatedUserEndpoint
+      ? "https://api.github.com/user/repos?affiliation=owner&sort=updated&per_page=6"
+      : `https://api.github.com/users/${login}/repos?sort=updated&per_page=6&type=owner`;
+
+    const response = await fetch(repoEndpoint, {
       headers,
     });
 
@@ -409,38 +413,57 @@ function buildArchitectureRadarSvg(login) {
 }
 
 function buildTopLanguagesSvg(languageStats, login, includesPrivateRepos) {
-  const width = 720;
-  const height = 320;
-  const rowHeight = 27;
-  const labelX = 42;
-  const barX = 240;
-  const barMaxWidth = 360;
-  const baseY = 92;
+  const width = 336;
+  const height = 140;
+  const cardX = 10;
+  const cardY = 8;
+  const cardWidth = 316;
+  const barX = 24;
+  const barY = 48;
+  const barWidth = 274;
+  const barHeight = 8;
+  const visibleStats = languageStats.slice(0, 5);
+  const totalVisiblePercent = visibleStats.reduce((sum, language) => sum + language.percent, 0);
+  const normalizedStats = visibleStats.map((language) => ({
+    ...language,
+    normalizedPercent: totalVisiblePercent > 0 ? (language.percent / totalVisiblePercent) * 100 : 0,
+  }));
 
-  const rows = languageStats.map((language, index) => {
-    const y = baseY + index * rowHeight;
-    const barWidth = Math.max(14, (language.percent / 100) * barMaxWidth);
+  let segmentStart = barX;
+  const segments = normalizedStats.map((language, index) => {
+    const isLast = index === normalizedStats.length - 1;
+    const rawWidth = (language.normalizedPercent / 100) * barWidth;
+    const segmentWidth = isLast ? barX + barWidth - segmentStart : Math.max(8, rawWidth);
+    const segment = `<rect x="${segmentStart.toFixed(2)}" y="${barY}" width="${segmentWidth.toFixed(2)}" height="${barHeight}" fill="${language.color}"/>`;
+    segmentStart += segmentWidth;
+    return segment;
+  }).join("\n    ");
+
+  const legendEntries = normalizedStats.map((language, index) => {
+    const column = index < 3 ? 0 : 1;
+    const row = index < 3 ? index : index - 3;
+    const x = column === 0 ? 28 : 170;
+    const y = 80 + row * 24;
+    const label = escapeXml(language.name);
+    const percent = `${language.percent.toFixed(1)}%`;
     return `
-  <text x="${labelX}" y="${y + 11}" fill="#E6F1FF" font-size="14" font-family="Segoe UI, Arial, sans-serif">${escapeXml(language.name)}</text>
-  <rect x="${barX}" y="${y - 1}" width="${barMaxWidth}" height="12" rx="6" fill="rgba(255,255,255,0.08)"/>
-  <rect x="${barX}" y="${y - 1}" width="${barWidth.toFixed(2)}" height="12" rx="6" fill="${language.color}"/>
-  <text x="${barX + barMaxWidth + 14}" y="${y + 11}" fill="#9ECFFF" font-size="13" font-family="Segoe UI, Arial, sans-serif">${language.percent.toFixed(1)}%</text>`;
+  <circle cx="${x}" cy="${y}" r="4" fill="${language.color}"/>
+  <text x="${x + 14}" y="${y + 1}" fill="#F0F6FC" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">${label}</text>
+  <text x="${x + 14 + estimateTextWidth(label, 7.1)}" y="${y + 1}" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">${percent}</text>`;
   }).join("\n");
 
   return `
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="langBg" x1="0" y1="0" x2="720" y2="320" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#08101A"/>
-      <stop offset="1" stop-color="#10304F"/>
-    </linearGradient>
-  </defs>
-  <rect width="${width}" height="${height}" rx="26" fill="url(#langBg)"/>
-  <text x="42" y="46" fill="#E6F1FF" font-size="26" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Top Languages</text>
-  <text x="42" y="68" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">${includesPrivateRepos ? "Live aggregation across owned repositories with private repo support" : `Live aggregation across ${escapeXml(login)} public repositories`}</text>
-  ${rows}
-  <text x="42" y="292" fill="#C9D1D9" font-size="12" font-family="Segoe UI, Arial, sans-serif">Generated by workflow to avoid third-party cache delays</text>
-  <text x="420" y="292" fill="#6EA8FE" font-size="12" font-family="Segoe UI, Arial, sans-serif">Add PROFILE_SIGNAL_TOKEN to include private repositories</text>
+  <rect x="${cardX}" y="${cardY}" width="${cardWidth}" height="124" rx="8" fill="#0D1117"/>
+  <text x="24" y="29" fill="#F0F6FC" font-size="14" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Languages</text>
+  <rect x="${barX}" y="${barY}" width="${barWidth}" height="${barHeight}" rx="4" fill="#21262D"/>
+  <clipPath id="langBarClip">
+    <rect x="${barX}" y="${barY}" width="${barWidth}" height="${barHeight}" rx="4"/>
+  </clipPath>
+  <g clip-path="url(#langBarClip)">
+    ${segments}
+  </g>
+  ${legendEntries}
 </svg>`.trimStart();
 }
 
@@ -556,6 +579,10 @@ function getLanguageColor(name) {
 
   const fallbackPalette = ["#2F6FEB", "#6EA8FE", "#58A6FF", "#9ECFFF", "#1F6FEB", "#7aa2f7"];
   return fallbackPalette[hash(name) % fallbackPalette.length];
+}
+
+function estimateTextWidth(value, unitWidth = 7) {
+  return String(value).length * unitWidth;
 }
 
 function hash(value) {
