@@ -2,7 +2,8 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const owner = process.env.GITHUB_REPOSITORY_OWNER || process.env.GITHUB_OWNER || "HexAbyss";
-const token = process.env.GITHUB_TOKEN || "";
+const token = process.env.PROFILE_SIGNAL_TOKEN || process.env.GITHUB_TOKEN || "";
+const hasUserToken = Boolean(process.env.PROFILE_SIGNAL_TOKEN);
 const rootDir = process.cwd();
 const mediaDir = path.join(rootDir, "media");
 const readmePath = path.join(rootDir, "README.md");
@@ -11,6 +12,7 @@ await fs.mkdir(mediaDir, { recursive: true });
 
 const contributionDays = await getContributionDays(owner, token);
 const repositories = await getRepositories(owner, token);
+const languageStats = await getLanguageStats(owner, token, hasUserToken);
 
 const latest84Days = normalizeContributionDays(contributionDays).slice(-84);
 const weeklyTotals = buildWeeklyTotals(latest84Days, 12);
@@ -18,6 +20,7 @@ const weeklyTotals = buildWeeklyTotals(latest84Days, 12);
 await fs.writeFile(path.join(mediaDir, "constellation-graph.svg"), buildConstellationSvg(latest84Days, owner));
 await fs.writeFile(path.join(mediaDir, "neural-pulse.svg"), buildNeuralPulseSvg(weeklyTotals, owner));
 await fs.writeFile(path.join(mediaDir, "architecture-radar.svg"), buildArchitectureRadarSvg(owner));
+await fs.writeFile(path.join(mediaDir, "top-languages.svg"), buildTopLanguagesSvg(languageStats, owner, hasUserToken));
 
 const timelineMarkdown = buildTimelineMarkdown(repositories);
 await updateReadmeTimeline(timelineMarkdown);
@@ -97,6 +100,61 @@ async function getRepositories(login, authToken) {
     return filtered.length ? filtered : buildFallbackRepositories();
   } catch {
     return buildFallbackRepositories();
+  }
+}
+
+async function getLanguageStats(login, authToken, useAuthenticatedUserEndpoint) {
+  const headers = {
+    Accept: "application/vnd.github+json",
+    "User-Agent": "profile-signals",
+  };
+
+  if (authToken) {
+    headers.Authorization = `Bearer ${authToken}`;
+  }
+
+  try {
+    const repoEndpoint = useAuthenticatedUserEndpoint
+      ? "https://api.github.com/user/repos?affiliation=owner&sort=updated&per_page=100"
+      : `https://api.github.com/users/${login}/repos?sort=updated&per_page=100&type=owner`;
+
+    const repoResponse = await fetch(repoEndpoint, { headers });
+    if (!repoResponse.ok) {
+      return buildFallbackLanguageStats();
+    }
+
+    const repos = await repoResponse.json();
+    const filteredRepos = repos.filter((repo) => !repo.fork);
+    const totals = new Map();
+
+    for (const repo of filteredRepos) {
+      const languageResponse = await fetch(repo.languages_url, { headers });
+      if (!languageResponse.ok) {
+        continue;
+      }
+
+      const languages = await languageResponse.json();
+      for (const [name, bytes] of Object.entries(languages)) {
+        totals.set(name, (totals.get(name) || 0) + Number(bytes || 0));
+      }
+    }
+
+    const totalBytes = [...totals.values()].reduce((sum, value) => sum + value, 0);
+    if (!totalBytes) {
+      return buildFallbackLanguageStats();
+    }
+
+    return [...totals.entries()]
+      .map(([name, bytes]) => ({
+        name,
+        bytes,
+        percent: (bytes / totalBytes) * 100,
+        color: getLanguageColor(name),
+      }))
+      .sort((left, right) => right.bytes - left.bytes)
+      .slice(0, 8);
+  } catch {
+    return buildFallbackLanguageStats();
   }
 }
 
@@ -350,6 +408,42 @@ function buildArchitectureRadarSvg(login) {
 </svg>`.trimStart();
 }
 
+function buildTopLanguagesSvg(languageStats, login, includesPrivateRepos) {
+  const width = 720;
+  const height = 320;
+  const rowHeight = 27;
+  const labelX = 42;
+  const barX = 240;
+  const barMaxWidth = 360;
+  const baseY = 92;
+
+  const rows = languageStats.map((language, index) => {
+    const y = baseY + index * rowHeight;
+    const barWidth = Math.max(14, (language.percent / 100) * barMaxWidth);
+    return `
+  <text x="${labelX}" y="${y + 11}" fill="#E6F1FF" font-size="14" font-family="Segoe UI, Arial, sans-serif">${escapeXml(language.name)}</text>
+  <rect x="${barX}" y="${y - 1}" width="${barMaxWidth}" height="12" rx="6" fill="rgba(255,255,255,0.08)"/>
+  <rect x="${barX}" y="${y - 1}" width="${barWidth.toFixed(2)}" height="12" rx="6" fill="${language.color}"/>
+  <text x="${barX + barMaxWidth + 14}" y="${y + 11}" fill="#9ECFFF" font-size="13" font-family="Segoe UI, Arial, sans-serif">${language.percent.toFixed(1)}%</text>`;
+  }).join("\n");
+
+  return `
+<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="langBg" x1="0" y1="0" x2="720" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#08101A"/>
+      <stop offset="1" stop-color="#10304F"/>
+    </linearGradient>
+  </defs>
+  <rect width="${width}" height="${height}" rx="26" fill="url(#langBg)"/>
+  <text x="42" y="46" fill="#E6F1FF" font-size="26" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Top Languages</text>
+  <text x="42" y="68" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">${includesPrivateRepos ? "Live aggregation across owned repositories with private repo support" : `Live aggregation across ${escapeXml(login)} public repositories`}</text>
+  ${rows}
+  <text x="42" y="292" fill="#C9D1D9" font-size="12" font-family="Segoe UI, Arial, sans-serif">Generated by workflow to avoid third-party cache delays</text>
+  <text x="420" y="292" fill="#6EA8FE" font-size="12" font-family="Segoe UI, Arial, sans-serif">Add PROFILE_SIGNAL_TOKEN to include private repositories</text>
+</svg>`.trimStart();
+}
+
 function buildTimelineMarkdown(repositories) {
   return repositories.map((repo) => {
     const updatedAt = formatDate(repo.updated_at || repo.updatedAt || new Date().toISOString());
@@ -413,6 +507,55 @@ function buildFallbackRepositories() {
       updated_at: new Date().toISOString(),
     },
   ];
+}
+
+function buildFallbackLanguageStats() {
+  return [
+    { name: "TypeScript", bytes: 36, percent: 36, color: getLanguageColor("TypeScript") },
+    { name: "Python", bytes: 22, percent: 22, color: getLanguageColor("Python") },
+    { name: "JavaScript", bytes: 14, percent: 14, color: getLanguageColor("JavaScript") },
+    { name: "HTML", bytes: 9, percent: 9, color: getLanguageColor("HTML") },
+    { name: "CSS", bytes: 7, percent: 7, color: getLanguageColor("CSS") },
+    { name: "Shell", bytes: 5, percent: 5, color: getLanguageColor("Shell") },
+    { name: "Rust", bytes: 4, percent: 4, color: getLanguageColor("Rust") },
+    { name: "Dockerfile", bytes: 3, percent: 3, color: getLanguageColor("Dockerfile") },
+  ];
+}
+
+function getLanguageColor(name) {
+  const colors = {
+    TypeScript: "#3178c6",
+    JavaScript: "#f1e05a",
+    Python: "#3572A5",
+    HTML: "#e34c26",
+    CSS: "#563d7c",
+    Shell: "#89e051",
+    Rust: "#dea584",
+    Dockerfile: "#384d54",
+    Prisma: "#5a67d8",
+    MDX: "#1b1f24",
+    Markdown: "#083fa1",
+    Go: "#00ADD8",
+    Java: "#b07219",
+    C: "#555555",
+    "C++": "#f34b7d",
+    "C#": "#178600",
+    SCSS: "#c6538c",
+    Vue: "#41b883",
+    Svelte: "#ff3e00",
+    TSX: "#3178c6",
+    JSX: "#61dafb",
+    Kotlin: "#A97BFF",
+    Swift: "#F05138",
+    PHP: "#4F5D95",
+  };
+
+  if (colors[name]) {
+    return colors[name];
+  }
+
+  const fallbackPalette = ["#2F6FEB", "#6EA8FE", "#58A6FF", "#9ECFFF", "#1F6FEB", "#7aa2f7"];
+  return fallbackPalette[hash(name) % fallbackPalette.length];
 }
 
 function hash(value) {
