@@ -159,7 +159,7 @@ My focus is not just shipping features, but structuring products that are scalab
 ## Language Distribution
 
 <p align="left">
-	<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HexAbyss&layout=compact&theme=github_dark&count_private=true&hide_border=true&langs_count=8" width="360" alt="Top languages" />
+	<img src="./media/top-languages.svg" width="430" alt="Top languages" />
 </p>
 
 ---
