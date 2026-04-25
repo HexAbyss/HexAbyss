@@ -6,16 +6,16 @@
     <rect x="24" y="48" width="274" height="8" rx="4"/>
   </clipPath>
   <g clip-path="url(#langBarClip)">
-    <rect x="24.00" y="48" width="128.27" height="8" fill="#3178c6"/>
-    <rect x="152.27" y="48" width="91.60" height="8" fill="#3572A5"/>
-    <rect x="243.87" y="48" width="33.83" height="8" fill="#f1e05a"/>
-    <rect x="277.70" y="48" width="14.43" height="8" fill="#563d7c"/>
-    <rect x="292.13" y="48" width="5.87" height="8" fill="#e34c26"/>
+    <rect x="24.00" y="48" width="127.61" height="8" fill="#3178c6"/>
+    <rect x="151.61" y="48" width="91.34" height="8" fill="#3572A5"/>
+    <rect x="242.95" y="48" width="34.11" height="8" fill="#f1e05a"/>
+    <rect x="277.06" y="48" width="15.09" height="8" fill="#563d7c"/>
+    <rect x="292.15" y="48" width="5.85" height="8" fill="#e34c26"/>
   </g>
   
   <circle cx="28" cy="80" r="4" fill="#3178c6"/>
   <text x="42" y="81" fill="#F0F6FC" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">TypeScript</text>
-  <text x="113" y="81" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">46.3%</text>
+  <text x="113" y="81" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">46.0%</text>
 
   <circle cx="28" cy="104" r="4" fill="#3572A5"/>
   <text x="42" y="105" fill="#F0F6FC" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">Python</text>
@@ -23,11 +23,11 @@
 
   <circle cx="28" cy="128" r="4" fill="#f1e05a"/>
   <text x="42" y="129" fill="#F0F6FC" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">JavaScript</text>
-  <text x="113" y="129" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">12.2%</text>
+  <text x="113" y="129" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">12.3%</text>
 
   <circle cx="170" cy="80" r="4" fill="#563d7c"/>
   <text x="184" y="81" fill="#F0F6FC" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">CSS</text>
-  <text x="205.3" y="81" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">5.2%</text>
+  <text x="205.3" y="81" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">5.4%</text>
 
   <circle cx="170" cy="104" r="4" fill="#e34c26"/>
   <text x="184" y="105" fill="#F0F6FC" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">HTML</text>
