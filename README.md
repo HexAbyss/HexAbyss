@@ -115,49 +115,6 @@ My focus is not just shipping features, but structuring products that are scalab
 
 ---
 
-## Technology Blueprint
-
-### Frontend
-
-<p>
-	<img src="https://img.shields.io/badge/Next.js-0B1F33?style=for-the-badge&logo=nextdotjs&logoColor=8EC5FF" alt="Next.js" />
-	<img src="https://img.shields.io/badge/React-103A63?style=for-the-badge&logo=react&logoColor=9ED0FF" alt="React" />
-	<img src="https://img.shields.io/badge/TypeScript-1A5A8C?style=for-the-badge&logo=typescript&logoColor=C6E6FF" alt="TypeScript" />
-	<img src="https://img.shields.io/badge/Tailwind-1F6FEB?style=for-the-badge&logo=tailwindcss&logoColor=EAF4FF" alt="Tailwind CSS" />
-</p>
-
-### Backend
-
-<p>
-	<img src="https://img.shields.io/badge/Node.js-0B1F33?style=for-the-badge&logo=nodedotjs&logoColor=8EC5FF" alt="Node.js" />
-	<img src="https://img.shields.io/badge/NestJS-103A63?style=for-the-badge&logo=nestjs&logoColor=9ED0FF" alt="NestJS" />
-</p>
-
-### Data Layer
-
-<p>
-	<img src="https://img.shields.io/badge/PostgreSQL-1A5A8C?style=for-the-badge&logo=postgresql&logoColor=C6E6FF" alt="PostgreSQL" />
-	<img src="https://img.shields.io/badge/Prisma-1F6FEB?style=for-the-badge&logo=prisma&logoColor=EAF4FF" alt="Prisma" />
-</p>
-
-### Infrastructure
-
-<p>
-	<img src="https://img.shields.io/badge/Docker-0B1F33?style=for-the-badge&logo=docker&logoColor=8EC5FF" alt="Docker" />
-	<img src="https://img.shields.io/badge/Vercel-103A63?style=for-the-badge&logo=vercel&logoColor=9ED0FF" alt="Vercel" />
-	<img src="https://img.shields.io/badge/Apps%20Script-1A5A8C?style=for-the-badge&logo=googleappsscript&logoColor=C6E6FF" alt="Apps Script" />
-	<img src="https://img.shields.io/badge/Hostinger-1F6FEB?style=for-the-badge&logo=hostinger&logoColor=EAF4FF" alt="Hostinger" />
-</p>
-
-### Quality
-
-<p>
-	<img src="https://img.shields.io/badge/Jest-103A63?style=for-the-badge&logo=jest&logoColor=9ED0FF" alt="Jest" />
-	<img src="https://img.shields.io/badge/Playwright-1F6FEB?style=for-the-badge&logo=playwright&logoColor=EAF4FF" alt="Playwright" />
-</p>
-
----
-
 ## System Domains & Architecture Matrix
 
 ### System Composition Model
