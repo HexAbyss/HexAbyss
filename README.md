@@ -115,154 +115,21 @@ My focus is not just shipping features, but structuring products that are scalab
 
 ---
 
-## System Domains & Architecture Matrix
+## System Domains & Composition Map
 
-### System Composition Model
+### Orbit Model
 
-Architecture is not a stack decision. It is the composition logic that selects domains under pressure and turns them into one coherent system.
+Architecture is the composition core. Each outer node is a system domain, and the orbiting markers show the languages, tools and runtimes that usually gather around that capability.
 
 <p align="center">
-	<img src="https://img.shields.io/badge/Web%20Systems-0B1F33?style=flat-square" alt="Web Systems" />
-	<strong>&rarr;</strong>
-	<img src="https://img.shields.io/badge/Data%20Layer-103A63?style=flat-square" alt="Data Layer" />
-	<strong>&rarr;</strong>
-	<img src="https://img.shields.io/badge/Intelligent%20Systems-154C79?style=flat-square" alt="Intelligent Systems" />
-	<strong>&rarr;</strong>
-	<img src="https://img.shields.io/badge/Architecture-1A5A8C?style=flat-square" alt="Architecture" />
-	<strong>&rarr;</strong>
-	<img src="https://img.shields.io/badge/Infrastructure-1F6FEB?style=flat-square" alt="Infrastructure" />
-	<strong>&rarr;</strong>
-	<img src="https://img.shields.io/badge/Automation-2F6FEB?style=flat-square" alt="Automation" />
+	<img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/system-domains-map.svg" width="100%" alt="System domains orbit map" />
 </p>
 
-<table>
-	<tr>
-		<td width="33%" valign="top">
-			<h3 align="center"><img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/icon-web-systems.svg" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Web Systems</h3>
-			<p align="center"><em>Interfaces that translate system complexity into clear interaction.</em></p>
-			<p>
-				<strong>Purpose:</strong> expose workflows, state and feedback in a usable form.<br/>
-				<strong>Use when:</strong> the system needs interfaces, navigation or product flows.<br/>
-				<strong>Role:</strong> human interface layer.
-			</p>
-			<p align="center">
-				<img src="https://img.shields.io/badge/Next.js-0B1F33?style=flat-square&logo=nextdotjs&logoColor=8EC5FF" alt="Next.js" />
-				<img src="https://img.shields.io/badge/React-103A63?style=flat-square&logo=react&logoColor=9ED0FF" alt="React" />
-				<img src="https://img.shields.io/badge/TypeScript-1A5A8C?style=flat-square&logo=typescript&logoColor=C6E6FF" alt="TypeScript" />
-			</p>
-			<p align="center"><sub>&#8627; expands into product surfaces, interaction flows and typed client state.</sub></p>
-		</td>
-		<td width="33%" valign="top">
-			<h3 align="center"><img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/icon-low-level-systems.svg" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Low-Level Systems</h3>
-			<p align="center"><em>Execution-critical layers where control and precision define the result.</em></p>
-			<p>
-				<strong>Purpose:</strong> handle binaries, performance, protocols and device-near behavior.<br/>
-				<strong>Use when:</strong> latency, resource control or hardware interaction are central constraints.<br/>
-				<strong>Role:</strong> execution foundation.
-			</p>
-			<p align="center">
-				<img src="https://img.shields.io/badge/Rust-0B1F33?style=flat-square&logo=rust&logoColor=8EC5FF" alt="Rust" />
-				<img src="https://img.shields.io/badge/C-103A63?style=flat-square&logo=c&logoColor=9ED0FF" alt="C" />
-				<img src="https://img.shields.io/badge/Linux-1A5A8C?style=flat-square&logo=linux&logoColor=C6E6FF" alt="Linux" />
-			</p>
-			<p align="center"><sub>&#8627; expands into protocols, binaries and performance-critical execution paths.</sub></p>
-		</td>
-		<td width="33%" valign="top">
-			<h3 align="center"><img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/icon-intelligent-systems.svg" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Intelligent Systems</h3>
-			<p align="center"><em>Reasoning layers that extend a system beyond deterministic flows.</em></p>
-			<p>
-				<strong>Purpose:</strong> add cognition, retrieval, generation and adaptive decision making.<br/>
-				<strong>Use when:</strong> the system must interpret context, classify inputs or generate responses.<br/>
-				<strong>Role:</strong> decision layer.
-			</p>
-			<p align="center">
-				<img src="https://img.shields.io/badge/Python-0B1F33?style=flat-square&logo=python&logoColor=8EC5FF" alt="Python" />
-				<img src="https://img.shields.io/badge/OpenAI-103A63?style=flat-square&logo=openai&logoColor=9ED0FF" alt="OpenAI" />
-				<img src="https://img.shields.io/badge/RAG-1A5A8C?style=flat-square" alt="RAG" />
-			</p>
-			<p align="center"><sub>&#8627; expands into retrieval, inference loops and adaptive decision models.</sub></p>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="3" valign="top">
-			<h3 align="center"><img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/icon-architecture.svg" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Architecture</h3>
-			<p align="center"><em>The layer that connects and governs all domains.</em></p>
-			<p align="center">
-				<strong>Purpose:</strong> define boundaries, contracts, orchestration paths and system evolution.<br/>
-				<strong>Use when:</strong> multiple capabilities must behave as one coherent product, platform or operational system.<br/>
-				<strong>Role:</strong> composition and governance layer.
-			</p>
-			<p align="center">
-				<img src="https://img.shields.io/badge/Domain%20Design-103A63?style=flat-square" alt="Domain Design" />
-				<img src="https://img.shields.io/badge/System%20Contracts-1A5A8C?style=flat-square" alt="System Contracts" />
-				<img src="https://img.shields.io/badge/Orchestration-1F6FEB?style=flat-square" alt="Orchestration" />
-			</p>
-			<p align="center"><sub>&#8627; expands into boundaries, contracts, orchestration maps and governance rules.</sub></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="33%" valign="top">
-			<h3 align="center"><img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/icon-data-layer.svg" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Data Layer</h3>
-			<p align="center"><em>Persistent truth, structure and memory for the system.</em></p>
-			<p>
-				<strong>Purpose:</strong> model entities, history, relationships and query paths.<br/>
-				<strong>Use when:</strong> state, consistency or long-lived records are part of the domain.<br/>
-				<strong>Role:</strong> persistence backbone.
-			</p>
-			<p align="center">
-				<img src="https://img.shields.io/badge/PostgreSQL-0B1F33?style=flat-square&logo=postgresql&logoColor=8EC5FF" alt="PostgreSQL" />
-				<img src="https://img.shields.io/badge/Prisma-103A63?style=flat-square&logo=prisma&logoColor=9ED0FF" alt="Prisma" />
-				<img src="https://img.shields.io/badge/Schema%20Design-1A5A8C?style=flat-square" alt="Schema Design" />
-			</p>
-			<p align="center"><sub>&#8627; expands into schemas, history, query paths and operational memory.</sub></p>
-		</td>
-		<td width="33%" valign="top">
-			<h3 align="center"><img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/icon-infrastructure.svg" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Infrastructure</h3>
-			<p align="center"><em>Runtime and delivery boundaries that keep systems deployable.</em></p>
-			<p>
-				<strong>Purpose:</strong> package, route, deploy and stabilize execution environments.<br/>
-				<strong>Use when:</strong> networking, environments or operational repeatability shape the solution.<br/>
-				<strong>Role:</strong> operational substrate.
-			</p>
-			<p align="center">
-				<img src="https://img.shields.io/badge/Docker-0B1F33?style=flat-square&logo=docker&logoColor=8EC5FF" alt="Docker" />
-				<img src="https://img.shields.io/badge/Vercel-103A63?style=flat-square&logo=vercel&logoColor=9ED0FF" alt="Vercel" />
-				<img src="https://img.shields.io/badge/Hostinger-1A5A8C?style=flat-square&logo=hostinger&logoColor=C6E6FF" alt="Hostinger" />
-			</p>
-			<p align="center"><sub>&#8627; expands into runtime topology, delivery paths and operational resilience.</sub></p>
-		</td>
-		<td width="33%" valign="top">
-			<h3 align="center"><img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/icon-automation-systems.svg" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Automation Systems</h3>
-			<p align="center"><em>Repeatable action layers that reduce manual operational friction.</em></p>
-			<p>
-				<strong>Purpose:</strong> convert intent into dependable flows across tools and services.<br/>
-				<strong>Use when:</strong> repetition, coordination or cross-system execution becomes operational debt.<br/>
-				<strong>Role:</strong> process orchestration layer.
-			</p>
-			<p align="center">
-				<img src="https://img.shields.io/badge/GitHub%20Actions-0B1F33?style=flat-square&logo=githubactions&logoColor=8EC5FF" alt="GitHub Actions" />
-				<img src="https://img.shields.io/badge/Apps%20Script-103A63?style=flat-square&logo=googleappsscript&logoColor=9ED0FF" alt="Apps Script" />
-				<img src="https://img.shields.io/badge/Webhooks-1A5A8C?style=flat-square" alt="Webhooks" />
-			</p>
-			<p align="center"><sub>&#8627; expands into event flows, system hooks and repeatable execution chains.</sub></p>
-		</td>
-	</tr>
-</table>
+<p align="center"><sub>Read it like a mental map: center = architectural control, outer clusters = domain families, orbiting markers = the technologies attached to each domain.</sub></p>
 
 ### System Integration Layer
 
 Systems are built by combining domains under architectural control, not by choosing a stack first. Web, intelligence, data, infrastructure, low-level execution and automation each answer a different force. Architecture is the composition layer that turns those forces into a coherent operating shape. The stack is what emerges after that decision, not what defines it.
-
-### System Pressures
-
-<p align="center">
-	<img src="https://img.shields.io/badge/Latency-0B1F33?style=flat-square" alt="Latency" />
-	<img src="https://img.shields.io/badge/Scale-103A63?style=flat-square" alt="Scale" />
-	<img src="https://img.shields.io/badge/Complexity-154C79?style=flat-square" alt="Complexity" />
-	<img src="https://img.shields.io/badge/Integration-1A5A8C?style=flat-square" alt="Integration" />
-	<img src="https://img.shields.io/badge/Consistency-1F6FEB?style=flat-square" alt="Consistency" />
-	<img src="https://img.shields.io/badge/Observability-2F6FEB?style=flat-square" alt="Observability" />
-</p>
 
 ## Composed Systems
 
@@ -292,11 +159,6 @@ Systems are built by combining domains under architectural control, not by choos
 	<strong>PRIMARY PRESSURE:</strong> Latency + Consistency<br/>
 	When throughput, precision or device-near execution define the domain, the composition shifts toward control, persistence and clear contracts.
 </details>
-
-## Architectural Signature
-
-> I do not assemble stacks.  
-> I compose systems under pressure, then let architecture decide the shape.
 
 ## Language Distribution
 

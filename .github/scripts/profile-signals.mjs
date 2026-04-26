@@ -24,6 +24,7 @@ const weeklyTotals = buildWeeklyTotals(latest84Days, 12);
 await fs.writeFile(path.join(mediaDir, "constellation-graph.svg"), buildConstellationSvg(latest84Days, owner));
 await fs.writeFile(path.join(mediaDir, "neural-pulse.svg"), buildNeuralPulseSvg(weeklyTotals, owner));
 await fs.writeFile(path.join(mediaDir, "architecture-radar.svg"), buildArchitectureRadarSvg(owner));
+await fs.writeFile(path.join(mediaDir, "system-domains-map.svg"), buildSystemDomainsMapSvg(owner));
 await fs.writeFile(path.join(mediaDir, "top-languages.svg"), buildTopLanguagesSvg(languageStats, owner, hasUserToken));
 await writeDomainIcons(mediaDir);
 
@@ -416,6 +417,185 @@ function buildArchitectureRadarSvg(login) {
     return `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="5" fill="#EAF4FF"/>`;
   }).join("\n")}
   ${labels}
+</svg>`.trimStart();
+}
+
+function buildSystemDomainsMapSvg(login) {
+  const width = 980;
+  const height = 760;
+  const center = { x: 490, y: 388 };
+  const nodes = [
+    {
+      title: "Architecture",
+      subtitle: "composition and governance core",
+      x: center.x,
+      y: center.y,
+      orbitRx: 188,
+      orbitRy: 78,
+      chipAngles: [210, 330, 90],
+      chips: ["Domain Design", "System Contracts", "Orchestration"],
+      stroke: "#C6E6FF",
+      core: true,
+    },
+    {
+      title: "Intelligent Systems",
+      subtitle: "reasoning and adaptive flow",
+      x: 490,
+      y: 136,
+      orbitRx: 124,
+      orbitRy: 52,
+      chipAngles: [210, 330, 90],
+      chips: ["Python", "OpenAI", "RAG"],
+      stroke: "#6EA8FE",
+    },
+    {
+      title: "Web Systems",
+      subtitle: "interfaces and product flow",
+      x: 220,
+      y: 248,
+      orbitRx: 122,
+      orbitRy: 52,
+      chipAngles: [215, 330, 95],
+      chips: ["Next.js", "React", "TypeScript"],
+      stroke: "#2F6FEB",
+    },
+    {
+      title: "Low-Level Systems",
+      subtitle: "control and precision",
+      x: 760,
+      y: 248,
+      orbitRx: 122,
+      orbitRy: 52,
+      chipAngles: [205, 325, 85],
+      chips: ["Rust", "C", "Linux"],
+      stroke: "#58A6FF",
+    },
+    {
+      title: "Automation Systems",
+      subtitle: "repeatable execution chains",
+      x: 220,
+      y: 528,
+      orbitRx: 126,
+      orbitRy: 52,
+      chipAngles: [220, 325, 95],
+      chips: ["GitHub Actions", "Apps Script", "Webhooks"],
+      stroke: "#7AA2F7",
+    },
+    {
+      title: "Infrastructure",
+      subtitle: "runtime and delivery surface",
+      x: 760,
+      y: 528,
+      orbitRx: 124,
+      orbitRy: 52,
+      chipAngles: [215, 320, 85],
+      chips: ["Docker", "Vercel", "Hostinger"],
+      stroke: "#9ECFFF",
+    },
+    {
+      title: "Data Layer",
+      subtitle: "persistence and memory",
+      x: 490,
+      y: 642,
+      orbitRx: 124,
+      orbitRy: 52,
+      chipAngles: [210, 330, 270],
+      chips: ["PostgreSQL", "Prisma", "Schema Design"],
+      stroke: "#4F8FE8",
+    },
+  ];
+
+  let starSeed = hash(`${login}-system-domains-map`);
+  const stars = Array.from({ length: 48 }, () => {
+    starSeed = seeded(starSeed);
+    const x = 24 + (starSeed / 4294967296) * (width - 48);
+    starSeed = seeded(starSeed);
+    const y = 24 + (starSeed / 4294967296) * (height - 48);
+    starSeed = seeded(starSeed);
+    const radius = 0.6 + (starSeed / 4294967296) * 1.9;
+    starSeed = seeded(starSeed);
+    const opacity = 0.12 + (starSeed / 4294967296) * 0.32;
+    return `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${radius.toFixed(2)}" fill="#9ECFFF" opacity="${opacity.toFixed(2)}"/>`;
+  }).join("\n  ");
+
+  const connectors = nodes.filter((node) => !node.core).map((node) => {
+    const dx = node.x - center.x;
+    const dy = node.y - center.y;
+    const distance = Math.hypot(dx, dy) || 1;
+    const startX = center.x + (dx / distance) * 124;
+    const startY = center.y + (dy / distance) * 82;
+    const endX = node.x - (dx / distance) * 110;
+    const endY = node.y - (dy / distance) * 62;
+    const controlX = (center.x + node.x) / 2;
+    const controlY = (center.y + node.y) / 2;
+    return `<path d="M${startX.toFixed(2)} ${startY.toFixed(2)} Q ${controlX.toFixed(2)} ${controlY.toFixed(2)} ${endX.toFixed(2)} ${endY.toFixed(2)}" stroke="rgba(110,168,254,0.26)" stroke-width="2.2" fill="none"/>`;
+  }).join("\n  ");
+
+  const orbitNodes = nodes.map((node) => {
+    const orbit = `<ellipse cx="${node.x}" cy="${node.y}" rx="${node.orbitRx}" ry="${node.orbitRy}" fill="none" stroke="rgba(110,168,254,0.22)" stroke-width="1.25" stroke-dasharray="6 7"/>`;
+    const chips = node.chips.map((chip, index) => {
+      const angle = ((node.chipAngles[index] ?? (index * 120 - 90)) * Math.PI) / 180;
+      const chipWidth = Math.max(58, chip.length * 7 + 26);
+      const chipX = node.x + Math.cos(angle) * node.orbitRx;
+      const chipY = node.y + Math.sin(angle) * node.orbitRy;
+      const color = getLanguageColor(chip);
+      return `
+  <g transform="translate(${(chipX - chipWidth / 2).toFixed(2)} ${(chipY - 14).toFixed(2)})">
+    <rect width="${chipWidth}" height="28" rx="14" fill="#09111D" fill-opacity="0.94" stroke="${color}" stroke-opacity="0.82"/>
+    <circle cx="14" cy="14" r="4" fill="${color}"/>
+    <text x="24" y="14.5" fill="#E6F1FF" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">${escapeXml(chip)}</text>
+  </g>`;
+    }).join("\n");
+
+    const cardWidth = node.core ? 250 : 198;
+    const cardHeight = node.core ? 92 : 80;
+    const cardX = node.x - cardWidth / 2;
+    const cardY = node.y - cardHeight / 2;
+    const halo = node.core
+      ? `<circle cx="${node.x}" cy="${node.y}" r="120" fill="url(#coreHalo)" opacity="0.9"/>`
+      : `<circle cx="${node.x}" cy="${node.y}" r="78" fill="url(#nodeHalo)" opacity="0.38"/>`;
+
+    return `
+  <g>
+    ${halo}
+    ${orbit}
+    <rect x="${cardX.toFixed(2)}" y="${cardY.toFixed(2)}" width="${cardWidth}" height="${cardHeight}" rx="22" fill="#081320" fill-opacity="0.96" stroke="${node.stroke}" stroke-width="1.6"/>
+    <text x="${node.x}" y="${(node.y - 6).toFixed(2)}" fill="#F0F6FC" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle">${escapeXml(node.title)}</text>
+    <text x="${node.x}" y="${(node.y + 18).toFixed(2)}" fill="#9ECFFF" font-size="12.8" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">${escapeXml(node.subtitle)}</text>
+    ${chips}
+  </g>`;
+  }).join("\n");
+
+  return `
+<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="domainMapBg" x1="0" y1="0" x2="980" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#06101A"/>
+      <stop offset="0.55" stop-color="#0B1F33"/>
+      <stop offset="1" stop-color="#123456"/>
+    </linearGradient>
+    <radialGradient id="coreHalo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(490 388) rotate(90) scale(180 220)">
+      <stop offset="0" stop-color="#2F6FEB" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#2F6FEB" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nodeHalo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(490 388) rotate(90) scale(120 150)">
+      <stop offset="0" stop-color="#6EA8FE" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#6EA8FE" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="${width}" height="${height}" rx="30" fill="url(#domainMapBg)"/>
+  <rect x="18" y="18" width="${width - 36}" height="${height - 36}" rx="22" stroke="rgba(158,207,255,0.14)"/>
+  ${stars}
+  <circle cx="${center.x}" cy="${center.y}" r="138" fill="#2F6FEB" opacity="0.12" filter="url(#softGlow)"/>
+  <text x="44" y="56" fill="#E6F1FF" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">System Domains Orbit Map</text>
+  <text x="44" y="80" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">Architecture stays at the center; languages, tools and runtimes orbit each system domain by function.</text>
+  <text x="746" y="56" fill="#6EA8FE" font-size="13" font-family="Segoe UI, Arial, sans-serif">mental map for ${escapeXml(login)}</text>
+  ${connectors}
+  ${orbitNodes}
+  <text x="44" y="720" fill="#C9D1D9" font-size="13" font-family="Segoe UI, Arial, sans-serif">Center node = composition logic · Outer nodes = domain families · Orbiting pills = tools commonly attached to each capability</text>
 </svg>`.trimStart();
 }
 
