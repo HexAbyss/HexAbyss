@@ -6,16 +6,16 @@
     <rect x="24" y="48" width="274" height="8" rx="4"/>
   </clipPath>
   <g clip-path="url(#langBarClip)">
-    <rect x="24.00" y="48" width="129.36" height="8" fill="#3178c6"/>
-    <rect x="153.36" y="48" width="90.30" height="8" fill="#3572A5"/>
-    <rect x="243.65" y="48" width="33.72" height="8" fill="#f1e05a"/>
-    <rect x="277.37" y="48" width="14.84" height="8" fill="#563d7c"/>
-    <rect x="292.21" y="48" width="5.79" height="8" fill="#e34c26"/>
+    <rect x="24.00" y="48" width="129.76" height="8" fill="#3178c6"/>
+    <rect x="153.76" y="48" width="90.04" height="8" fill="#3572A5"/>
+    <rect x="243.81" y="48" width="33.62" height="8" fill="#f1e05a"/>
+    <rect x="277.43" y="48" width="14.80" height="8" fill="#563d7c"/>
+    <rect x="292.23" y="48" width="5.77" height="8" fill="#e34c26"/>
   </g>
   
   <circle cx="28" cy="80" r="4" fill="#3178c6"/>
   <text x="42" y="81" fill="#F0F6FC" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">TypeScript</text>
-  <text x="113" y="81" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">46.5%</text>
+  <text x="113" y="81" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">46.6%</text>
 
   <circle cx="28" cy="104" r="4" fill="#3572A5"/>
   <text x="42" y="105" fill="#F0F6FC" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">Python</text>
