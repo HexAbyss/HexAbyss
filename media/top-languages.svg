@@ -15,19 +15,19 @@
   
   <circle cx="28" cy="80" r="4" fill="#3178c6"/>
   <text x="42" y="81" fill="#F0F6FC" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">TypeScript</text>
-  <text x="113" y="81" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">46.6%</text>
+  <text x="113" y="81" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">47.0%</text>
 
   <circle cx="28" cy="104" r="4" fill="#3572A5"/>
   <text x="42" y="105" fill="#F0F6FC" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">Python</text>
-  <text x="84.6" y="105" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">32.3%</text>
+  <text x="84.6" y="105" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">32.6%</text>
 
   <circle cx="28" cy="128" r="4" fill="#f1e05a"/>
   <text x="42" y="129" fill="#F0F6FC" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">JavaScript</text>
-  <text x="113" y="129" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">12.1%</text>
+  <text x="113" y="129" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">12.2%</text>
 
   <circle cx="170" cy="80" r="4" fill="#563d7c"/>
   <text x="184" y="81" fill="#F0F6FC" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">CSS</text>
-  <text x="205.3" y="81" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">5.3%</text>
+  <text x="205.3" y="81" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">5.4%</text>
 
   <circle cx="170" cy="104" r="4" fill="#e34c26"/>
   <text x="184" y="105" fill="#F0F6FC" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">HTML</text>
