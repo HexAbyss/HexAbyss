@@ -159,7 +159,7 @@ My focus is not just shipping features, but structuring products that are scalab
 ## Language Distribution
 
 <p align="left">
-	<img src="./media/top-languages.svg" width="336" alt="Top languages" />
+	<img src="./media/top-languages.svg" width="540" alt="Top languages" />
 </p>
 
 ---

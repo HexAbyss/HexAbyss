@@ -156,7 +156,7 @@ async function getLanguageStats(login, authToken, useAuthenticatedUserEndpoint) 
         color: getLanguageColor(name),
       }))
       .sort((left, right) => right.bytes - left.bytes)
-      .slice(0, 8);
+      .slice(0, 9);
   } catch {
     return buildFallbackLanguageStats();
   }
@@ -413,48 +413,53 @@ function buildArchitectureRadarSvg(login) {
 }
 
 function buildTopLanguagesSvg(languageStats, login, includesPrivateRepos) {
-  const width = 336;
-  const height = 140;
+  const width = 540;
+  const height = 170;
   const cardX = 10;
   const cardY = 8;
-  const cardWidth = 316;
+  const cardWidth = 520;
+  const cardHeight = 154;
   const barX = 24;
   const barY = 48;
-  const barWidth = 274;
-  const barHeight = 8;
-  const visibleStats = languageStats.slice(0, 5);
+  const barWidth = 492;
+  const barHeight = 10;
+  const visibleStats = languageStats.slice(0, 9);
   const totalVisiblePercent = visibleStats.reduce((sum, language) => sum + language.percent, 0);
   const normalizedStats = visibleStats.map((language) => ({
     ...language,
     normalizedPercent: totalVisiblePercent > 0 ? (language.percent / totalVisiblePercent) * 100 : 0,
   }));
+  const legendColumns = [28, 190, 352];
+  const legendPercentX = [166, 328, 490];
+  const legendBaseY = 82;
+  const legendRowGap = 24;
 
   let segmentStart = barX;
   const segments = normalizedStats.map((language, index) => {
     const isLast = index === normalizedStats.length - 1;
     const rawWidth = (language.normalizedPercent / 100) * barWidth;
-    const segmentWidth = isLast ? barX + barWidth - segmentStart : Math.max(8, rawWidth);
+    const segmentWidth = isLast ? barX + barWidth - segmentStart : Math.max(6, rawWidth);
     const segment = `<rect x="${segmentStart.toFixed(2)}" y="${barY}" width="${segmentWidth.toFixed(2)}" height="${barHeight}" fill="${language.color}"/>`;
     segmentStart += segmentWidth;
     return segment;
   }).join("\n    ");
 
   const legendEntries = normalizedStats.map((language, index) => {
-    const column = index < 3 ? 0 : 1;
-    const row = index < 3 ? index : index - 3;
-    const x = column === 0 ? 28 : 170;
-    const y = 80 + row * 24;
-    const label = escapeXml(language.name);
+    const column = index % 3;
+    const row = Math.floor(index / 3);
+    const x = legendColumns[column];
+    const y = legendBaseY + row * legendRowGap;
+    const label = escapeXml(truncateLegendLabel(language.name, 12));
     const percent = `${language.percent.toFixed(1)}%`;
     return `
   <circle cx="${x}" cy="${y}" r="4" fill="${language.color}"/>
   <text x="${x + 14}" y="${y + 1}" fill="#F0F6FC" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">${label}</text>
-  <text x="${x + 14 + estimateTextWidth(label, 7.1)}" y="${y + 1}" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">${percent}</text>`;
+  <text x="${legendPercentX[column]}" y="${y + 1}" fill="#8B949E" font-size="12" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle" text-anchor="end">${percent}</text>`;
   }).join("\n");
 
   return `
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="${cardX}" y="${cardY}" width="${cardWidth}" height="124" rx="8" fill="#0D1117"/>
+  <rect x="${cardX}" y="${cardY}" width="${cardWidth}" height="${cardHeight}" rx="8" fill="#0D1117"/>
   <text x="24" y="29" fill="#F0F6FC" font-size="14" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Languages</text>
   <rect x="${barX}" y="${barY}" width="${barWidth}" height="${barHeight}" rx="4" fill="#21262D"/>
   <clipPath id="langBarClip">
@@ -534,14 +539,15 @@ function buildFallbackRepositories() {
 
 function buildFallbackLanguageStats() {
   return [
-    { name: "TypeScript", bytes: 36, percent: 36, color: getLanguageColor("TypeScript") },
-    { name: "Python", bytes: 22, percent: 22, color: getLanguageColor("Python") },
+    { name: "TypeScript", bytes: 33, percent: 33, color: getLanguageColor("TypeScript") },
+    { name: "Python", bytes: 21, percent: 21, color: getLanguageColor("Python") },
     { name: "JavaScript", bytes: 14, percent: 14, color: getLanguageColor("JavaScript") },
     { name: "HTML", bytes: 9, percent: 9, color: getLanguageColor("HTML") },
     { name: "CSS", bytes: 7, percent: 7, color: getLanguageColor("CSS") },
     { name: "Shell", bytes: 5, percent: 5, color: getLanguageColor("Shell") },
     { name: "Rust", bytes: 4, percent: 4, color: getLanguageColor("Rust") },
-    { name: "Dockerfile", bytes: 3, percent: 3, color: getLanguageColor("Dockerfile") },
+    { name: "Dockerfile", bytes: 4, percent: 4, color: getLanguageColor("Dockerfile") },
+    { name: "Markdown", bytes: 3, percent: 3, color: getLanguageColor("Markdown") },
   ];
 }
 
@@ -581,8 +587,13 @@ function getLanguageColor(name) {
   return fallbackPalette[hash(name) % fallbackPalette.length];
 }
 
-function estimateTextWidth(value, unitWidth = 7) {
-  return String(value).length * unitWidth;
+function truncateLegendLabel(value, maxLength = 12) {
+  const normalized = String(value).trim();
+  if (normalized.length <= maxLength) {
+    return normalized;
+  }
+
+  return `${normalized.slice(0, Math.max(0, maxLength - 1))}…`;
 }
 
 function hash(value) {
