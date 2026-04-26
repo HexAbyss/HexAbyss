@@ -26,7 +26,6 @@ await fs.writeFile(path.join(mediaDir, "neural-pulse.svg"), buildNeuralPulseSvg(
 await fs.writeFile(path.join(mediaDir, "architecture-radar.svg"), buildArchitectureRadarSvg(owner));
 await fs.writeFile(path.join(mediaDir, "system-domains-map.svg"), buildSystemDomainsMapSvg(owner));
 await fs.writeFile(path.join(mediaDir, "top-languages.svg"), buildTopLanguagesSvg(languageStats, owner, hasUserToken));
-await writeDomainIcons(mediaDir);
 
 if (!skipReadmeUpdate) {
   const timelineMarkdown = buildTimelineMarkdown(repositories);
@@ -421,182 +420,373 @@ function buildArchitectureRadarSvg(login) {
 }
 
 function buildSystemDomainsMapSvg(login) {
-  const width = 980;
-  const height = 760;
-  const center = { x: 490, y: 388 };
-  const nodes = [
+  const width = 1320;
+  const height = 860;
+  const center = { x: 410, y: 438 };
+  const legendX = 865;
+  const legendWidth = 415;
+  const orbitRings = [170, 245, 320];
+  const domains = [
     {
-      title: "Architecture",
-      subtitle: "composition and governance core",
-      x: center.x,
-      y: center.y,
-      orbitRx: 188,
-      orbitRy: 78,
-      chipAngles: [210, 330, 90],
-      chips: ["Domain Design", "System Contracts", "Orchestration"],
-      stroke: "#C6E6FF",
-      core: true,
-    },
-    {
-      title: "Intelligent Systems",
-      subtitle: "reasoning and adaptive flow",
-      x: 490,
-      y: 136,
-      orbitRx: 124,
-      orbitRy: 52,
-      chipAngles: [210, 330, 90],
-      chips: ["Python", "OpenAI", "RAG"],
-      stroke: "#6EA8FE",
-    },
-    {
+      short: "WS",
       title: "Web Systems",
-      subtitle: "interfaces and product flow",
-      x: 220,
-      y: 248,
-      orbitRx: 122,
-      orbitRy: 52,
-      chipAngles: [215, 330, 95],
-      chips: ["Next.js", "React", "TypeScript"],
-      stroke: "#2F6FEB",
+      orbitRadius: 170,
+      angle: 212,
+      duration: 76,
+      direction: 1,
+      color: "#2F6FEB",
+      planetRadius: 34,
+      moonOrbitRadius: 52,
+      moonDuration: 18,
+      moonDirection: -1,
+      moons: [
+        { name: "Next.js", icon: "next" },
+        { name: "React", icon: "react" },
+        { name: "TypeScript", icon: "typescript" },
+      ],
     },
     {
+      short: "LLS",
       title: "Low-Level Systems",
-      subtitle: "control and precision",
-      x: 760,
-      y: 248,
-      orbitRx: 122,
-      orbitRy: 52,
-      chipAngles: [205, 325, 85],
-      chips: ["Rust", "C", "Linux"],
-      stroke: "#58A6FF",
+      orbitRadius: 170,
+      angle: 32,
+      duration: 76,
+      direction: 1,
+      color: "#58A6FF",
+      planetRadius: 35,
+      moonOrbitRadius: 52,
+      moonDuration: 16,
+      moonDirection: 1,
+      moons: [
+        { name: "Rust", icon: "rust" },
+        { name: "C", icon: "c" },
+        { name: "Linux", icon: "linux" },
+      ],
     },
     {
-      title: "Automation Systems",
-      subtitle: "repeatable execution chains",
-      x: 220,
-      y: 528,
-      orbitRx: 126,
-      orbitRy: 52,
-      chipAngles: [220, 325, 95],
-      chips: ["GitHub Actions", "Apps Script", "Webhooks"],
-      stroke: "#7AA2F7",
+      short: "IS",
+      title: "Intelligent Systems",
+      orbitRadius: 245,
+      angle: 270,
+      duration: 96,
+      direction: -1,
+      color: "#6EA8FE",
+      planetRadius: 35,
+      moonOrbitRadius: 56,
+      moonDuration: 15,
+      moonDirection: 1,
+      moons: [
+        { name: "Python", icon: "python" },
+        { name: "OpenAI", icon: "openai" },
+        { name: "RAG", icon: "rag" },
+      ],
     },
     {
+      short: "Infra",
       title: "Infrastructure",
-      subtitle: "runtime and delivery surface",
-      x: 760,
-      y: 528,
-      orbitRx: 124,
-      orbitRy: 52,
-      chipAngles: [215, 320, 85],
-      chips: ["Docker", "Vercel", "Hostinger"],
-      stroke: "#9ECFFF",
+      orbitRadius: 245,
+      angle: 90,
+      duration: 96,
+      direction: -1,
+      color: "#9ECFFF",
+      planetRadius: 35,
+      moonOrbitRadius: 56,
+      moonDuration: 17,
+      moonDirection: -1,
+      moons: [
+        { name: "Docker", icon: "docker" },
+        { name: "Vercel", icon: "vercel" },
+        { name: "Hostinger", icon: "hostinger" },
+      ],
     },
     {
+      short: "AS",
+      title: "Automation Systems",
+      orbitRadius: 320,
+      angle: 182,
+      duration: 124,
+      direction: 1,
+      color: "#7AA2F7",
+      planetRadius: 35,
+      moonOrbitRadius: 60,
+      moonDuration: 14,
+      moonDirection: 1,
+      moons: [
+        { name: "GitHub Actions", icon: "github-actions" },
+        { name: "Apps Script", icon: "apps-script" },
+        { name: "Webhooks", icon: "webhooks" },
+      ],
+    },
+    {
+      short: "DL",
       title: "Data Layer",
-      subtitle: "persistence and memory",
-      x: 490,
-      y: 642,
-      orbitRx: 124,
-      orbitRy: 52,
-      chipAngles: [210, 330, 270],
-      chips: ["PostgreSQL", "Prisma", "Schema Design"],
-      stroke: "#4F8FE8",
+      orbitRadius: 320,
+      angle: 2,
+      duration: 124,
+      direction: 1,
+      color: "#4F8FE8",
+      planetRadius: 35,
+      moonOrbitRadius: 60,
+      moonDuration: 13,
+      moonDirection: -1,
+      moons: [
+        { name: "PostgreSQL", icon: "postgresql" },
+        { name: "Prisma", icon: "prisma" },
+        { name: "SQL", icon: "sql" },
+      ],
     },
   ];
 
-  let starSeed = hash(`${login}-system-domains-map`);
-  const stars = Array.from({ length: 48 }, () => {
+  let starSeed = hash(`${login}-system-domains-map-solar`);
+  const stars = Array.from({ length: 62 }, () => {
     starSeed = seeded(starSeed);
-    const x = 24 + (starSeed / 4294967296) * (width - 48);
+    const x = 28 + (starSeed / 4294967296) * (width - 56);
     starSeed = seeded(starSeed);
     const y = 24 + (starSeed / 4294967296) * (height - 48);
     starSeed = seeded(starSeed);
-    const radius = 0.6 + (starSeed / 4294967296) * 1.9;
+    const radius = 0.7 + (starSeed / 4294967296) * 1.8;
     starSeed = seeded(starSeed);
-    const opacity = 0.12 + (starSeed / 4294967296) * 0.32;
-    return `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${radius.toFixed(2)}" fill="#9ECFFF" opacity="${opacity.toFixed(2)}"/>`;
+    const opacity = 0.14 + (starSeed / 4294967296) * 0.36;
+    return `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${radius.toFixed(2)}" fill="#A7D4FF" opacity="${opacity.toFixed(2)}"/>`;
   }).join("\n  ");
 
-  const connectors = nodes.filter((node) => !node.core).map((node) => {
-    const dx = node.x - center.x;
-    const dy = node.y - center.y;
-    const distance = Math.hypot(dx, dy) || 1;
-    const startX = center.x + (dx / distance) * 124;
-    const startY = center.y + (dy / distance) * 82;
-    const endX = node.x - (dx / distance) * 110;
-    const endY = node.y - (dy / distance) * 62;
-    const controlX = (center.x + node.x) / 2;
-    const controlY = (center.y + node.y) / 2;
-    return `<path d="M${startX.toFixed(2)} ${startY.toFixed(2)} Q ${controlX.toFixed(2)} ${controlY.toFixed(2)} ${endX.toFixed(2)} ${endY.toFixed(2)}" stroke="rgba(110,168,254,0.26)" stroke-width="2.2" fill="none"/>`;
-  }).join("\n  ");
+  const orbitLines = orbitRings.map((radius) => `
+  <circle cx="${center.x}" cy="${center.y}" r="${radius}" fill="none" stroke="rgba(110,168,254,0.18)" stroke-width="1.4" stroke-dasharray="8 10"/>`).join("\n");
 
-  const orbitNodes = nodes.map((node) => {
-    const orbit = `<ellipse cx="${node.x}" cy="${node.y}" rx="${node.orbitRx}" ry="${node.orbitRy}" fill="none" stroke="rgba(110,168,254,0.22)" stroke-width="1.25" stroke-dasharray="6 7"/>`;
-    const chips = node.chips.map((chip, index) => {
-      const angle = ((node.chipAngles[index] ?? (index * 120 - 90)) * Math.PI) / 180;
-      const chipWidth = Math.max(58, chip.length * 7 + 26);
-      const chipX = node.x + Math.cos(angle) * node.orbitRx;
-      const chipY = node.y + Math.sin(angle) * node.orbitRy;
-      const color = getLanguageColor(chip);
-      return `
-  <g transform="translate(${(chipX - chipWidth / 2).toFixed(2)} ${(chipY - 14).toFixed(2)})">
-    <rect width="${chipWidth}" height="28" rx="14" fill="#09111D" fill-opacity="0.94" stroke="${color}" stroke-opacity="0.82"/>
-    <circle cx="14" cy="14" r="4" fill="${color}"/>
-    <text x="24" y="14.5" fill="#E6F1FF" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">${escapeXml(chip)}</text>
-  </g>`;
-    }).join("\n");
-
-    const cardWidth = node.core ? 250 : 198;
-    const cardHeight = node.core ? 92 : 80;
-    const cardX = node.x - cardWidth / 2;
-    const cardY = node.y - cardHeight / 2;
-    const halo = node.core
-      ? `<circle cx="${node.x}" cy="${node.y}" r="120" fill="url(#coreHalo)" opacity="0.9"/>`
-      : `<circle cx="${node.x}" cy="${node.y}" r="78" fill="url(#nodeHalo)" opacity="0.38"/>`;
-
+  const domainLegendEntries = [
+    { short: "Arch", title: "Architecture", color: "#F6D365" },
+    ...domains.map((domain) => ({ short: domain.short, title: domain.title, color: domain.color })),
+  ].map((entry, index) => {
+    const y = 162 + index * 28;
     return `
-  <g>
-    ${halo}
-    ${orbit}
-    <rect x="${cardX.toFixed(2)}" y="${cardY.toFixed(2)}" width="${cardWidth}" height="${cardHeight}" rx="22" fill="#081320" fill-opacity="0.96" stroke="${node.stroke}" stroke-width="1.6"/>
-    <text x="${node.x}" y="${(node.y - 6).toFixed(2)}" fill="#F0F6FC" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle">${escapeXml(node.title)}</text>
-    <text x="${node.x}" y="${(node.y + 18).toFixed(2)}" fill="#9ECFFF" font-size="12.8" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">${escapeXml(node.subtitle)}</text>
-    ${chips}
+  <g transform="translate(${legendX + 28} ${y})">
+    <circle cx="10" cy="10" r="10" fill="#091522" stroke="${entry.color}" stroke-width="1.2"/>
+    <text x="10" y="10.5" fill="#EAF4FF" font-size="10.5" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle" dominant-baseline="middle">${escapeXml(entry.short)}</text>
+    <text x="30" y="10.5" fill="#DCEBFF" font-size="13" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">${escapeXml(entry.title)}</text>
   </g>`;
   }).join("\n");
+
+  const moonLegendGroups = domains.map((domain, index) => {
+    const column = index % 2;
+    const row = Math.floor(index / 2);
+    const x = legendX + 24 + column * 188;
+    const y = 376 + row * 126;
+    const moonRows = domain.moons.map((moon, moonIndex) => {
+      const rowY = 36 + moonIndex * 24;
+      return `
+    <g transform="translate(14 ${rowY})">
+      ${buildSolarMoonBadge(moon, 0, 0)}
+      <text x="24" y="0.5" fill="#DCEBFF" font-size="12.4" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">${escapeXml(moon.name)}</text>
+    </g>`;
+    }).join("\n");
+
+    return `
+  <g transform="translate(${x} ${y})">
+    <rect width="172" height="106" rx="16" fill="#091522" fill-opacity="0.95" stroke="rgba(158,207,255,0.16)"/>
+    <circle cx="18" cy="18" r="10" fill="#0B1A2B" stroke="${domain.color}" stroke-width="1.2"/>
+    <text x="18" y="18.5" fill="#EAF4FF" font-size="10.5" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle" dominant-baseline="middle">${escapeXml(domain.short)}</text>
+    <text x="34" y="18.5" fill="#F0F6FC" font-size="12.6" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">${escapeXml(domain.title)}</text>
+    ${moonRows}
+  </g>`;
+  }).join("\n");
+
+  const planets = domains.map((domain) => buildSolarPlanet(domain, center)).join("\n");
 
   return `
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="domainMapBg" x1="0" y1="0" x2="980" y2="760" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#06101A"/>
-      <stop offset="0.55" stop-color="#0B1F33"/>
-      <stop offset="1" stop-color="#123456"/>
+    <linearGradient id="solarMapBg" x1="0" y1="0" x2="1320" y2="860" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#050D16"/>
+      <stop offset="0.55" stop-color="#0A1A2C"/>
+      <stop offset="1" stop-color="#122A45"/>
     </linearGradient>
-    <radialGradient id="coreHalo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(490 388) rotate(90) scale(180 220)">
-      <stop offset="0" stop-color="#2F6FEB" stop-opacity="0.42"/>
-      <stop offset="1" stop-color="#2F6FEB" stop-opacity="0"/>
+    <radialGradient id="sunGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(${center.x} ${center.y}) rotate(90) scale(220)">
+      <stop offset="0" stop-color="#F6D365" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#F6D365" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="nodeHalo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(490 388) rotate(90) scale(120 150)">
-      <stop offset="0" stop-color="#6EA8FE" stop-opacity="0.28"/>
-      <stop offset="1" stop-color="#6EA8FE" stop-opacity="0"/>
+    <radialGradient id="sunCore" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(${center.x - 10} ${center.y - 16}) rotate(60) scale(90 90)">
+      <stop offset="0" stop-color="#FFF2B2"/>
+      <stop offset="0.58" stop-color="#F6D365"/>
+      <stop offset="1" stop-color="#E39B27"/>
     </radialGradient>
-    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="18"/>
+    <filter id="solarSoftGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.24"/>
     </filter>
   </defs>
-  <rect width="${width}" height="${height}" rx="30" fill="url(#domainMapBg)"/>
+  <rect width="${width}" height="${height}" rx="30" fill="url(#solarMapBg)"/>
   <rect x="18" y="18" width="${width - 36}" height="${height - 36}" rx="22" stroke="rgba(158,207,255,0.14)"/>
+  <rect x="${legendX}" y="88" width="${legendWidth}" height="242" rx="22" fill="#081320" fill-opacity="0.96" stroke="rgba(158,207,255,0.14)" filter="url(#panelShadow)"/>
+  <rect x="${legendX}" y="348" width="${legendWidth}" height="424" rx="22" fill="#081320" fill-opacity="0.96" stroke="rgba(158,207,255,0.14)" filter="url(#panelShadow)"/>
   ${stars}
-  <circle cx="${center.x}" cy="${center.y}" r="138" fill="#2F6FEB" opacity="0.12" filter="url(#softGlow)"/>
-  <text x="44" y="56" fill="#E6F1FF" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">System Domains Orbit Map</text>
-  <text x="44" y="80" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">Architecture stays at the center; languages, tools and runtimes orbit each system domain by function.</text>
-  <text x="746" y="56" fill="#6EA8FE" font-size="13" font-family="Segoe UI, Arial, sans-serif">mental map for ${escapeXml(login)}</text>
-  ${connectors}
-  ${orbitNodes}
-  <text x="44" y="720" fill="#C9D1D9" font-size="13" font-family="Segoe UI, Arial, sans-serif">Center node = composition logic · Outer nodes = domain families · Orbiting pills = tools commonly attached to each capability</text>
+  <text x="42" y="58" fill="#F0F6FC" font-size="29" font-family="Segoe UI, Arial, sans-serif" font-weight="700">System Solar Map</text>
+  <text x="42" y="82" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">Architecture stays fixed as the core. Planets move slowly, moons move faster, and the right column keeps the chart readable.</text>
+  <text x="${legendX + 28}" y="124" fill="#F0F6FC" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Planet Legend</text>
+  <text x="${legendX + 28}" y="144" fill="#9ECFFF" font-size="12.8" font-family="Segoe UI, Arial, sans-serif">Abbreviations are used inside the planets to keep the system clean.</text>
+  ${domainLegendEntries}
+  <text x="${legendX + 28}" y="382" fill="#F0F6FC" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Moon Legend</text>
+  <text x="${legendX + 28}" y="402" fill="#9ECFFF" font-size="12.8" font-family="Segoe UI, Arial, sans-serif">Each moon uses a symbol, and the grouped legend resolves it back to its technology.</text>
+  <circle cx="${center.x}" cy="${center.y}" r="126" fill="url(#sunGlow)" opacity="0.85" filter="url(#solarSoftGlow)"/>
+  ${orbitLines}
+  <g>
+    <circle cx="${center.x}" cy="${center.y}" r="58" fill="url(#sunCore)" stroke="#FFE9A3" stroke-width="2"/>
+    <circle cx="${center.x}" cy="${center.y}" r="80" fill="none" stroke="rgba(246,211,101,0.18)" stroke-width="1.2"/>
+    <text x="${center.x}" y="${center.y + 2}" fill="#08203A" font-size="20" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">Arch</text>
+  </g>
+  ${planets}
+  ${moonLegendGroups}
+  <text x="42" y="820" fill="#C9D1D9" font-size="13" font-family="Segoe UI, Arial, sans-serif">Static fallback still reads cleanly: the sun is Architecture, the planets are domain abbreviations, and the moons are decoded by the legend.</text>
+  <text x="${legendX + 186}" y="820" fill="#6EA8FE" font-size="13" font-family="Segoe UI, Arial, sans-serif">slow planetary orbit • faster moon orbit • mental map for ${escapeXml(login)}</text>
 </svg>`.trimStart();
+}
+
+function buildSolarPlanet(domain, center) {
+  const moonDistance = domain.moonOrbitRadius;
+  const moonAngleStep = 360 / domain.moons.length;
+  const moonMarkup = domain.moons.map((moon, index) => {
+    const angle = ((index * moonAngleStep - 90) * Math.PI) / 180;
+    const x = Math.cos(angle) * moonDistance;
+    const y = Math.sin(angle) * moonDistance;
+    return `
+            <g transform="translate(${x.toFixed(2)} ${y.toFixed(2)})">
+              ${buildSolarMoonBadge(moon, 0, 0)}
+            </g>`;
+  }).join("\n");
+
+  return `
+  <g transform="rotate(${domain.angle} ${center.x} ${center.y})">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0 ${center.x} ${center.y}" to="${domain.direction * 360} ${center.x} ${center.y}" dur="${domain.duration}s" repeatCount="indefinite"/>
+      <g transform="translate(${center.x + domain.orbitRadius} ${center.y})">
+        <g>
+          <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="${domain.direction * -360} 0 0" dur="${domain.duration}s" repeatCount="indefinite"/>
+          <circle cx="0" cy="0" r="${domain.moonOrbitRadius}" fill="none" stroke="rgba(158,207,255,0.16)" stroke-width="1.1" stroke-dasharray="5 6"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="${domain.moonDirection * 360} 0 0" dur="${domain.moonDuration}s" repeatCount="indefinite"/>
+            ${moonMarkup}
+          </g>
+          <circle cx="0" cy="0" r="${domain.planetRadius + 18}" fill="${domain.color}" opacity="0.08" filter="url(#solarSoftGlow)"/>
+          <circle cx="0" cy="0" r="${domain.planetRadius}" fill="#091522" stroke="${domain.color}" stroke-width="2"/>
+          <circle cx="-10" cy="-${Math.max(12, domain.planetRadius - 18)}" r="${Math.max(4, domain.planetRadius / 3)}" fill="#FFFFFF" opacity="0.08"/>
+          <text x="0" y="1" fill="#F0F6FC" font-size="${domain.short.length > 3 ? 12.6 : 14.8}" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">${escapeXml(domain.short)}</text>
+        </g>
+      </g>
+    </g>
+  </g>`;
+}
+
+function buildSolarMoonBadge(moon, x, y) {
+  const color = getLanguageColor(moon.name);
+  return `
+  <g transform="translate(${x} ${y})">
+    <circle cx="0" cy="0" r="10.5" fill="#07111D" stroke="${color}" stroke-width="1.2"/>
+    ${buildSolarMoonIcon(moon.icon, color)}
+  </g>`;
+}
+
+function buildSolarMoonIcon(icon, color) {
+  switch (icon) {
+    case "next":
+      return `<text x="0" y="0.5" fill="${color}" font-size="9.5" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">N</text>`;
+    case "react":
+      return `
+    <g stroke="${color}" stroke-width="1" fill="none">
+      <ellipse cx="0" cy="0" rx="5.8" ry="2.4"/>
+      <ellipse cx="0" cy="0" rx="5.8" ry="2.4" transform="rotate(60)"/>
+      <ellipse cx="0" cy="0" rx="5.8" ry="2.4" transform="rotate(120)"/>
+    </g>
+    <circle cx="0" cy="0" r="1.4" fill="${color}"/>`;
+    case "typescript":
+      return `
+    <rect x="-5" y="-5" width="10" height="10" rx="2" fill="none" stroke="${color}" stroke-width="1"/>
+    <text x="0" y="0.4" fill="${color}" font-size="4.5" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">TS</text>`;
+    case "python":
+      return `
+    <path d="M-4.8 -1.8c0-2.1 1.2-3.4 3.4-3.4h2.8c1.9 0 3 1.2 3 2.8v2.3H-1c-1.8 0-3 1.2-3 3v2.1h-1.6c-1.8 0-3.2-1.2-3.2-3.1Z" fill="#4B8BBE"/>
+    <circle cx="1.2" cy="-3.1" r="0.75" fill="#EAF4FF"/>
+    <path d="M4.8 1.8c0 2.1-1.2 3.4-3.4 3.4h-2.8c-1.9 0-3-1.2-3-2.8V.1H1c1.8 0 3-1.2 3-3v-2.1h1.6c1.8 0 3.2 1.2 3.2 3.1Z" fill="#FFD43B"/>
+    <circle cx="-1.2" cy="3.1" r="0.75" fill="#08203A"/>`;
+    case "openai":
+      return Array.from({ length: 6 }, (_, index) => {
+        const angle = (Math.PI * 2 * index) / 6;
+        const x = Math.cos(angle) * 4.1;
+        const y = Math.sin(angle) * 4.1;
+        return `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="1.85" fill="none" stroke="${color}" stroke-width="1"/>`;
+      }).join("");
+    case "rag":
+      return `
+    <rect x="-4.6" y="-4.2" width="7.8" height="2.3" rx="1.1" fill="none" stroke="${color}" stroke-width="1"/>
+    <rect x="-2.8" y="-0.9" width="7.8" height="2.3" rx="1.1" fill="none" stroke="${color}" stroke-width="1"/>
+    <rect x="-4.6" y="2.4" width="7.8" height="2.3" rx="1.1" fill="none" stroke="${color}" stroke-width="1"/>
+    <circle cx="-5.6" cy="-3.1" r="1" fill="${color}"/>
+    <circle cx="5.6" cy="0.2" r="1" fill="${color}"/>
+    <circle cx="-5.6" cy="3.5" r="1" fill="${color}"/>`;
+    case "rust":
+      return `
+    <circle cx="0" cy="0" r="4.8" fill="none" stroke="${color}" stroke-width="1" stroke-dasharray="1.2 2.2"/>
+    <text x="0" y="0.5" fill="${color}" font-size="6.4" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">R</text>`;
+    case "c":
+      return `<text x="0" y="0.5" fill="${color}" font-size="8.6" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">C</text>`;
+    case "linux":
+      return `
+    <rect x="-5.5" y="-4" width="11" height="8" rx="1.8" fill="none" stroke="${color}" stroke-width="1"/>
+    <path d="M-2.8 1.8l1.4-1.4-1.4-1.4" stroke="${color}" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M1 2.2h3.2" stroke="${color}" stroke-width="1" stroke-linecap="round"/>
+    <path d="M-3.8 -5.3h7.6" stroke="${color}" stroke-width="1" stroke-linecap="round"/>`;
+    case "docker":
+      return `
+    <rect x="-5.5" y="-3.8" width="2.5" height="2.5" rx="0.4" fill="${color}"/>
+    <rect x="-2.2" y="-3.8" width="2.5" height="2.5" rx="0.4" fill="${color}"/>
+    <rect x="1.1" y="-3.8" width="2.5" height="2.5" rx="0.4" fill="${color}"/>
+    <rect x="-2.2" y="-0.5" width="2.5" height="2.5" rx="0.4" fill="${color}"/>
+    <rect x="1.1" y="-0.5" width="2.5" height="2.5" rx="0.4" fill="${color}"/>
+    <path d="M-6 3.2h10.4c1.6 0 2.2-1.2 1.6-2.2-.5-.8-1.3-1.2-2.5-1.2H-2" stroke="${color}" stroke-width="1" stroke-linecap="round" fill="none"/>
+    <circle cx="6" cy="2.3" r="0.8" fill="${color}"/>`;
+    case "vercel":
+      return `<path d="M0 -5.5 5 3.8h-10Z" fill="${color}"/>`;
+    case "hostinger":
+      return `
+    <rect x="-4.8" y="-5" width="2.4" height="10" rx="0.8" fill="${color}"/>
+    <rect x="1.4" y="-5" width="2.4" height="10" rx="0.8" fill="${color}"/>
+    <rect x="-2" y="-1" width="3.8" height="2" rx="0.8" fill="${color}"/>
+    <rect x="-0.3" y="-5" width="1.6" height="10" rx="0.8" fill="#07111D" opacity="0.55"/>`;
+    case "github-actions":
+      return `
+    <circle cx="-3.6" cy="-2.8" r="1.5" fill="none" stroke="${color}" stroke-width="1"/>
+    <circle cx="3.6" cy="0" r="1.5" fill="none" stroke="${color}" stroke-width="1"/>
+    <circle cx="-1.2" cy="3.5" r="1.5" fill="none" stroke="${color}" stroke-width="1"/>
+    <path d="M-2.4 -1.9 2 .4M-2.4 -1.8-.1 2.3" stroke="${color}" stroke-width="1" stroke-linecap="round" fill="none"/>
+    <path d="M1.3 -3.9h3.3v3.3" stroke="${color}" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`;
+    case "apps-script":
+      return `
+    <path d="M-4.8-4.8h6.5l3.1 3.1V4.8H-4.8Z" fill="none" stroke="${color}" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M1.7-4.8v3.1h3.1" fill="none" stroke="${color}" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M-2.3-.6 0-2.6 2.3-.6" stroke="${color}" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M-2.3 1.8 0 3.8 2.3 1.8" stroke="${color}" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`;
+    case "webhooks":
+      return `
+    <circle cx="-3.8" cy="-2.8" r="1.4" fill="none" stroke="${color}" stroke-width="1"/>
+    <circle cx="3.8" cy="-1.2" r="1.4" fill="none" stroke="${color}" stroke-width="1"/>
+    <circle cx="0.2" cy="3.6" r="1.4" fill="none" stroke="${color}" stroke-width="1"/>
+    <path d="M-2.4 -2.3h4.4M-.7 -1.6v4" stroke="${color}" stroke-width="1" stroke-linecap="round" fill="none"/>
+    <path d="M1.2 2.6 2.9-.1" stroke="${color}" stroke-width="1" stroke-linecap="round" fill="none"/>`;
+    case "postgresql":
+      return `
+    <ellipse cx="0" cy="-3.4" rx="4.6" ry="1.8" fill="none" stroke="${color}" stroke-width="1"/>
+    <path d="M-4.6-3.4v5.8c0 1 2.1 1.8 4.6 1.8s4.6-.8 4.6-1.8v-5.8" fill="none" stroke="${color}" stroke-width="1"/>
+    <path d="M-4.6-.4c0 1 2.1 1.8 4.6 1.8S4.6.6 4.6-.4" fill="none" stroke="${color}" stroke-width="1"/>`;
+    case "prisma":
+      return `<path d="M-3.2 4.8 0-5l4.2 7.6Z" fill="none" stroke="${color}" stroke-width="1.2" stroke-linejoin="round"/>`;
+    case "sql":
+      return `
+    <ellipse cx="0" cy="-2.7" rx="4.6" ry="1.8" fill="none" stroke="${color}" stroke-width="1"/>
+    <path d="M-4.6-2.7v4.7c0 1 2.1 1.8 4.6 1.8s4.6-.8 4.6-1.8v-4.7" fill="none" stroke="${color}" stroke-width="1"/>
+    <text x="0" y="1.2" fill="${color}" font-size="3.8" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">SQL</text>`;
+    default:
+      return `<circle cx="0" cy="0" r="3" fill="${color}"/>`;
+  }
 }
 
 function buildTopLanguagesSvg(languageStats, login, includesPrivateRepos) {
@@ -738,81 +928,30 @@ function buildFallbackLanguageStats() {
   ];
 }
 
-async function writeDomainIcons(targetDir) {
-  const icons = {
-    "icon-web-systems.svg": buildDomainIconSvg([
-      '<circle cx="12" cy="12" r="10" />',
-      '<path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />',
-      '<path d="M2 12h20" />',
-    ]),
-    "icon-low-level-systems.svg": buildDomainIconSvg([
-      '<path d="M12 20v2" />',
-      '<path d="M12 2v2" />',
-      '<path d="M17 20v2" />',
-      '<path d="M17 2v2" />',
-      '<path d="M2 12h2" />',
-      '<path d="M2 17h2" />',
-      '<path d="M2 7h2" />',
-      '<path d="M20 12h2" />',
-      '<path d="M20 17h2" />',
-      '<path d="M20 7h2" />',
-      '<path d="M7 20v2" />',
-      '<path d="M7 2v2" />',
-      '<rect x="4" y="4" width="16" height="16" rx="2" />',
-      '<rect x="8" y="8" width="8" height="8" rx="1" />',
-    ]),
-    "icon-intelligent-systems.svg": buildDomainIconSvg([
-      '<path d="M12 18V5" />',
-      '<path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4" />',
-      '<path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5" />',
-      '<path d="M17.997 5.125a4 4 0 0 1 2.526 5.77" />',
-      '<path d="M18 18a4 4 0 0 0 2-7.464" />',
-      '<path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517" />',
-      '<path d="M6 18a4 4 0 0 1-2-7.464" />',
-      '<path d="M6.003 5.125a4 4 0 0 0-2.526 5.77" />',
-    ]),
-    "icon-architecture.svg": buildDomainIconSvg([
-      '<path d="M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2" />',
-      '<rect x="14" y="2" width="8" height="8" rx="1" />',
-    ]),
-    "icon-data-layer.svg": buildDomainIconSvg([
-      '<ellipse cx="12" cy="5" rx="9" ry="3" />',
-      '<path d="M3 5V19A9 3 0 0 0 21 19V5" />',
-      '<path d="M3 12A9 3 0 0 0 21 12" />',
-    ]),
-    "icon-infrastructure.svg": buildDomainIconSvg([
-      '<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />',
-    ]),
-    "icon-automation-systems.svg": buildDomainIconSvg([
-      '<rect width="8" height="8" x="3" y="3" rx="2" />',
-      '<path d="M7 11v4a2 2 0 0 0 2 2h4" />',
-      '<rect width="8" height="8" x="13" y="13" rx="2" />',
-    ]),
-  };
-
-  await Promise.all(
-    Object.entries(icons).map(([fileName, content]) => fs.writeFile(path.join(targetDir, fileName), content)),
-  );
-}
-
-function buildDomainIconSvg(shapes) {
-  return `
-<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6EA8FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  ${shapes.join("\n  ")}
-</svg>`.trimStart();
-}
-
 function getLanguageColor(name) {
   const colors = {
     TypeScript: "#3178c6",
     JavaScript: "#f1e05a",
     Python: "#3572A5",
+    "Next.js": "#F0F6FC",
+    React: "#61DAFB",
+    OpenAI: "#DCEBFF",
+    RAG: "#7AA2F7",
     HTML: "#e34c26",
     CSS: "#563d7c",
     Shell: "#89e051",
     Rust: "#dea584",
+    Linux: "#FCC624",
+    Docker: "#2496ED",
+    Vercel: "#F0F6FC",
+    Hostinger: "#7F56D9",
+    "GitHub Actions": "#2088FF",
+    "Apps Script": "#34A853",
+    Webhooks: "#58A6FF",
+    PostgreSQL: "#336791",
     Dockerfile: "#384d54",
     Prisma: "#5a67d8",
+    SQL: "#9ECFFF",
     MDX: "#1b1f24",
     Markdown: "#083fa1",
     Go: "#00ADD8",

@@ -117,15 +117,15 @@ My focus is not just shipping features, but structuring products that are scalab
 
 ## System Domains & Composition Map
 
-### Orbit Model
+### Solar Orbit Model
 
-Architecture is the composition core. Each outer node is a system domain, and the orbiting markers show the languages, tools and runtimes that usually gather around that capability.
+Architecture is the fixed core. Each planet uses an abbreviation to keep the map clean, and each moon uses a symbol instead of a written stack label. The legend on the right resolves both the domain codes and the technology symbols.
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/system-domains-map.svg" width="100%" alt="System domains orbit map" />
 </p>
 
-<p align="center"><sub>Read it like a mental map: center = architectural control, outer clusters = domain families, orbiting markers = the technologies attached to each domain.</sub></p>
+<p align="center"><sub>Read it as a compact solar system: `Arch` is the sun, the planets are domain families, and the moons are the technologies that orbit each domain.</sub></p>
 
 ### System Integration Layer
 
