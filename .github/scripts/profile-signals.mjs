@@ -426,14 +426,15 @@ function getSystemDomainsData() {
     {
       short: "WS",
       title: "Web Systems",
+      orbitId: "planet-orbit-1",
       angle: 212,
       duration: 76,
       color: "#2F6FEB",
-      planetRadius: 42,
-      orbitRx: 220,
-      orbitRy: 138,
-      moonOrbitRx: 72,
-      moonOrbitRy: 46,
+      planetRadius: 46,
+      orbitRx: 240,
+      orbitRy: 150,
+      moonOrbitRx: 80,
+      moonOrbitRy: 54,
       moonDuration: 18,
       moons: [
         { name: "Next.js", icon: "next" },
@@ -444,14 +445,15 @@ function getSystemDomainsData() {
     {
       short: "LLS",
       title: "Low-Level Systems",
+      orbitId: "planet-orbit-1",
       angle: 28,
       duration: 76,
       color: "#58A6FF",
-      planetRadius: 43,
-      orbitRx: 220,
-      orbitRy: 138,
-      moonOrbitRx: 72,
-      moonOrbitRy: 46,
+      planetRadius: 47,
+      orbitRx: 240,
+      orbitRy: 150,
+      moonOrbitRx: 80,
+      moonOrbitRy: 54,
       moonDuration: 16,
       moons: [
         { name: "Rust", icon: "rust" },
@@ -462,14 +464,15 @@ function getSystemDomainsData() {
     {
       short: "IS",
       title: "Intelligent Systems",
+      orbitId: "planet-orbit-2",
       angle: 270,
       duration: 96,
       color: "#6EA8FE",
-      planetRadius: 43,
-      orbitRx: 330,
-      orbitRy: 220,
-      moonOrbitRx: 78,
-      moonOrbitRy: 50,
+      planetRadius: 47,
+      orbitRx: 360,
+      orbitRy: 245,
+      moonOrbitRx: 86,
+      moonOrbitRy: 58,
       moonDuration: 15,
       moons: [
         { name: "Python", icon: "python" },
@@ -480,14 +483,15 @@ function getSystemDomainsData() {
     {
       short: "Infra",
       title: "Infrastructure",
+      orbitId: "planet-orbit-2",
       angle: 90,
       duration: 96,
       color: "#9ECFFF",
-      planetRadius: 43,
-      orbitRx: 330,
-      orbitRy: 220,
-      moonOrbitRx: 78,
-      moonOrbitRy: 50,
+      planetRadius: 47,
+      orbitRx: 360,
+      orbitRy: 245,
+      moonOrbitRx: 86,
+      moonOrbitRy: 58,
       moonDuration: 17,
       moons: [
         { name: "Docker", icon: "docker" },
@@ -498,14 +502,15 @@ function getSystemDomainsData() {
     {
       short: "AS",
       title: "Automation Systems",
+      orbitId: "planet-orbit-3",
       angle: 190,
       duration: 124,
       color: "#7AA2F7",
-      planetRadius: 44,
-      orbitRx: 470,
-      orbitRy: 312,
-      moonOrbitRx: 84,
-      moonOrbitRy: 54,
+      planetRadius: 48,
+      orbitRx: 510,
+      orbitRy: 350,
+      moonOrbitRx: 92,
+      moonOrbitRy: 62,
       moonDuration: 14,
       moons: [
         { name: "GitHub Actions", icon: "github-actions" },
@@ -516,14 +521,15 @@ function getSystemDomainsData() {
     {
       short: "DL",
       title: "Data Layer",
+      orbitId: "planet-orbit-3",
       angle: 8,
       duration: 124,
       color: "#4F8FE8",
-      planetRadius: 44,
-      orbitRx: 470,
-      orbitRy: 312,
-      moonOrbitRx: 84,
-      moonOrbitRy: 54,
+      planetRadius: 48,
+      orbitRx: 510,
+      orbitRy: 350,
+      moonOrbitRx: 92,
+      moonOrbitRy: 62,
       moonDuration: 13,
       moons: [
         { name: "PostgreSQL", icon: "postgresql" },
@@ -535,34 +541,34 @@ function getSystemDomainsData() {
 }
 
 function buildSystemDomainsMapSvg(login) {
-  const width = 1280;
-  const height = 1040;
-  const center = { x: 640, y: 550 };
+  const width = 1360;
+  const height = 1120;
+  const center = { x: 680, y: 600 };
   const domains = getSystemDomainsData();
   const orbitPairs = [
-    { rx: 220, ry: 138 },
-    { rx: 330, ry: 220 },
-    { rx: 470, ry: 312 },
+    { id: "planet-orbit-1", rx: 240, ry: 150 },
+    { id: "planet-orbit-2", rx: 360, ry: 245 },
+    { id: "planet-orbit-3", rx: 510, ry: 350 },
   ];
 
-  const stars = buildStarField(`${login}-system-domains-main`, width, height, 84);
-  const orbitLines = orbitPairs.map((orbit) => `
-  <ellipse cx="${center.x}" cy="${center.y}" rx="${orbit.rx}" ry="${orbit.ry}" fill="none" stroke="rgba(110,168,254,0.18)" stroke-width="1.5" stroke-dasharray="10 12"/>`).join("\n");
+  const stars = buildStarField(`${login}-system-domains-main`, width, height, 96);
+  const orbitDefs = orbitPairs.map((orbit) => `<path id="${orbit.id}" d="${buildAbsoluteEllipsePath(center.x, center.y, orbit.rx, orbit.ry)}"/>`).join("\n    ");
+  const orbitLines = orbitPairs.map((orbit) => `<use href="#${orbit.id}" fill="none" stroke="rgba(110,168,254,0.18)" stroke-width="1.5" stroke-dasharray="10 12"/>`).join("\n  ");
   const planets = domains.map((domain) => buildSolarPlanet(domain, center)).join("\n");
 
   return `
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="solarMainBg" x1="0" y1="0" x2="1280" y2="1040" gradientUnits="userSpaceOnUse">
+    <linearGradient id="solarMainBg" x1="0" y1="0" x2="1360" y2="1120" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#050D16"/>
       <stop offset="0.55" stop-color="#0A1A2C"/>
       <stop offset="1" stop-color="#122A45"/>
     </linearGradient>
-    <radialGradient id="solarMainGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(${center.x} ${center.y}) rotate(90) scale(290)">
+    <radialGradient id="solarMainGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(${center.x} ${center.y}) rotate(90) scale(320)">
       <stop offset="0" stop-color="#F6D365" stop-opacity="0.68"/>
       <stop offset="1" stop-color="#F6D365" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="solarMainCore" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(${center.x - 14} ${center.y - 22}) rotate(60) scale(120 120)">
+    <radialGradient id="solarMainCore" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(${center.x - 14} ${center.y - 22}) rotate(60) scale(128 128)">
       <stop offset="0" stop-color="#FFF2B2"/>
       <stop offset="0.58" stop-color="#F6D365"/>
       <stop offset="1" stop-color="#E39B27"/>
@@ -570,21 +576,22 @@ function buildSystemDomainsMapSvg(login) {
     <filter id="solarMainSoftGlow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="22"/>
     </filter>
+    ${orbitDefs}
   </defs>
   <rect width="${width}" height="${height}" rx="32" fill="url(#solarMainBg)"/>
   <rect x="20" y="20" width="${width - 40}" height="${height - 40}" rx="24" stroke="rgba(158,207,255,0.14)"/>
   ${stars}
-  <text x="44" y="62" fill="#F0F6FC" font-size="31" font-family="Segoe UI, Arial, sans-serif" font-weight="700">System Solar Map</text>
-  <text x="44" y="88" fill="#9ECFFF" font-size="15" font-family="Segoe UI, Arial, sans-serif">Large view of the system model: Architecture is fixed at the center, planets orbit slowly, and the moon symbols orbit faster around each domain.</text>
-  <circle cx="${center.x}" cy="${center.y}" r="150" fill="url(#solarMainGlow)" opacity="0.88" filter="url(#solarMainSoftGlow)"/>
+  <text x="44" y="64" fill="#F0F6FC" font-size="33" font-family="Segoe UI, Arial, sans-serif" font-weight="700">System Solar Map</text>
+  <text x="44" y="92" fill="#9ECFFF" font-size="15.5" font-family="Segoe UI, Arial, sans-serif">Large view of the system model: Architecture is fixed at the center, planets orbit slowly, and the moon symbols orbit faster around each domain.</text>
+  <circle cx="${center.x}" cy="${center.y}" r="164" fill="url(#solarMainGlow)" opacity="0.88" filter="url(#solarMainSoftGlow)"/>
   ${orbitLines}
   <g>
-    <circle cx="${center.x}" cy="${center.y}" r="72" fill="url(#solarMainCore)" stroke="#FFE9A3" stroke-width="2.2"/>
-    <circle cx="${center.x}" cy="${center.y}" r="102" fill="none" stroke="rgba(246,211,101,0.18)" stroke-width="1.4"/>
-    <text x="${center.x}" y="${center.y + 2}" fill="#08203A" font-size="25" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">Arch</text>
+    <circle cx="${center.x}" cy="${center.y}" r="78" fill="url(#solarMainCore)" stroke="#FFE9A3" stroke-width="2.2"/>
+    <circle cx="${center.x}" cy="${center.y}" r="112" fill="none" stroke="rgba(246,211,101,0.18)" stroke-width="1.4"/>
+    <text x="${center.x}" y="${center.y + 2}" fill="#08203A" font-size="27" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">Arch</text>
   </g>
   ${planets}
-  <text x="44" y="1002" fill="#C9D1D9" font-size="13.5" font-family="Segoe UI, Arial, sans-serif">The solar map is isolated here to maximize readability for both the planet abbreviations and the moon symbols.</text>
+  <text x="44" y="1076" fill="#C9D1D9" font-size="13.5" font-family="Segoe UI, Arial, sans-serif">The solar map is isolated here to maximize readability for both the planet abbreviations and the moon symbols.</text>
 </svg>`.trimStart();
 }
 
@@ -629,30 +636,32 @@ function buildSystemDomainsPlanetLegendSvg() {
 }
 
 function buildSystemDomainsMoonLegendSvg() {
-  const width = 1120;
-  const height = 500;
+  const width = 1160;
+  const height = 780;
   const domains = getSystemDomainsData();
-  const stars = buildStarField("system-domains-moons-legend", width, height, 42);
+  const stars = buildStarField("system-domains-moons-legend", width, height, 56);
   const cards = domains.map((domain, index) => {
-    const column = index % 3;
-    const row = Math.floor(index / 3);
-    const x = 30 + column * 354;
-    const y = 100 + row * 184;
+    const column = index % 2;
+    const row = Math.floor(index / 2);
+    const x = 32 + column * 566;
+    const y = 110 + row * 212;
     const rows = domain.moons.map((moon, moonIndex) => {
-      const rowY = 50 + moonIndex * 30;
+      const rowY = 84 + moonIndex * 38;
+      const branch = moonIndex === domain.moons.length - 1 ? "└─" : "├─";
+      const code = getMoonLegendCode(moon);
       return `
-    <g transform="translate(22 ${rowY})">
-      ${buildSolarMoonBadge(moon, 0, 0, 12.5)}
-      <text x="28" y="0.5" fill="#DCEBFF" font-size="13.2" font-family="Segoe UI, Arial, sans-serif" dominant-baseline="middle">${escapeXml(moon.name)}</text>
+    <g transform="translate(26 ${rowY})">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">${branch}</text>
+      ${buildSolarMoonBadge(moon, 54, 0, 16)}
+      <text x="84" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">(${escapeXml(code)}) ${escapeXml(moon.name)}</text>
     </g>`;
     }).join("\n");
 
     return `
   <g transform="translate(${x} ${y})">
-    <rect width="324" height="146" rx="18" fill="#091522" fill-opacity="0.96" stroke="rgba(158,207,255,0.16)"/>
-    <circle cx="24" cy="24" r="13" fill="#0B1A2B" stroke="${domain.color}" stroke-width="1.4"/>
-    <text x="24" y="24.5" fill="#EAF4FF" font-size="11.5" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">${escapeXml(domain.short)}</text>
-    <text x="46" y="24.5" fill="#F0F6FC" font-size="14.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">${escapeXml(domain.title)}</text>
+    <rect width="530" height="178" rx="20" fill="#091522" fill-opacity="0.96" stroke="rgba(158,207,255,0.16)"/>
+    <text x="26" y="40" fill="#F0F6FC" font-size="17" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">(${escapeXml(domain.short)}) ${escapeXml(domain.title)}</text>
+    <path d="M40 74v76" stroke="rgba(158,207,255,0.14)" stroke-width="1.2" stroke-linecap="round"/>
     ${rows}
   </g>`;
   }).join("\n");
@@ -660,7 +669,7 @@ function buildSystemDomainsMoonLegendSvg() {
   return `
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="moonLegendBg" x1="0" y1="0" x2="1120" y2="500" gradientUnits="userSpaceOnUse">
+    <linearGradient id="moonLegendBg" x1="0" y1="0" x2="1160" y2="780" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#07111D"/>
       <stop offset="1" stop-color="#0F2741"/>
     </linearGradient>
@@ -669,7 +678,7 @@ function buildSystemDomainsMoonLegendSvg() {
   <rect x="18" y="18" width="${width - 36}" height="${height - 36}" rx="20" stroke="rgba(158,207,255,0.14)"/>
   ${stars}
   <text x="34" y="56" fill="#F0F6FC" font-size="27" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Moon Legend</text>
-  <text x="34" y="80" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">The moons keep only the symbols in the solar map, and this panel decodes each symbol back to its technology.</text>
+  <text x="34" y="80" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">The moons keep only the symbols in the solar map, and this panel decodes each symbol back to its technology in a tree layout.</text>
   ${cards}
 </svg>`.trimStart();
 }
@@ -689,21 +698,26 @@ function buildStarField(seedSource, width, height, count) {
   }).join("\n  ");
 }
 
+function buildAbsoluteEllipsePath(cx, cy, rx, ry) {
+  return `M ${cx + rx} ${cy} A ${rx} ${ry} 0 1 1 ${cx - rx} ${cy} A ${rx} ${ry} 0 1 1 ${cx + rx} ${cy}`;
+}
+
 function buildEllipsePath(rx, ry) {
   return `M ${rx} 0 A ${rx} ${ry} 0 1 1 ${-rx} 0 A ${rx} ${ry} 0 1 1 ${rx} 0`;
 }
 
 function buildSolarPlanet(domain, center) {
+  const moonOrbitId = `moon-orbit-${domain.short.toLowerCase()}`;
   const moonAngleStep = 360 / domain.moons.length;
-  const moonPath = buildEllipsePath(domain.moonOrbitRx, domain.moonOrbitRy);
-  const orbitPath = buildEllipsePath(domain.orbitRx, domain.orbitRy);
   const moons = domain.moons.map((moon, index) => {
     const angle = index * moonAngleStep;
     return `
         <g transform="rotate(${angle})">
           <g>
-            <animateMotion dur="${domain.moonDuration}s" repeatCount="indefinite" rotate="0" path="${moonPath}"/>
-            ${buildSolarMoonBadge(moon, 0, 0, 13)}
+            <animateMotion dur="${domain.moonDuration}s" repeatCount="indefinite" rotate="0">
+              <mpath href="#${moonOrbitId}"/>
+            </animateMotion>
+            ${buildSolarMoonBadge(moon, 0, 0, 15)}
           </g>
         </g>`;
   }).join("\n");
@@ -711,9 +725,14 @@ function buildSolarPlanet(domain, center) {
   return `
   <g transform="translate(${center.x} ${center.y}) rotate(${domain.angle})">
     <g>
-      <animateMotion dur="${domain.duration}s" repeatCount="indefinite" rotate="0" path="${orbitPath}"/>
+      <animateMotion dur="${domain.duration}s" repeatCount="indefinite" rotate="0">
+        <mpath href="#${domain.orbitId}"/>
+      </animateMotion>
       <g>
-        <ellipse cx="0" cy="0" rx="${domain.moonOrbitRx}" ry="${domain.moonOrbitRy}" fill="none" stroke="rgba(158,207,255,0.16)" stroke-width="1.2" stroke-dasharray="6 7"/>
+        <defs>
+          <path id="${moonOrbitId}" d="${buildEllipsePath(domain.moonOrbitRx, domain.moonOrbitRy)}"/>
+        </defs>
+        <use href="#${moonOrbitId}" fill="none" stroke="rgba(158,207,255,0.16)" stroke-width="1.2" stroke-dasharray="6 7"/>
         ${moons}
         <circle cx="0" cy="0" r="${domain.planetRadius + 22}" fill="${domain.color}" opacity="0.08" filter="url(#solarMainSoftGlow)"/>
         <circle cx="0" cy="0" r="${domain.planetRadius}" fill="#091522" stroke="${domain.color}" stroke-width="2.1"/>
@@ -722,6 +741,31 @@ function buildSolarPlanet(domain, center) {
       </g>
     </g>
   </g>`;
+}
+
+function getMoonLegendCode(moon) {
+  const codes = {
+    "Next.js": "N",
+    React: "R",
+    TypeScript: "TS",
+    Python: "PY",
+    OpenAI: "AI",
+    RAG: "RAG",
+    Rust: "R",
+    C: "C",
+    Linux: "LX",
+    Docker: "D",
+    Vercel: "V",
+    Hostinger: "H",
+    "GitHub Actions": "GA",
+    "Apps Script": "AS",
+    Webhooks: "WH",
+    PostgreSQL: "PG",
+    Prisma: "P",
+    SQL: "SQL",
+  };
+
+  return codes[moon.name] || moon.name.slice(0, 2).toUpperCase();
 }
 
 function buildSolarMoonBadge(moon, x, y, radius = 10.5) {
