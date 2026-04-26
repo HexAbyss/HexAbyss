@@ -23,9 +23,9 @@
 <line x1="54" y1="136.67" x2="906" y2="136.67" stroke="rgba(110,168,254,0.12)" stroke-width="1"/>
 <line x1="54" y1="201.33" x2="906" y2="201.33" stroke="rgba(110,168,254,0.12)" stroke-width="1"/>
 <line x1="54" y1="266.00" x2="906" y2="266.00" stroke="rgba(110,168,254,0.12)" stroke-width="1"/>
-  <path d="M 54.00 266.00 L 131.45 266.00 L 208.91 266.00 L 286.36 266.00 L 363.82 266.00 L 441.27 266.00 L 518.73 266.00 L 596.18 266.00 L 673.64 266.00 L 751.09 266.00 L 828.55 156.80 L 906.00 84.00 L 906.00 266.00 L 54.00 266.00 Z" fill="url(#pulseArea)"/>
-  <path d="M 54.00 266.00 L 131.45 266.00 L 208.91 266.00 L 286.36 266.00 L 363.82 266.00 L 441.27 266.00 L 518.73 266.00 L 596.18 266.00 L 673.64 266.00 L 751.09 266.00 L 828.55 156.80 L 906.00 84.00" stroke="url(#pulseLine)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
-  <path d="M 54.00 266.00 L 131.45 266.00 L 208.91 266.00 L 286.36 266.00 L 363.82 266.00 L 441.27 266.00 L 518.73 266.00 L 596.18 266.00 L 673.64 266.00 L 751.09 266.00 L 828.55 156.80 L 906.00 84.00" stroke="#EAF4FF" stroke-opacity="0.75" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 54.00 266.00 L 131.45 266.00 L 208.91 266.00 L 286.36 266.00 L 363.82 266.00 L 441.27 266.00 L 518.73 266.00 L 596.18 266.00 L 673.64 266.00 L 751.09 266.00 L 828.55 160.32 L 906.00 84.00 L 906.00 266.00 L 54.00 266.00 Z" fill="url(#pulseArea)"/>
+  <path d="M 54.00 266.00 L 131.45 266.00 L 208.91 266.00 L 286.36 266.00 L 363.82 266.00 L 441.27 266.00 L 518.73 266.00 L 596.18 266.00 L 673.64 266.00 L 751.09 266.00 L 828.55 160.32 L 906.00 84.00" stroke="url(#pulseLine)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  <path d="M 54.00 266.00 L 131.45 266.00 L 208.91 266.00 L 286.36 266.00 L 363.82 266.00 L 441.27 266.00 L 518.73 266.00 L 596.18 266.00 L 673.64 266.00 L 751.09 266.00 L 828.55 160.32 L 906.00 84.00" stroke="#EAF4FF" stroke-opacity="0.75" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
   
     <circle cx="54.00" cy="266.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
     <circle cx="54.00" cy="266.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
@@ -67,13 +67,13 @@
     <circle cx="751.09" cy="266.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
   
 
-    <circle cx="828.55" cy="156.80" r="5.5" fill="#EAF4FF" opacity="0.95"/>
-    <circle cx="828.55" cy="156.80" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+    <circle cx="828.55" cy="160.32" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="828.55" cy="160.32" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
   
 
     <circle cx="906.00" cy="84.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
     <circle cx="906.00" cy="84.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
   
   <text x="52" y="286" fill="#C9D1D9" font-size="13" font-family="Segoe UI, Arial, sans-serif">12-week pulse window</text>
-  <text x="782" y="286" fill="#6EA8FE" font-size="13" font-family="Segoe UI, Arial, sans-serif">peak intensity: 30</text>
+  <text x="782" y="286" fill="#6EA8FE" font-size="13" font-family="Segoe UI, Arial, sans-serif">peak intensity: 31</text>
 </svg>
