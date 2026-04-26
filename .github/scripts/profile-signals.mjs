@@ -445,8 +445,8 @@ function buildTopLanguagesSvg(languageStats, login, includesPrivateRepos) {
   }).join("\n    ");
 
   const legendEntries = normalizedStats.map((language, index) => {
-    const column = index % 3;
-    const row = Math.floor(index / 3);
+    const column = Math.floor(index / 3);
+    const row = index % 3;
     const x = legendColumns[column];
     const y = legendBaseY + row * legendRowGap;
     const label = escapeXml(truncateLegendLabel(language.name, 12));
