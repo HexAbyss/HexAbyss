@@ -119,13 +119,21 @@ My focus is not just shipping features, but structuring products that are scalab
 
 ### Solar Orbit Model
 
-Architecture is the fixed core. Each planet uses an abbreviation to keep the map clean, and each moon uses a symbol instead of a written stack label. The legend on the right resolves both the domain codes and the technology symbols.
+Architecture is the fixed core. Each planet uses an abbreviation to keep the map clean, and each moon uses a symbol instead of a written stack label. The solar map now stands alone, with the planet legend below it and the moon legend below that.
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/system-domains-map.svg" width="100%" alt="System domains orbit map" />
 </p>
 
-<p align="center"><sub>Read it as a compact solar system: `Arch` is the sun, the planets are domain families, and the moons are the technologies that orbit each domain.</sub></p>
+<p align="center">
+	<img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/system-domains-planets-legend.svg" width="100%" alt="Planet legend for the system solar map" />
+</p>
+
+<p align="center">
+	<img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/system-domains-moons-legend.svg" width="100%" alt="Moon legend for the system solar map" />
+</p>
+
+<p align="center"><sub>Read it in three layers: first the solar system, then the planet abbreviations, then the moon symbols.</sub></p>
 
 ### System Integration Layer
 
