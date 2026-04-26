@@ -5,7 +5,11 @@ const owner = process.env.GITHUB_REPOSITORY_OWNER || process.env.GITHUB_OWNER ||
 const token = process.env.PROFILE_SIGNAL_TOKEN || process.env.GITHUB_TOKEN || "";
 const hasUserToken = Boolean(process.env.PROFILE_SIGNAL_TOKEN);
 const rootDir = process.cwd();
-const mediaDir = path.join(rootDir, "media");
+const outputDir = process.env.PROFILE_SIGNAL_OUTPUT_DIR
+  ? path.resolve(process.env.PROFILE_SIGNAL_OUTPUT_DIR)
+  : rootDir;
+const skipReadmeUpdate = process.env.PROFILE_SIGNAL_SKIP_README_UPDATE === "true";
+const mediaDir = path.join(outputDir, "media");
 const readmePath = path.join(rootDir, "README.md");
 
 await fs.mkdir(mediaDir, { recursive: true });
@@ -22,8 +26,10 @@ await fs.writeFile(path.join(mediaDir, "neural-pulse.svg"), buildNeuralPulseSvg(
 await fs.writeFile(path.join(mediaDir, "architecture-radar.svg"), buildArchitectureRadarSvg(owner));
 await fs.writeFile(path.join(mediaDir, "top-languages.svg"), buildTopLanguagesSvg(languageStats, owner, hasUserToken));
 
-const timelineMarkdown = buildTimelineMarkdown(repositories);
-await updateReadmeTimeline(timelineMarkdown);
+if (!skipReadmeUpdate) {
+  const timelineMarkdown = buildTimelineMarkdown(repositories);
+  await updateReadmeTimeline(timelineMarkdown);
+}
 
 async function getContributionDays(login, authToken) {
   if (!authToken) {

@@ -159,7 +159,7 @@ My focus is not just shipping features, but structuring products that are scalab
 ## Language Distribution
 
 <p align="left">
-	<img src="./media/top-languages.svg" width="540" alt="Top languages" />
+	<img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/top-languages.svg" width="540" alt="Top languages" />
 </p>
 
 ---
@@ -179,7 +179,7 @@ My focus is not just shipping features, but structuring products that are scalab
 			</div>
 		</td>
 		<td width="50%" align="center">
-			<img src="./media/architecture-radar.svg" width="100%" alt="Architecture Radar" />
+			<img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/architecture-radar.svg" width="100%" alt="Architecture Radar" />
 		</td>
 	</tr>
 </table>
@@ -220,7 +220,7 @@ My focus is not just shipping features, but structuring products that are scalab
 ## Signal Layer
 
 <p align="center">
-	<img src="./media/constellation-graph.svg" width="100%" alt="Constellation Graph" />
+	<img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/constellation-graph.svg" width="100%" alt="Constellation Graph" />
 </p>
 
 These signals translate engineering identity into motion: contribution constellations, system-shape radar and a living activity pulse.
