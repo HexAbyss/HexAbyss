@@ -359,16 +359,6 @@ Systems are built by combining domains under architectural control, not by choos
 
 ---
 
-## Signal Layer
-
-<p align="center">
-	<img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/constellation-graph.svg" width="100%" alt="Constellation Graph" />
-</p>
-
-These signals translate engineering identity into motion: contribution constellations, system-shape radar and a living activity pulse.
-
----
-
 ## Current Direction
 
 - Intelligent systems with real operational utility.
