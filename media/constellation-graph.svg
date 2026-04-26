@@ -116,7 +116,7 @@
 <circle cx="882" cy="236.49233090810702" r="4.82" fill="rgba(47,111,235,0.07)" filter="url(#blur)"/><circle cx="882" cy="236.49233090810702" r="1.72" fill="rgba(234,244,255,0.36)"/>
 <circle cx="882" cy="278.492330908107" r="8.51" fill="rgba(47,111,235,0.16)" filter="url(#blur)"/><circle cx="882" cy="278.492330908107" r="3.04" fill="rgba(234,244,255,0.86)"/>
 <circle cx="882" cy="320.492330908107" r="4.82" fill="rgba(47,111,235,0.07)" filter="url(#blur)"/><circle cx="882" cy="320.492330908107" r="1.72" fill="rgba(234,244,255,0.36)"/>
-<circle cx="882" cy="362.492330908107" r="4.20" fill="rgba(47,111,235,0.03)" filter="url(#blur)"/><circle cx="882" cy="362.492330908107" r="1.50" fill="rgba(234,244,255,0.14)"/>
-  <text x="52" y="390" fill="#C9D1D9" font-size="13" font-family="Segoe UI, Arial, sans-serif">Last 84 days · 47 visible contribution impulses</text>
+<circle cx="882" cy="362.492330908107" r="4.82" fill="rgba(47,111,235,0.07)" filter="url(#blur)"/><circle cx="882" cy="362.492330908107" r="1.72" fill="rgba(234,244,255,0.36)"/>
+  <text x="52" y="390" fill="#C9D1D9" font-size="13" font-family="Segoe UI, Arial, sans-serif">Last 84 days · 48 visible contribution impulses</text>
   <text x="742" y="390" fill="#6EA8FE" font-size="13" font-family="Segoe UI, Arial, sans-serif">architecture • systems • intelligence</text>
 </svg>
