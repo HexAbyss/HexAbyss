@@ -138,7 +138,7 @@ Architecture is not a stack decision. It is the composition logic that selects d
 <table>
 	<tr>
 		<td width="33%" valign="top">
-			<h3 align="center"><img src="data:image/svg+xml,%3Csvg%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20width%3D%2218%22%20%20height%3D%2218%22%20%20viewBox%3D%220%200%2024%2024%22%20%20fill%3D%22none%22%20%20stroke%3D%22%236EA8FE%22%20%20stroke-width%3D%222%22%20%20stroke-linecap%3D%22round%22%20%20stroke-linejoin%3D%22round%22%3E%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2210%22%20%2F%3E%20%20%3Cpath%20d%3D%22M12%202a14.5%2014.5%200%200%200%200%2020%2014.5%2014.5%200%200%200%200-20%22%20%2F%3E%20%20%3Cpath%20d%3D%22M2%2012h20%22%20%2F%3E%3C%2Fsvg%3E" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Web Systems</h3>
+			<h3 align="center"><img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/icon-web-systems.svg" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Web Systems</h3>
 			<p align="center"><em>Interfaces that translate system complexity into clear interaction.</em></p>
 			<p>
 				<strong>Purpose:</strong> expose workflows, state and feedback in a usable form.<br/>
@@ -153,7 +153,7 @@ Architecture is not a stack decision. It is the composition logic that selects d
 			<p align="center"><sub>&#8627; expands into product surfaces, interaction flows and typed client state.</sub></p>
 		</td>
 		<td width="33%" valign="top">
-			<h3 align="center"><img src="data:image/svg+xml,%3Csvg%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20width%3D%2218%22%20%20height%3D%2218%22%20%20viewBox%3D%220%200%2024%2024%22%20%20fill%3D%22none%22%20%20stroke%3D%22%236EA8FE%22%20%20stroke-width%3D%222%22%20%20stroke-linecap%3D%22round%22%20%20stroke-linejoin%3D%22round%22%3E%20%20%3Cpath%20d%3D%22M12%2020v2%22%20%2F%3E%20%20%3Cpath%20d%3D%22M12%202v2%22%20%2F%3E%20%20%3Cpath%20d%3D%22M17%2020v2%22%20%2F%3E%20%20%3Cpath%20d%3D%22M17%202v2%22%20%2F%3E%20%20%3Cpath%20d%3D%22M2%2012h2%22%20%2F%3E%20%20%3Cpath%20d%3D%22M2%2017h2%22%20%2F%3E%20%20%3Cpath%20d%3D%22M2%207h2%22%20%2F%3E%20%20%3Cpath%20d%3D%22M20%2012h2%22%20%2F%3E%20%20%3Cpath%20d%3D%22M20%2017h2%22%20%2F%3E%20%20%3Cpath%20d%3D%22M20%207h2%22%20%2F%3E%20%20%3Cpath%20d%3D%22M7%2020v2%22%20%2F%3E%20%20%3Cpath%20d%3D%22M7%202v2%22%20%2F%3E%20%20%3Crect%20x%3D%224%22%20y%3D%224%22%20width%3D%2216%22%20height%3D%2216%22%20rx%3D%222%22%20%2F%3E%20%20%3Crect%20x%3D%228%22%20y%3D%228%22%20width%3D%228%22%20height%3D%228%22%20rx%3D%221%22%20%2F%3E%3C%2Fsvg%3E" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Low-Level Systems</h3>
+			<h3 align="center"><img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/icon-low-level-systems.svg" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Low-Level Systems</h3>
 			<p align="center"><em>Execution-critical layers where control and precision define the result.</em></p>
 			<p>
 				<strong>Purpose:</strong> handle binaries, performance, protocols and device-near behavior.<br/>
@@ -168,7 +168,7 @@ Architecture is not a stack decision. It is the composition logic that selects d
 			<p align="center"><sub>&#8627; expands into protocols, binaries and performance-critical execution paths.</sub></p>
 		</td>
 		<td width="33%" valign="top">
-			<h3 align="center"><img src="data:image/svg+xml,%3Csvg%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20width%3D%2218%22%20%20height%3D%2218%22%20%20viewBox%3D%220%200%2024%2024%22%20%20fill%3D%22none%22%20%20stroke%3D%22%236EA8FE%22%20%20stroke-width%3D%222%22%20%20stroke-linecap%3D%22round%22%20%20stroke-linejoin%3D%22round%22%3E%20%20%3Cpath%20d%3D%22M12%2018V5%22%20%2F%3E%20%20%3Cpath%20d%3D%22M15%2013a4.17%204.17%200%200%201-3-4%204.17%204.17%200%200%201-3%204%22%20%2F%3E%20%20%3Cpath%20d%3D%22M17.598%206.5A3%203%200%201%200%2012%205a3%203%200%201%200-5.598%201.5%22%20%2F%3E%20%20%3Cpath%20d%3D%22M17.997%205.125a4%204%200%200%201%202.526%205.77%22%20%2F%3E%20%20%3Cpath%20d%3D%22M18%2018a4%204%200%200%200%202-7.464%22%20%2F%3E%20%20%3Cpath%20d%3D%22M19.967%2017.483A4%204%200%201%201%2012%2018a4%204%200%201%201-7.967-.517%22%20%2F%3E%20%20%3Cpath%20d%3D%22M6%2018a4%204%200%200%201-2-7.464%22%20%2F%3E%20%20%3Cpath%20d%3D%22M6.003%205.125a4%204%200%200%200-2.526%205.77%22%20%2F%3E%3C%2Fsvg%3E" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Intelligent Systems</h3>
+			<h3 align="center"><img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/icon-intelligent-systems.svg" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Intelligent Systems</h3>
 			<p align="center"><em>Reasoning layers that extend a system beyond deterministic flows.</em></p>
 			<p>
 				<strong>Purpose:</strong> add cognition, retrieval, generation and adaptive decision making.<br/>
@@ -185,7 +185,7 @@ Architecture is not a stack decision. It is the composition logic that selects d
 	</tr>
 	<tr>
 		<td colspan="3" valign="top">
-			<h3 align="center"><img src="data:image/svg+xml,%3Csvg%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20width%3D%2218%22%20%20height%3D%2218%22%20%20viewBox%3D%220%200%2024%2024%22%20%20fill%3D%22none%22%20%20stroke%3D%22%236EA8FE%22%20%20stroke-width%3D%222%22%20%20stroke-linecap%3D%22round%22%20%20stroke-linejoin%3D%22round%22%3E%20%20%3Cpath%20d%3D%22M10%2022V7a1%201%200%200%200-1-1H4a2%202%200%200%200-2%202v12a2%202%200%200%200%202%202h12a2%202%200%200%200%202-2v-5a1%201%200%200%200-1-1H2%22%20%2F%3E%20%20%3Crect%20x%3D%2214%22%20y%3D%222%22%20width%3D%228%22%20height%3D%228%22%20rx%3D%221%22%20%2F%3E%3C%2Fsvg%3E" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Architecture</h3>
+			<h3 align="center"><img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/icon-architecture.svg" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Architecture</h3>
 			<p align="center"><em>The layer that connects and governs all domains.</em></p>
 			<p align="center">
 				<strong>Purpose:</strong> define boundaries, contracts, orchestration paths and system evolution.<br/>
@@ -202,7 +202,7 @@ Architecture is not a stack decision. It is the composition logic that selects d
 	</tr>
 	<tr>
 		<td width="33%" valign="top">
-			<h3 align="center"><img src="data:image/svg+xml,%3Csvg%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20width%3D%2218%22%20%20height%3D%2218%22%20%20viewBox%3D%220%200%2024%2024%22%20%20fill%3D%22none%22%20%20stroke%3D%22%236EA8FE%22%20%20stroke-width%3D%222%22%20%20stroke-linecap%3D%22round%22%20%20stroke-linejoin%3D%22round%22%3E%20%20%3Cellipse%20cx%3D%2212%22%20cy%3D%225%22%20rx%3D%229%22%20ry%3D%223%22%20%2F%3E%20%20%3Cpath%20d%3D%22M3%205V19A9%203%200%200%200%2021%2019V5%22%20%2F%3E%20%20%3Cpath%20d%3D%22M3%2012A9%203%200%200%200%2021%2012%22%20%2F%3E%3C%2Fsvg%3E" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Data Layer</h3>
+			<h3 align="center"><img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/icon-data-layer.svg" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Data Layer</h3>
 			<p align="center"><em>Persistent truth, structure and memory for the system.</em></p>
 			<p>
 				<strong>Purpose:</strong> model entities, history, relationships and query paths.<br/>
@@ -217,7 +217,7 @@ Architecture is not a stack decision. It is the composition logic that selects d
 			<p align="center"><sub>&#8627; expands into schemas, history, query paths and operational memory.</sub></p>
 		</td>
 		<td width="33%" valign="top">
-			<h3 align="center"><img src="data:image/svg+xml,%3Csvg%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20width%3D%2218%22%20%20height%3D%2218%22%20%20viewBox%3D%220%200%2024%2024%22%20%20fill%3D%22none%22%20%20stroke%3D%22%236EA8FE%22%20%20stroke-width%3D%222%22%20%20stroke-linecap%3D%22round%22%20%20stroke-linejoin%3D%22round%22%3E%20%20%3Cpath%20d%3D%22M17.5%2019H9a7%207%200%201%201%206.71-9h1.79a4.5%204.5%200%201%201%200%209Z%22%20%2F%3E%3C%2Fsvg%3E" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Infrastructure</h3>
+			<h3 align="center"><img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/icon-infrastructure.svg" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Infrastructure</h3>
 			<p align="center"><em>Runtime and delivery boundaries that keep systems deployable.</em></p>
 			<p>
 				<strong>Purpose:</strong> package, route, deploy and stabilize execution environments.<br/>
@@ -232,7 +232,7 @@ Architecture is not a stack decision. It is the composition logic that selects d
 			<p align="center"><sub>&#8627; expands into runtime topology, delivery paths and operational resilience.</sub></p>
 		</td>
 		<td width="33%" valign="top">
-			<h3 align="center"><img src="data:image/svg+xml,%3Csvg%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20width%3D%2218%22%20%20height%3D%2218%22%20%20viewBox%3D%220%200%2024%2024%22%20%20fill%3D%22none%22%20%20stroke%3D%22%236EA8FE%22%20%20stroke-width%3D%222%22%20%20stroke-linecap%3D%22round%22%20%20stroke-linejoin%3D%22round%22%3E%20%20%3Crect%20width%3D%228%22%20height%3D%228%22%20x%3D%223%22%20y%3D%223%22%20rx%3D%222%22%20%2F%3E%20%20%3Cpath%20d%3D%22M7%2011v4a2%202%200%200%200%202%202h4%22%20%2F%3E%20%20%3Crect%20width%3D%228%22%20height%3D%228%22%20x%3D%2213%22%20y%3D%2213%22%20rx%3D%222%22%20%2F%3E%3C%2Fsvg%3E" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Automation Systems</h3>
+			<h3 align="center"><img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/icon-automation-systems.svg" width="17" height="17" alt="" style="vertical-align:middle;" />&nbsp;Automation Systems</h3>
 			<p align="center"><em>Repeatable action layers that reduce manual operational friction.</em></p>
 			<p>
 				<strong>Purpose:</strong> convert intent into dependable flows across tools and services.<br/>

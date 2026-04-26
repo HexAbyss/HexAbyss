@@ -25,6 +25,7 @@ await fs.writeFile(path.join(mediaDir, "constellation-graph.svg"), buildConstell
 await fs.writeFile(path.join(mediaDir, "neural-pulse.svg"), buildNeuralPulseSvg(weeklyTotals, owner));
 await fs.writeFile(path.join(mediaDir, "architecture-radar.svg"), buildArchitectureRadarSvg(owner));
 await fs.writeFile(path.join(mediaDir, "top-languages.svg"), buildTopLanguagesSvg(languageStats, owner, hasUserToken));
+await writeDomainIcons(mediaDir);
 
 if (!skipReadmeUpdate) {
   const timelineMarkdown = buildTimelineMarkdown(repositories);
@@ -555,6 +556,70 @@ function buildFallbackLanguageStats() {
     { name: "Dockerfile", bytes: 4, percent: 4, color: getLanguageColor("Dockerfile") },
     { name: "Markdown", bytes: 3, percent: 3, color: getLanguageColor("Markdown") },
   ];
+}
+
+async function writeDomainIcons(targetDir) {
+  const icons = {
+    "icon-web-systems.svg": buildDomainIconSvg([
+      '<circle cx="12" cy="12" r="10" />',
+      '<path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />',
+      '<path d="M2 12h20" />',
+    ]),
+    "icon-low-level-systems.svg": buildDomainIconSvg([
+      '<path d="M12 20v2" />',
+      '<path d="M12 2v2" />',
+      '<path d="M17 20v2" />',
+      '<path d="M17 2v2" />',
+      '<path d="M2 12h2" />',
+      '<path d="M2 17h2" />',
+      '<path d="M2 7h2" />',
+      '<path d="M20 12h2" />',
+      '<path d="M20 17h2" />',
+      '<path d="M20 7h2" />',
+      '<path d="M7 20v2" />',
+      '<path d="M7 2v2" />',
+      '<rect x="4" y="4" width="16" height="16" rx="2" />',
+      '<rect x="8" y="8" width="8" height="8" rx="1" />',
+    ]),
+    "icon-intelligent-systems.svg": buildDomainIconSvg([
+      '<path d="M12 18V5" />',
+      '<path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4" />',
+      '<path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5" />',
+      '<path d="M17.997 5.125a4 4 0 0 1 2.526 5.77" />',
+      '<path d="M18 18a4 4 0 0 0 2-7.464" />',
+      '<path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517" />',
+      '<path d="M6 18a4 4 0 0 1-2-7.464" />',
+      '<path d="M6.003 5.125a4 4 0 0 0-2.526 5.77" />',
+    ]),
+    "icon-architecture.svg": buildDomainIconSvg([
+      '<path d="M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2" />',
+      '<rect x="14" y="2" width="8" height="8" rx="1" />',
+    ]),
+    "icon-data-layer.svg": buildDomainIconSvg([
+      '<ellipse cx="12" cy="5" rx="9" ry="3" />',
+      '<path d="M3 5V19A9 3 0 0 0 21 19V5" />',
+      '<path d="M3 12A9 3 0 0 0 21 12" />',
+    ]),
+    "icon-infrastructure.svg": buildDomainIconSvg([
+      '<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />',
+    ]),
+    "icon-automation-systems.svg": buildDomainIconSvg([
+      '<rect width="8" height="8" x="3" y="3" rx="2" />',
+      '<path d="M7 11v4a2 2 0 0 0 2 2h4" />',
+      '<rect width="8" height="8" x="13" y="13" rx="2" />',
+    ]),
+  };
+
+  await Promise.all(
+    Object.entries(icons).map(([fileName, content]) => fs.writeFile(path.join(targetDir, fileName), content)),
+  );
+}
+
+function buildDomainIconSvg(shapes) {
+  return `
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6EA8FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  ${shapes.join("\n  ")}
+</svg>`.trimStart();
 }
 
 function getLanguageColor(name) {
