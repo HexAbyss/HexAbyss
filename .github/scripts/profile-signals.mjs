@@ -25,8 +25,8 @@ await fs.writeFile(path.join(mediaDir, "constellation-graph.svg"), buildConstell
 await fs.writeFile(path.join(mediaDir, "neural-pulse.svg"), buildNeuralPulseSvg(weeklyTotals, owner));
 await fs.writeFile(path.join(mediaDir, "architecture-radar.svg"), buildArchitectureRadarSvg(owner));
 await fs.writeFile(path.join(mediaDir, "system-domains-map.svg"), buildSystemDomainsMapSvg(owner));
-await fs.writeFile(path.join(mediaDir, "system-domains-planets-legend.svg"), buildSystemDomainsPlanetLegendSvg());
 await fs.writeFile(path.join(mediaDir, "system-domains-moons-legend.svg"), buildSystemDomainsMoonLegendSvg());
+await fs.rm(path.join(mediaDir, "system-domains-planets-legend.svg"), { force: true });
 await fs.writeFile(path.join(mediaDir, "top-languages.svg"), buildTopLanguagesSvg(languageStats, owner, hasUserToken));
 
 if (!skipReadmeUpdate) {
@@ -427,7 +427,7 @@ function getSystemDomainsData() {
       short: "WS",
       title: "Web Systems",
       angle: 212,
-      duration: 76,
+      duration: 78,
       direction: 1,
       color: "#2F6FEB",
       planetRadius: 46,
@@ -445,14 +445,14 @@ function getSystemDomainsData() {
       short: "LLS",
       title: "Low-Level Systems",
       angle: 18,
-      duration: 76,
-      direction: -1,
+      duration: 81,
+      direction: 1,
       color: "#58A6FF",
       planetRadius: 47,
       orbitRadius: 290,
       moonOrbitRadius: 88,
       moonDuration: 16,
-      moonDirection: -1,
+      moonDirection: 1,
       moons: [
         { name: "Rust", icon: "rust" },
         { name: "C", icon: "c" },
@@ -463,7 +463,7 @@ function getSystemDomainsData() {
       short: "IS",
       title: "Intelligent Systems",
       angle: 270,
-      duration: 96,
+      duration: 84,
       direction: 1,
       color: "#6EA8FE",
       planetRadius: 47,
@@ -481,14 +481,14 @@ function getSystemDomainsData() {
       short: "Infra",
       title: "Infrastructure",
       angle: 98,
-      duration: 96,
-      direction: -1,
+      duration: 87,
+      direction: 1,
       color: "#9ECFFF",
       planetRadius: 47,
       orbitRadius: 430,
       moonOrbitRadius: 94,
       moonDuration: 17,
-      moonDirection: -1,
+      moonDirection: 1,
       moons: [
         { name: "Docker", icon: "docker" },
         { name: "Vercel", icon: "vercel" },
@@ -499,7 +499,7 @@ function getSystemDomainsData() {
       short: "AS",
       title: "Automation Systems",
       angle: 190,
-      duration: 124,
+      duration: 90,
       direction: 1,
       color: "#7AA2F7",
       planetRadius: 48,
@@ -517,14 +517,14 @@ function getSystemDomainsData() {
       short: "DL",
       title: "Data Layer",
       angle: 350,
-      duration: 124,
-      direction: -1,
+      duration: 93,
+      direction: 1,
       color: "#4F8FE8",
       planetRadius: 48,
       orbitRadius: 570,
       moonOrbitRadius: 102,
       moonDuration: 13,
-      moonDirection: -1,
+      moonDirection: 1,
       moons: [
         { name: "PostgreSQL", icon: "postgresql" },
         { name: "Prisma", icon: "prisma" },
@@ -582,73 +582,32 @@ function buildSystemDomainsMapSvg(login) {
 </svg>`.trimStart();
 }
 
-function buildSystemDomainsPlanetLegendSvg() {
-  const width = 1120;
-  const height = 280;
-  const domains = getSystemDomainsData();
-  const entries = [
-    { short: "Arch", title: "Architecture", color: "#F6D365" },
-    ...domains.map((domain) => ({ short: domain.short, title: domain.title, color: domain.color })),
-  ];
-  const stars = buildStarField("system-domains-planets-legend", width, height, 28);
-  const cards = entries.map((entry, index) => {
-    const column = index % 4;
-    const row = Math.floor(index / 4);
-    const x = 34 + column * 264;
-    const y = 96 + row * 92;
-    return `
-  <g transform="translate(${x} ${y})">
-    <rect width="238" height="68" rx="18" fill="#091522" fill-opacity="0.96" stroke="rgba(158,207,255,0.16)"/>
-    <circle cx="34" cy="34" r="20" fill="#0B1A2B" stroke="${entry.color}" stroke-width="1.5"/>
-    <text x="34" y="34.5" fill="#EAF4FF" font-size="12.5" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">${escapeXml(entry.short)}</text>
-    <text x="64" y="34.5" fill="#F0F6FC" font-size="15.5" font-family="Segoe UI, Arial, sans-serif" font-weight="600" dominant-baseline="middle">${escapeXml(entry.title)}</text>
-  </g>`;
-  }).join("\n");
-
-  return `
-<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="planetLegendBg" x1="0" y1="0" x2="1120" y2="280" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#07111D"/>
-      <stop offset="1" stop-color="#0D2238"/>
-    </linearGradient>
-  </defs>
-  <rect width="${width}" height="${height}" rx="28" fill="url(#planetLegendBg)"/>
-  <rect x="18" y="18" width="${width - 36}" height="${height - 36}" rx="20" stroke="rgba(158,207,255,0.14)"/>
-  ${stars}
-  <text x="34" y="56" fill="#F0F6FC" font-size="27" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Planet Legend</text>
-  <text x="34" y="80" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">Short labels stay inside the planets, and this panel expands them back to the full domain names.</text>
-  ${cards}
-</svg>`.trimStart();
-}
-
 function buildSystemDomainsMoonLegendSvg() {
   const width = 1160;
-  const height = 780;
+  const height = 920;
   const domains = getSystemDomainsData();
-  const stars = buildStarField("system-domains-moons-legend", width, height, 56);
+  const stars = buildStarField("system-domains-moons-legend", width, height, 64);
   const cards = domains.map((domain, index) => {
     const column = index % 2;
     const row = Math.floor(index / 2);
     const x = 32 + column * 566;
-    const y = 110 + row * 212;
+    const y = 110 + row * 252;
     const rows = domain.moons.map((moon, moonIndex) => {
-      const rowY = 84 + moonIndex * 38;
+      const rowY = 92 + moonIndex * 42;
       const branch = moonIndex === domain.moons.length - 1 ? "└─" : "├─";
-      const code = getMoonLegendCode(moon);
       return `
     <g transform="translate(26 ${rowY})">
       <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">${branch}</text>
-      ${buildSolarMoonBadge(moon, 54, 0, 16)}
-      <text x="84" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">(${escapeXml(code)}) ${escapeXml(moon.name)}</text>
+      ${buildSolarMoonBadge(moon, 60, 0, 17)}
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">${escapeXml(moon.name)}</text>
     </g>`;
     }).join("\n");
 
     return `
   <g transform="translate(${x} ${y})">
-    <rect width="530" height="178" rx="20" fill="#091522" fill-opacity="0.96" stroke="rgba(158,207,255,0.16)"/>
+    <rect width="530" height="214" rx="20" fill="#091522" fill-opacity="0.96" stroke="rgba(158,207,255,0.16)"/>
     <text x="26" y="40" fill="#F0F6FC" font-size="17" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">(${escapeXml(domain.short)}) ${escapeXml(domain.title)}</text>
-    <path d="M40 74v76" stroke="rgba(158,207,255,0.14)" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M40 80v100" stroke="rgba(158,207,255,0.14)" stroke-width="1.2" stroke-linecap="round"/>
     ${rows}
   </g>`;
   }).join("\n");
@@ -656,7 +615,7 @@ function buildSystemDomainsMoonLegendSvg() {
   return `
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="moonLegendBg" x1="0" y1="0" x2="1160" y2="780" gradientUnits="userSpaceOnUse">
+    <linearGradient id="moonLegendBg" x1="0" y1="0" x2="1160" y2="920" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#07111D"/>
       <stop offset="1" stop-color="#0F2741"/>
     </linearGradient>
@@ -695,9 +654,11 @@ function buildSolarPlanet(domain, center) {
             <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="${domain.moonDirection * 360} 0 0" dur="${domain.moonDuration}s" repeatCount="indefinite"/>
             <g transform="translate(${domain.moonOrbitRadius} 0)">
               ${buildSolarMoonTail(domain.moonDirection, getLanguageColor(moon.name))}
+              <g transform="rotate(${-angle})">
               <g>
                 <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="${domain.moonDirection * -360} 0 0" dur="${domain.moonDuration}s" repeatCount="indefinite"/>
                 ${buildSolarMoonBadge(moon, 0, 0, 18)}
+              </g>
               </g>
             </g>
           </g>
@@ -732,31 +693,6 @@ function buildSolarMoonTail(direction, color) {
     <path d="M 0 0 Q -1 ${tailMid} 0 ${tailEnd}" stroke="${color}" stroke-opacity="0.34" stroke-width="2.2" stroke-linecap="round" fill="none"/>
     <path d="M 0 0 Q -0.5 ${tailMid * 0.75} 0 ${tailEnd * 0.6}" stroke="${color}" stroke-opacity="0.7" stroke-width="1.2" stroke-linecap="round" fill="none"/>
   </g>`;
-}
-
-function getMoonLegendCode(moon) {
-  const codes = {
-    "Next.js": "N",
-    React: "R",
-    TypeScript: "TS",
-    Python: "PY",
-    OpenAI: "AI",
-    RAG: "RAG",
-    Rust: "R",
-    C: "C",
-    Linux: "LX",
-    Docker: "D",
-    Vercel: "V",
-    Hostinger: "H",
-    "GitHub Actions": "GA",
-    "Apps Script": "AS",
-    Webhooks: "WH",
-    PostgreSQL: "PG",
-    Prisma: "P",
-    SQL: "SQL",
-  };
-
-  return codes[moon.name] || moon.name.slice(0, 2).toUpperCase();
 }
 
 function buildSolarMoonBadge(moon, x, y, radius = 10.5) {
