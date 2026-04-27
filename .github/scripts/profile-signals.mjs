@@ -426,16 +426,15 @@ function getSystemDomainsData() {
     {
       short: "WS",
       title: "Web Systems",
-      orbitId: "planet-orbit-1",
       angle: 212,
       duration: 76,
+      direction: 1,
       color: "#2F6FEB",
       planetRadius: 46,
-      orbitRx: 240,
-      orbitRy: 150,
-      moonOrbitRx: 80,
-      moonOrbitRy: 54,
+      orbitRadius: 220,
+      moonOrbitRadius: 86,
       moonDuration: 18,
+      moonDirection: 1,
       moons: [
         { name: "Next.js", icon: "next" },
         { name: "React", icon: "react" },
@@ -445,16 +444,15 @@ function getSystemDomainsData() {
     {
       short: "LLS",
       title: "Low-Level Systems",
-      orbitId: "planet-orbit-1",
-      angle: 28,
+      angle: 18,
       duration: 76,
+      direction: -1,
       color: "#58A6FF",
       planetRadius: 47,
-      orbitRx: 240,
-      orbitRy: 150,
-      moonOrbitRx: 80,
-      moonOrbitRy: 54,
+      orbitRadius: 290,
+      moonOrbitRadius: 88,
       moonDuration: 16,
+      moonDirection: -1,
       moons: [
         { name: "Rust", icon: "rust" },
         { name: "C", icon: "c" },
@@ -464,16 +462,15 @@ function getSystemDomainsData() {
     {
       short: "IS",
       title: "Intelligent Systems",
-      orbitId: "planet-orbit-2",
       angle: 270,
       duration: 96,
+      direction: 1,
       color: "#6EA8FE",
       planetRadius: 47,
-      orbitRx: 360,
-      orbitRy: 245,
-      moonOrbitRx: 86,
-      moonOrbitRy: 58,
+      orbitRadius: 360,
+      moonOrbitRadius: 92,
       moonDuration: 15,
+      moonDirection: 1,
       moons: [
         { name: "Python", icon: "python" },
         { name: "OpenAI", icon: "openai" },
@@ -483,16 +480,15 @@ function getSystemDomainsData() {
     {
       short: "Infra",
       title: "Infrastructure",
-      orbitId: "planet-orbit-2",
-      angle: 90,
+      angle: 98,
       duration: 96,
+      direction: -1,
       color: "#9ECFFF",
       planetRadius: 47,
-      orbitRx: 360,
-      orbitRy: 245,
-      moonOrbitRx: 86,
-      moonOrbitRy: 58,
+      orbitRadius: 430,
+      moonOrbitRadius: 94,
       moonDuration: 17,
+      moonDirection: -1,
       moons: [
         { name: "Docker", icon: "docker" },
         { name: "Vercel", icon: "vercel" },
@@ -502,16 +498,15 @@ function getSystemDomainsData() {
     {
       short: "AS",
       title: "Automation Systems",
-      orbitId: "planet-orbit-3",
       angle: 190,
       duration: 124,
+      direction: 1,
       color: "#7AA2F7",
       planetRadius: 48,
-      orbitRx: 510,
-      orbitRy: 350,
-      moonOrbitRx: 92,
-      moonOrbitRy: 62,
+      orbitRadius: 500,
+      moonOrbitRadius: 98,
       moonDuration: 14,
+      moonDirection: 1,
       moons: [
         { name: "GitHub Actions", icon: "github-actions" },
         { name: "Apps Script", icon: "apps-script" },
@@ -521,16 +516,15 @@ function getSystemDomainsData() {
     {
       short: "DL",
       title: "Data Layer",
-      orbitId: "planet-orbit-3",
-      angle: 8,
+      angle: 350,
       duration: 124,
+      direction: -1,
       color: "#4F8FE8",
       planetRadius: 48,
-      orbitRx: 510,
-      orbitRy: 350,
-      moonOrbitRx: 92,
-      moonOrbitRy: 62,
+      orbitRadius: 570,
+      moonOrbitRadius: 102,
       moonDuration: 13,
+      moonDirection: -1,
       moons: [
         { name: "PostgreSQL", icon: "postgresql" },
         { name: "Prisma", icon: "prisma" },
@@ -541,25 +535,19 @@ function getSystemDomainsData() {
 }
 
 function buildSystemDomainsMapSvg(login) {
-  const width = 1360;
-  const height = 1120;
-  const center = { x: 680, y: 600 };
+  const width = 1640;
+  const height = 1560;
+  const center = { x: 820, y: 780 };
   const domains = getSystemDomainsData();
-  const orbitPairs = [
-    { id: "planet-orbit-1", rx: 240, ry: 150 },
-    { id: "planet-orbit-2", rx: 360, ry: 245 },
-    { id: "planet-orbit-3", rx: 510, ry: 350 },
-  ];
 
-  const stars = buildStarField(`${login}-system-domains-main`, width, height, 96);
-  const orbitDefs = orbitPairs.map((orbit) => `<path id="${orbit.id}" d="${buildAbsoluteEllipsePath(center.x, center.y, orbit.rx, orbit.ry)}"/>`).join("\n    ");
-  const orbitLines = orbitPairs.map((orbit) => `<use href="#${orbit.id}" fill="none" stroke="rgba(110,168,254,0.18)" stroke-width="1.5" stroke-dasharray="10 12"/>`).join("\n  ");
+  const stars = buildStarField(`${login}-system-domains-main`, width, height, 124);
+  const orbitLines = domains.map((domain) => `<circle cx="${center.x}" cy="${center.y}" r="${domain.orbitRadius}" fill="none" stroke="${domain.color}" stroke-opacity="0.22" stroke-width="1.45" stroke-dasharray="10 12"/>`).join("\n  ");
   const planets = domains.map((domain) => buildSolarPlanet(domain, center)).join("\n");
 
   return `
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="solarMainBg" x1="0" y1="0" x2="1360" y2="1120" gradientUnits="userSpaceOnUse">
+    <linearGradient id="solarMainBg" x1="0" y1="0" x2="1640" y2="1560" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#050D16"/>
       <stop offset="0.55" stop-color="#0A1A2C"/>
       <stop offset="1" stop-color="#122A45"/>
@@ -576,7 +564,6 @@ function buildSystemDomainsMapSvg(login) {
     <filter id="solarMainSoftGlow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="22"/>
     </filter>
-    ${orbitDefs}
   </defs>
   <rect width="${width}" height="${height}" rx="32" fill="url(#solarMainBg)"/>
   <rect x="20" y="20" width="${width - 40}" height="${height - 40}" rx="24" stroke="rgba(158,207,255,0.14)"/>
@@ -591,7 +578,7 @@ function buildSystemDomainsMapSvg(login) {
     <text x="${center.x}" y="${center.y + 2}" fill="#08203A" font-size="27" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">Arch</text>
   </g>
   ${planets}
-  <text x="44" y="1076" fill="#C9D1D9" font-size="13.5" font-family="Segoe UI, Arial, sans-serif">The solar map is isolated here to maximize readability for both the planet abbreviations and the moon symbols.</text>
+  <text x="44" y="1516" fill="#C9D1D9" font-size="13.5" font-family="Segoe UI, Arial, sans-serif">The solar map is isolated here to maximize readability for both the planet abbreviations and the moon symbols.</text>
 </svg>`.trimStart();
 }
 
@@ -698,26 +685,21 @@ function buildStarField(seedSource, width, height, count) {
   }).join("\n  ");
 }
 
-function buildAbsoluteEllipsePath(cx, cy, rx, ry) {
-  return `M ${cx + rx} ${cy} A ${rx} ${ry} 0 1 1 ${cx - rx} ${cy} A ${rx} ${ry} 0 1 1 ${cx + rx} ${cy}`;
-}
-
-function buildEllipsePath(rx, ry) {
-  return `M ${rx} 0 A ${rx} ${ry} 0 1 1 ${-rx} 0 A ${rx} ${ry} 0 1 1 ${rx} 0`;
-}
-
 function buildSolarPlanet(domain, center) {
-  const moonOrbitId = `moon-orbit-${domain.short.toLowerCase()}`;
   const moonAngleStep = 360 / domain.moons.length;
   const moons = domain.moons.map((moon, index) => {
     const angle = index * moonAngleStep;
     return `
         <g transform="rotate(${angle})">
           <g>
-            <animateMotion dur="${domain.moonDuration}s" repeatCount="indefinite" rotate="0">
-              <mpath href="#${moonOrbitId}"/>
-            </animateMotion>
-            ${buildSolarMoonBadge(moon, 0, 0, 15)}
+            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="${domain.moonDirection * 360} 0 0" dur="${domain.moonDuration}s" repeatCount="indefinite"/>
+            <g transform="translate(${domain.moonOrbitRadius} 0)">
+              ${buildSolarMoonTail(domain.moonDirection, getLanguageColor(moon.name))}
+              <g>
+                <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="${domain.moonDirection * -360} 0 0" dur="${domain.moonDuration}s" repeatCount="indefinite"/>
+                ${buildSolarMoonBadge(moon, 0, 0, 18)}
+              </g>
+            </g>
           </g>
         </g>`;
   }).join("\n");
@@ -725,21 +707,30 @@ function buildSolarPlanet(domain, center) {
   return `
   <g transform="translate(${center.x} ${center.y}) rotate(${domain.angle})">
     <g>
-      <animateMotion dur="${domain.duration}s" repeatCount="indefinite" rotate="0">
-        <mpath href="#${domain.orbitId}"/>
-      </animateMotion>
-      <g>
-        <defs>
-          <path id="${moonOrbitId}" d="${buildEllipsePath(domain.moonOrbitRx, domain.moonOrbitRy)}"/>
-        </defs>
-        <use href="#${moonOrbitId}" fill="none" stroke="rgba(158,207,255,0.16)" stroke-width="1.2" stroke-dasharray="6 7"/>
-        ${moons}
-        <circle cx="0" cy="0" r="${domain.planetRadius + 22}" fill="${domain.color}" opacity="0.08" filter="url(#solarMainSoftGlow)"/>
-        <circle cx="0" cy="0" r="${domain.planetRadius}" fill="#091522" stroke="${domain.color}" stroke-width="2.1"/>
-        <circle cx="-${Math.round(domain.planetRadius * 0.32)}" cy="-${Math.round(domain.planetRadius * 0.38)}" r="${Math.max(5, Math.round(domain.planetRadius * 0.22))}" fill="#FFFFFF" opacity="0.08"/>
-        <text x="0" y="1.5" fill="#F0F6FC" font-size="${domain.short.length > 3 ? 14 : 16}" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">${escapeXml(domain.short)}</text>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="${domain.direction * 360} 0 0" dur="${domain.duration}s" repeatCount="indefinite"/>
+      <g transform="translate(${domain.orbitRadius} 0)">
+        <g transform="rotate(${-domain.angle})">
+        <g>
+          <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="${domain.direction * -360} 0 0" dur="${domain.duration}s" repeatCount="indefinite"/>
+          ${moons}
+          <circle cx="0" cy="0" r="${domain.planetRadius + 22}" fill="${domain.color}" opacity="0.08" filter="url(#solarMainSoftGlow)"/>
+          <circle cx="0" cy="0" r="${domain.planetRadius}" fill="#091522" stroke="${domain.color}" stroke-width="2.1"/>
+          <circle cx="-${Math.round(domain.planetRadius * 0.32)}" cy="-${Math.round(domain.planetRadius * 0.38)}" r="${Math.max(5, Math.round(domain.planetRadius * 0.22))}" fill="#FFFFFF" opacity="0.08"/>
+          <text x="0" y="1.5" fill="#F0F6FC" font-size="${domain.short.length > 3 ? 14 : 16}" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">${escapeXml(domain.short)}</text>
+        </g>
+        </g>
       </g>
     </g>
+  </g>`;
+}
+
+function buildSolarMoonTail(direction, color) {
+  const tailEnd = direction > 0 ? -32 : 32;
+  const tailMid = direction > 0 ? -18 : 18;
+  return `
+  <g opacity="0.8">
+    <path d="M 0 0 Q -1 ${tailMid} 0 ${tailEnd}" stroke="${color}" stroke-opacity="0.34" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M 0 0 Q -0.5 ${tailMid * 0.75} 0 ${tailEnd * 0.6}" stroke="${color}" stroke-opacity="0.7" stroke-width="1.2" stroke-linecap="round" fill="none"/>
   </g>`;
 }
 
