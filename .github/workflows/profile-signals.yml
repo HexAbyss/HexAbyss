@@ -1,5 +1,9 @@
 name: Profile Signals
 
+concurrency:
+  group: profile-signals
+  cancel-in-progress: true
+
 on:
   push:
     branches:
@@ -8,11 +12,8 @@ on:
     paths-ignore:
       - media/**
   schedule:
-    - cron: "15 * * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
-  repository_dispatch:
-    types:
-      - profile-refresh
 
 permissions:
   contents: write
