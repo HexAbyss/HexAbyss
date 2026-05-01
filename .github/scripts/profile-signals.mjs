@@ -11,12 +11,13 @@ const outputDir = process.env.PROFILE_SIGNAL_OUTPUT_DIR
 const skipReadmeUpdate = process.env.PROFILE_SIGNAL_SKIP_README_UPDATE === "true";
 const mediaDir = path.join(outputDir, "media");
 const readmePath = path.join(rootDir, "README.md");
+const languageScope = (process.env.PROFILE_LANGUAGE_SCOPE || "all").toLowerCase();
 
 await fs.mkdir(mediaDir, { recursive: true });
 
 const contributionDays = await getContributionDays(owner, token);
 const repositories = await getRepositories(owner, token, hasUserToken);
-const languageStats = await getLanguageStats(owner, token, hasUserToken);
+const languageStats = await getLanguageStats(owner, token, hasUserToken, languageScope);
 
 const latest84Days = normalizeContributionDays(contributionDays).slice(-84);
 const weeklyTotals = buildWeeklyTotals(latest84Days, 12);
@@ -27,7 +28,7 @@ await fs.writeFile(path.join(mediaDir, "architecture-radar.svg"), buildArchitect
 await fs.writeFile(path.join(mediaDir, "system-domains-map.svg"), buildSystemDomainsMapSvg(owner));
 await fs.writeFile(path.join(mediaDir, "system-domains-moons-legend.svg"), buildSystemDomainsMoonLegendSvg());
 await fs.rm(path.join(mediaDir, "system-domains-planets-legend.svg"), { force: true });
-await fs.writeFile(path.join(mediaDir, "top-languages.svg"), buildTopLanguagesSvg(languageStats, owner, hasUserToken));
+await fs.writeFile(path.join(mediaDir, "top-languages.svg"), buildTopLanguagesSvg(languageStats, owner, languageScope));
 
 if (!skipReadmeUpdate) {
   const timelineMarkdown = buildTimelineMarkdown(repositories);
@@ -116,7 +117,8 @@ async function getRepositories(login, authToken, useAuthenticatedUserEndpoint) {
   }
 }
 
-async function getLanguageStats(login, authToken, useAuthenticatedUserEndpoint) {
+async function getLanguageStats(login, authToken, useAuthenticatedUserEndpoint, languageScope = "all") {
+  const requestedScope = ["public", "private", "all"].includes(languageScope) ? languageScope : "all";
   const headers = {
     Accept: "application/vnd.github+json",
     "User-Agent": "profile-signals",
@@ -127,9 +129,9 @@ async function getLanguageStats(login, authToken, useAuthenticatedUserEndpoint) 
   }
 
   try {
-    const repoEndpoint = useAuthenticatedUserEndpoint
-      ? "https://api.github.com/user/repos?affiliation=owner&sort=updated&per_page=100"
-      : `https://api.github.com/users/${login}/repos?sort=updated&per_page=100&type=owner`;
+    const publicEndpoint = `https://api.github.com/users/${login}/repos?sort=updated&per_page=100&type=owner`;
+    const authenticatedEndpoint = "https://api.github.com/user/repos?affiliation=owner&sort=updated&per_page=100";
+    const repoEndpoint = requestedScope === "public" || !authToken ? publicEndpoint : authenticatedEndpoint;
 
     const repoResponse = await fetch(repoEndpoint, { headers });
     if (!repoResponse.ok) {
@@ -137,7 +139,14 @@ async function getLanguageStats(login, authToken, useAuthenticatedUserEndpoint) 
     }
 
     const repos = await repoResponse.json();
-    const filteredRepos = repos.filter((repo) => !repo.fork);
+    let filteredRepos = repos.filter((repo) => !repo.fork);
+
+    if (requestedScope === "public") {
+      filteredRepos = filteredRepos.filter((repo) => !repo.private);
+    } else if (requestedScope === "private") {
+      filteredRepos = filteredRepos.filter((repo) => repo.private);
+    }
+
     const totals = new Map();
 
     for (const repo of filteredRepos) {
@@ -810,7 +819,7 @@ function buildSolarMoonIcon(icon, color) {
   }
 }
 
-function buildTopLanguagesSvg(languageStats, login, includesPrivateRepos) {
+function buildTopLanguagesSvg(languageStats, login, languageScope) {
   const width = 540;
   const height = 170;
   const cardX = 10;
@@ -818,7 +827,13 @@ function buildTopLanguagesSvg(languageStats, login, includesPrivateRepos) {
   const cardWidth = 520;
   const cardHeight = 154;
   const barX = 24;
-  const barY = 48;
+  const barY = 58;
+  const scopeLabel =
+    languageScope === "private"
+      ? "Private repositories"
+      : languageScope === "public"
+      ? "Public repositories"
+      : "All repositories";
   const barWidth = 492;
   const barHeight = 10;
   const visibleStats = languageStats.slice(0, 9);
@@ -859,6 +874,7 @@ function buildTopLanguagesSvg(languageStats, login, includesPrivateRepos) {
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect x="${cardX}" y="${cardY}" width="${cardWidth}" height="${cardHeight}" rx="8" fill="#0D1117"/>
   <text x="24" y="29" fill="#F0F6FC" font-size="14" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Languages</text>
+  <text x="24" y="47" fill="#8B949E" font-size="11" font-family="Segoe UI, Arial, sans-serif" font-weight="600">${scopeLabel}</text>
   <rect x="${barX}" y="${barY}" width="${barWidth}" height="${barHeight}" rx="4" fill="#21262D"/>
   <clipPath id="langBarClip">
     <rect x="${barX}" y="${barY}" width="${barWidth}" height="${barHeight}" rx="4"/>
