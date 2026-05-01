@@ -39,6 +39,7 @@ jobs:
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           PROFILE_SIGNAL_OUTPUT_DIR: ${{ github.workspace }}/output-branch
           PROFILE_SIGNAL_SKIP_README_UPDATE: "true"
+          PROFILE_LANGUAGE_SCOPE: ${{ vars.PROFILE_LANGUAGE_SCOPE || secrets.PROFILE_LANGUAGE_SCOPE || 'all' }}
         run: node .github/scripts/profile-signals.mjs
 
       - name: Commit signal updates to output branch
