@@ -1,0 +1,383 @@
+<svg width="1160" height="920" viewBox="0 0 1160 920" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="moonLegendBg" x1="0" y1="0" x2="1160" y2="920" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#07111D"/>
+      <stop offset="1" stop-color="#0F2741"/>
+    </linearGradient>
+  </defs>
+  <rect width="1160" height="920" rx="28" fill="url(#moonLegendBg)"/>
+  <rect x="18" y="18" width="1124" height="884" rx="20" stroke="rgba(158,207,255,0.14)"/>
+  <circle cx="464.18" cy="58.83" r="0.97" fill="#A7D4FF" opacity="0.41"/>
+  <circle cx="262.72" cy="529.31" r="1.74" fill="#A7D4FF" opacity="0.43"/>
+  <circle cx="835.56" cy="754.45" r="1.89" fill="#A7D4FF" opacity="0.42"/>
+  <circle cx="1127.36" cy="455.03" r="1.19" fill="#A7D4FF" opacity="0.17"/>
+  <circle cx="427.61" cy="72.35" r="1.36" fill="#A7D4FF" opacity="0.34"/>
+  <circle cx="1109.71" cy="759.81" r="1.49" fill="#A7D4FF" opacity="0.18"/>
+  <circle cx="524.81" cy="635.24" r="2.05" fill="#A7D4FF" opacity="0.47"/>
+  <circle cx="215.19" cy="605.64" r="2.07" fill="#A7D4FF" opacity="0.40"/>
+  <circle cx="842.26" cy="157.92" r="1.54" fill="#A7D4FF" opacity="0.30"/>
+  <circle cx="429.78" cy="351.43" r="1.81" fill="#A7D4FF" opacity="0.38"/>
+  <circle cx="457.43" cy="73.59" r="2.44" fill="#A7D4FF" opacity="0.26"/>
+  <circle cx="153.47" cy="614.62" r="0.85" fill="#A7D4FF" opacity="0.41"/>
+  <circle cx="757.35" cy="698.67" r="1.37" fill="#A7D4FF" opacity="0.21"/>
+  <circle cx="657.28" cy="79.20" r="1.16" fill="#A7D4FF" opacity="0.48"/>
+  <circle cx="393.39" cy="376.13" r="2.06" fill="#A7D4FF" opacity="0.20"/>
+  <circle cx="99.72" cy="770.35" r="2.29" fill="#A7D4FF" opacity="0.42"/>
+  <circle cx="35.46" cy="341.35" r="1.82" fill="#A7D4FF" opacity="0.48"/>
+  <circle cx="678.79" cy="739.46" r="1.28" fill="#A7D4FF" opacity="0.32"/>
+  <circle cx="245.77" cy="486.41" r="2.19" fill="#A7D4FF" opacity="0.40"/>
+  <circle cx="1119.46" cy="319.75" r="2.09" fill="#A7D4FF" opacity="0.35"/>
+  <circle cx="256.03" cy="846.92" r="1.93" fill="#A7D4FF" opacity="0.32"/>
+  <circle cx="72.66" cy="152.33" r="2.30" fill="#A7D4FF" opacity="0.17"/>
+  <circle cx="984.24" cy="91.38" r="1.56" fill="#A7D4FF" opacity="0.24"/>
+  <circle cx="417.73" cy="574.77" r="1.85" fill="#A7D4FF" opacity="0.21"/>
+  <circle cx="58.88" cy="604.97" r="1.15" fill="#A7D4FF" opacity="0.24"/>
+  <circle cx="1124.45" cy="628.21" r="1.60" fill="#A7D4FF" opacity="0.40"/>
+  <circle cx="1090.63" cy="111.91" r="2.31" fill="#A7D4FF" opacity="0.25"/>
+  <circle cx="26.52" cy="170.90" r="2.46" fill="#A7D4FF" opacity="0.44"/>
+  <circle cx="495.67" cy="356.27" r="1.74" fill="#A7D4FF" opacity="0.23"/>
+  <circle cx="834.50" cy="738.31" r="1.48" fill="#A7D4FF" opacity="0.40"/>
+  <circle cx="798.36" cy="577.29" r="1.56" fill="#A7D4FF" opacity="0.30"/>
+  <circle cx="1036.34" cy="789.67" r="1.06" fill="#A7D4FF" opacity="0.21"/>
+  <circle cx="373.47" cy="195.25" r="2.13" fill="#A7D4FF" opacity="0.23"/>
+  <circle cx="717.35" cy="165.10" r="0.77" fill="#A7D4FF" opacity="0.42"/>
+  <circle cx="771.96" cy="243.73" r="0.95" fill="#A7D4FF" opacity="0.38"/>
+  <circle cx="51.68" cy="673.14" r="2.36" fill="#A7D4FF" opacity="0.24"/>
+  <circle cx="494.18" cy="60.50" r="1.03" fill="#A7D4FF" opacity="0.45"/>
+  <circle cx="1033.31" cy="192.87" r="0.80" fill="#A7D4FF" opacity="0.15"/>
+  <circle cx="786.61" cy="572.82" r="1.85" fill="#A7D4FF" opacity="0.20"/>
+  <circle cx="102.53" cy="346.43" r="1.27" fill="#A7D4FF" opacity="0.36"/>
+  <circle cx="110.09" cy="225.28" r="1.67" fill="#A7D4FF" opacity="0.33"/>
+  <circle cx="579.93" cy="710.18" r="2.33" fill="#A7D4FF" opacity="0.18"/>
+  <circle cx="631.57" cy="118.11" r="2.26" fill="#A7D4FF" opacity="0.36"/>
+  <circle cx="427.87" cy="492.19" r="1.41" fill="#A7D4FF" opacity="0.21"/>
+  <circle cx="51.34" cy="44.02" r="1.50" fill="#A7D4FF" opacity="0.36"/>
+  <circle cx="931.48" cy="700.38" r="0.73" fill="#A7D4FF" opacity="0.23"/>
+  <circle cx="1013.75" cy="247.53" r="1.02" fill="#A7D4FF" opacity="0.19"/>
+  <circle cx="715.16" cy="697.09" r="1.30" fill="#A7D4FF" opacity="0.39"/>
+  <circle cx="293.45" cy="186.80" r="1.78" fill="#A7D4FF" opacity="0.30"/>
+  <circle cx="670.51" cy="476.12" r="0.95" fill="#A7D4FF" opacity="0.23"/>
+  <circle cx="1125.14" cy="401.95" r="1.96" fill="#A7D4FF" opacity="0.26"/>
+  <circle cx="891.87" cy="814.36" r="2.09" fill="#A7D4FF" opacity="0.27"/>
+  <circle cx="860.80" cy="513.88" r="0.93" fill="#A7D4FF" opacity="0.30"/>
+  <circle cx="739.28" cy="425.83" r="1.86" fill="#A7D4FF" opacity="0.37"/>
+  <circle cx="658.39" cy="329.62" r="1.85" fill="#A7D4FF" opacity="0.29"/>
+  <circle cx="916.96" cy="582.28" r="0.98" fill="#A7D4FF" opacity="0.23"/>
+  <circle cx="506.14" cy="566.15" r="2.33" fill="#A7D4FF" opacity="0.19"/>
+  <circle cx="895.31" cy="632.24" r="2.25" fill="#A7D4FF" opacity="0.37"/>
+  <circle cx="710.24" cy="576.74" r="1.79" fill="#A7D4FF" opacity="0.21"/>
+  <circle cx="572.38" cy="114.63" r="0.71" fill="#A7D4FF" opacity="0.18"/>
+  <circle cx="950.09" cy="55.72" r="2.22" fill="#A7D4FF" opacity="0.20"/>
+  <circle cx="614.85" cy="490.84" r="1.33" fill="#A7D4FF" opacity="0.29"/>
+  <circle cx="237.05" cy="361.89" r="2.32" fill="#A7D4FF" opacity="0.22"/>
+  <circle cx="366.55" cy="391.27" r="1.20" fill="#A7D4FF" opacity="0.35"/>
+  <text x="34" y="56" fill="#F0F6FC" font-size="27" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Moon Legend</text>
+  <text x="34" y="80" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">The moons keep only the symbols in the solar map, and this panel decodes each symbol back to its technology in a tree layout.</text>
+  
+  <g transform="translate(32 110)">
+    <rect width="530" height="214" rx="20" fill="#091522" fill-opacity="0.96" stroke="rgba(158,207,255,0.16)"/>
+    <text x="26" y="40" fill="#F0F6FC" font-size="17" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">(WS) Web Systems</text>
+    <path d="M40 80v100" stroke="rgba(158,207,255,0.14)" stroke-width="1.2" stroke-linecap="round"/>
+    
+    <g transform="translate(26 92)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">├─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#F0F6FC" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      <text x="0" y="0.5" fill="#F0F6FC" font-size="9.5" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">N</text>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">Next.js</text>
+    </g>
+
+    <g transform="translate(26 134)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">├─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#61DAFB" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      
+    <g stroke="#61DAFB" stroke-width="1" fill="none">
+      <ellipse cx="0" cy="0" rx="5.8" ry="2.4"/>
+      <ellipse cx="0" cy="0" rx="5.8" ry="2.4" transform="rotate(60)"/>
+      <ellipse cx="0" cy="0" rx="5.8" ry="2.4" transform="rotate(120)"/>
+    </g>
+    <circle cx="0" cy="0" r="1.4" fill="#61DAFB"/>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">React</text>
+    </g>
+
+    <g transform="translate(26 176)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">└─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#3178c6" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      
+    <rect x="-5" y="-5" width="10" height="10" rx="2" fill="none" stroke="#3178c6" stroke-width="1"/>
+    <text x="0" y="0.4" fill="#3178c6" font-size="4.5" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">TS</text>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">TypeScript</text>
+    </g>
+  </g>
+
+  <g transform="translate(598 110)">
+    <rect width="530" height="214" rx="20" fill="#091522" fill-opacity="0.96" stroke="rgba(158,207,255,0.16)"/>
+    <text x="26" y="40" fill="#F0F6FC" font-size="17" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">(LLS) Low-Level Systems</text>
+    <path d="M40 80v100" stroke="rgba(158,207,255,0.14)" stroke-width="1.2" stroke-linecap="round"/>
+    
+    <g transform="translate(26 92)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">├─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#dea584" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      
+    <circle cx="0" cy="0" r="4.8" fill="none" stroke="#dea584" stroke-width="1" stroke-dasharray="1.2 2.2"/>
+    <text x="0" y="0.5" fill="#dea584" font-size="6.4" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">R</text>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">Rust</text>
+    </g>
+
+    <g transform="translate(26 134)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">├─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#555555" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      <text x="0" y="0.5" fill="#555555" font-size="8.6" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">C</text>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">C</text>
+    </g>
+
+    <g transform="translate(26 176)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">└─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#FCC624" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      
+    <rect x="-5.5" y="-4" width="11" height="8" rx="1.8" fill="none" stroke="#FCC624" stroke-width="1"/>
+    <path d="M-2.8 1.8l1.4-1.4-1.4-1.4" stroke="#FCC624" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M1 2.2h3.2" stroke="#FCC624" stroke-width="1" stroke-linecap="round"/>
+    <path d="M-3.8 -5.3h7.6" stroke="#FCC624" stroke-width="1" stroke-linecap="round"/>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">Linux</text>
+    </g>
+  </g>
+
+  <g transform="translate(32 362)">
+    <rect width="530" height="214" rx="20" fill="#091522" fill-opacity="0.96" stroke="rgba(158,207,255,0.16)"/>
+    <text x="26" y="40" fill="#F0F6FC" font-size="17" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">(IS) Intelligent Systems</text>
+    <path d="M40 80v100" stroke="rgba(158,207,255,0.14)" stroke-width="1.2" stroke-linecap="round"/>
+    
+    <g transform="translate(26 92)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">├─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#3572A5" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      
+    <path d="M-4.8 -1.8c0-2.1 1.2-3.4 3.4-3.4h2.8c1.9 0 3 1.2 3 2.8v2.3H-1c-1.8 0-3 1.2-3 3v2.1h-1.6c-1.8 0-3.2-1.2-3.2-3.1Z" fill="#4B8BBE"/>
+    <circle cx="1.2" cy="-3.1" r="0.75" fill="#EAF4FF"/>
+    <path d="M4.8 1.8c0 2.1-1.2 3.4-3.4 3.4h-2.8c-1.9 0-3-1.2-3-2.8V.1H1c1.8 0 3-1.2 3-3v-2.1h1.6c1.8 0 3.2 1.2 3.2 3.1Z" fill="#FFD43B"/>
+    <circle cx="-1.2" cy="3.1" r="0.75" fill="#08203A"/>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">Python</text>
+    </g>
+
+    <g transform="translate(26 134)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">├─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#DCEBFF" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      <circle cx="4.10" cy="0.00" r="1.85" fill="none" stroke="#DCEBFF" stroke-width="1"/><circle cx="2.05" cy="3.55" r="1.85" fill="none" stroke="#DCEBFF" stroke-width="1"/><circle cx="-2.05" cy="3.55" r="1.85" fill="none" stroke="#DCEBFF" stroke-width="1"/><circle cx="-4.10" cy="0.00" r="1.85" fill="none" stroke="#DCEBFF" stroke-width="1"/><circle cx="-2.05" cy="-3.55" r="1.85" fill="none" stroke="#DCEBFF" stroke-width="1"/><circle cx="2.05" cy="-3.55" r="1.85" fill="none" stroke="#DCEBFF" stroke-width="1"/>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">OpenAI</text>
+    </g>
+
+    <g transform="translate(26 176)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">└─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#7AA2F7" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      
+    <rect x="-4.6" y="-4.2" width="7.8" height="2.3" rx="1.1" fill="none" stroke="#7AA2F7" stroke-width="1"/>
+    <rect x="-2.8" y="-0.9" width="7.8" height="2.3" rx="1.1" fill="none" stroke="#7AA2F7" stroke-width="1"/>
+    <rect x="-4.6" y="2.4" width="7.8" height="2.3" rx="1.1" fill="none" stroke="#7AA2F7" stroke-width="1"/>
+    <circle cx="-5.6" cy="-3.1" r="1" fill="#7AA2F7"/>
+    <circle cx="5.6" cy="0.2" r="1" fill="#7AA2F7"/>
+    <circle cx="-5.6" cy="3.5" r="1" fill="#7AA2F7"/>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">RAG</text>
+    </g>
+  </g>
+
+  <g transform="translate(598 362)">
+    <rect width="530" height="214" rx="20" fill="#091522" fill-opacity="0.96" stroke="rgba(158,207,255,0.16)"/>
+    <text x="26" y="40" fill="#F0F6FC" font-size="17" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">(Infra) Infrastructure</text>
+    <path d="M40 80v100" stroke="rgba(158,207,255,0.14)" stroke-width="1.2" stroke-linecap="round"/>
+    
+    <g transform="translate(26 92)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">├─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#2496ED" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      
+    <rect x="-5.5" y="-3.8" width="2.5" height="2.5" rx="0.4" fill="#2496ED"/>
+    <rect x="-2.2" y="-3.8" width="2.5" height="2.5" rx="0.4" fill="#2496ED"/>
+    <rect x="1.1" y="-3.8" width="2.5" height="2.5" rx="0.4" fill="#2496ED"/>
+    <rect x="-2.2" y="-0.5" width="2.5" height="2.5" rx="0.4" fill="#2496ED"/>
+    <rect x="1.1" y="-0.5" width="2.5" height="2.5" rx="0.4" fill="#2496ED"/>
+    <path d="M-6 3.2h10.4c1.6 0 2.2-1.2 1.6-2.2-.5-.8-1.3-1.2-2.5-1.2H-2" stroke="#2496ED" stroke-width="1" stroke-linecap="round" fill="none"/>
+    <circle cx="6" cy="2.3" r="0.8" fill="#2496ED"/>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">Docker</text>
+    </g>
+
+    <g transform="translate(26 134)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">├─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#F0F6FC" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      <path d="M0 -5.5 5 3.8h-10Z" fill="#F0F6FC"/>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">Vercel</text>
+    </g>
+
+    <g transform="translate(26 176)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">└─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#7F56D9" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      
+    <rect x="-4.8" y="-5" width="2.4" height="10" rx="0.8" fill="#7F56D9"/>
+    <rect x="1.4" y="-5" width="2.4" height="10" rx="0.8" fill="#7F56D9"/>
+    <rect x="-2" y="-1" width="3.8" height="2" rx="0.8" fill="#7F56D9"/>
+    <rect x="-0.3" y="-5" width="1.6" height="10" rx="0.8" fill="#07111D" opacity="0.55"/>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">Hostinger</text>
+    </g>
+  </g>
+
+  <g transform="translate(32 614)">
+    <rect width="530" height="214" rx="20" fill="#091522" fill-opacity="0.96" stroke="rgba(158,207,255,0.16)"/>
+    <text x="26" y="40" fill="#F0F6FC" font-size="17" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">(AS) Automation Systems</text>
+    <path d="M40 80v100" stroke="rgba(158,207,255,0.14)" stroke-width="1.2" stroke-linecap="round"/>
+    
+    <g transform="translate(26 92)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">├─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#2088FF" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      
+    <circle cx="-3.6" cy="-2.8" r="1.5" fill="none" stroke="#2088FF" stroke-width="1"/>
+    <circle cx="3.6" cy="0" r="1.5" fill="none" stroke="#2088FF" stroke-width="1"/>
+    <circle cx="-1.2" cy="3.5" r="1.5" fill="none" stroke="#2088FF" stroke-width="1"/>
+    <path d="M-2.4 -1.9 2 .4M-2.4 -1.8-.1 2.3" stroke="#2088FF" stroke-width="1" stroke-linecap="round" fill="none"/>
+    <path d="M1.3 -3.9h3.3v3.3" stroke="#2088FF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">GitHub Actions</text>
+    </g>
+
+    <g transform="translate(26 134)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">├─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#34A853" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      
+    <path d="M-4.8-4.8h6.5l3.1 3.1V4.8H-4.8Z" fill="none" stroke="#34A853" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M1.7-4.8v3.1h3.1" fill="none" stroke="#34A853" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M-2.3-.6 0-2.6 2.3-.6" stroke="#34A853" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M-2.3 1.8 0 3.8 2.3 1.8" stroke="#34A853" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">Apps Script</text>
+    </g>
+
+    <g transform="translate(26 176)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">└─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#58A6FF" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      
+    <circle cx="-3.8" cy="-2.8" r="1.4" fill="none" stroke="#58A6FF" stroke-width="1"/>
+    <circle cx="3.8" cy="-1.2" r="1.4" fill="none" stroke="#58A6FF" stroke-width="1"/>
+    <circle cx="0.2" cy="3.6" r="1.4" fill="none" stroke="#58A6FF" stroke-width="1"/>
+    <path d="M-2.4 -2.3h4.4M-.7 -1.6v4" stroke="#58A6FF" stroke-width="1" stroke-linecap="round" fill="none"/>
+    <path d="M1.2 2.6 2.9-.1" stroke="#58A6FF" stroke-width="1" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">Webhooks</text>
+    </g>
+  </g>
+
+  <g transform="translate(598 614)">
+    <rect width="530" height="214" rx="20" fill="#091522" fill-opacity="0.96" stroke="rgba(158,207,255,0.16)"/>
+    <text x="26" y="40" fill="#F0F6FC" font-size="17" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">(DL) Data Layer</text>
+    <path d="M40 80v100" stroke="rgba(158,207,255,0.14)" stroke-width="1.2" stroke-linecap="round"/>
+    
+    <g transform="translate(26 92)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">├─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#336791" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      
+    <ellipse cx="0" cy="-3.4" rx="4.6" ry="1.8" fill="none" stroke="#336791" stroke-width="1"/>
+    <path d="M-4.6-3.4v5.8c0 1 2.1 1.8 4.6 1.8s4.6-.8 4.6-1.8v-5.8" fill="none" stroke="#336791" stroke-width="1"/>
+    <path d="M-4.6-.4c0 1 2.1 1.8 4.6 1.8S4.6.6 4.6-.4" fill="none" stroke="#336791" stroke-width="1"/>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">PostgreSQL</text>
+    </g>
+
+    <g transform="translate(26 134)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">├─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#5a67d8" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      <path d="M-3.2 4.8 0-5l4.2 7.6Z" fill="none" stroke="#5a67d8" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">Prisma</text>
+    </g>
+
+    <g transform="translate(26 176)">
+      <text x="0" y="0.5" fill="#9ECFFF" font-size="18" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" dominant-baseline="middle">└─</text>
+      
+  <g transform="translate(60 0)">
+    <circle cx="0" cy="0" r="17" fill="#07111D" stroke="#9ECFFF" stroke-width="1.2"/>
+    <g transform="scale(1.619)">
+      
+    <ellipse cx="0" cy="-2.7" rx="4.6" ry="1.8" fill="none" stroke="#9ECFFF" stroke-width="1"/>
+    <path d="M-4.6-2.7v4.7c0 1 2.1 1.8 4.6 1.8s4.6-.8 4.6-1.8v-4.7" fill="none" stroke="#9ECFFF" stroke-width="1"/>
+    <text x="0" y="1.2" fill="#9ECFFF" font-size="3.8" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle" dominant-baseline="middle">SQL</text>
+    </g>
+  </g>
+      <text x="92" y="0.5" fill="#DCEBFF" font-size="15" font-family="JetBrains Mono, Consolas, monospace" font-weight="600" dominant-baseline="middle">SQL</text>
+    </g>
+  </g>
+</svg>

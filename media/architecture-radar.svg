@@ -1,0 +1,43 @@
+<svg width="620" height="620" viewBox="0 0 620 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="radarBg" x1="0" y1="0" x2="620" y2="620" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#08101A"/>
+      <stop offset="1" stop-color="#102A43"/>
+    </linearGradient>
+    <linearGradient id="radarFill" x1="120" y1="80" x2="500" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6EA8FE" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#2F6FEB" stop-opacity="0.18"/>
+    </linearGradient>
+    <filter id="radarGlow">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+  <rect width="620" height="620" rx="28" fill="url(#radarBg)"/>
+  <text x="42" y="52" fill="#E6F1FF" font-size="26" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Architecture Radar</text>
+  <text x="42" y="72" fill="#9ECFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif">Current engineering profile shape for HexAbyss</text>
+  <polygon points="310.00,282.40 344.29,302.20 344.29,341.80 310.00,361.60 275.71,341.80 275.71,302.20" fill="none" stroke="rgba(110,168,254,0.136)" stroke-width="1"/>
+<polygon points="310.00,242.80 378.59,282.40 378.59,361.60 310.00,401.20 241.41,361.60 241.41,282.40" fill="none" stroke="rgba(110,168,254,0.172)" stroke-width="1"/>
+<polygon points="310.00,203.20 412.88,262.60 412.88,381.40 310.00,440.80 207.12,381.40 207.12,262.60" fill="none" stroke="rgba(110,168,254,0.20800000000000002)" stroke-width="1"/>
+<polygon points="310.00,163.60 447.18,242.80 447.18,401.20 310.00,480.40 172.82,401.20 172.82,242.80" fill="none" stroke="rgba(110,168,254,0.244)" stroke-width="1"/>
+<polygon points="310.00,124.00 481.47,223.00 481.47,421.00 310.00,520.00 138.53,421.00 138.53,223.00" fill="none" stroke="rgba(110,168,254,0.28)" stroke-width="1"/>
+  <line x1="310" y1="322" x2="310.00" y2="124.00" stroke="rgba(110,168,254,0.24)" stroke-width="1"/>
+<line x1="310" y1="322" x2="481.47" y2="223.00" stroke="rgba(110,168,254,0.24)" stroke-width="1"/>
+<line x1="310" y1="322" x2="481.47" y2="421.00" stroke="rgba(110,168,254,0.24)" stroke-width="1"/>
+<line x1="310" y1="322" x2="310.00" y2="520.00" stroke="rgba(110,168,254,0.24)" stroke-width="1"/>
+<line x1="310" y1="322" x2="138.53" y2="421.00" stroke="rgba(110,168,254,0.24)" stroke-width="1"/>
+<line x1="310" y1="322" x2="138.53" y2="223.00" stroke="rgba(110,168,254,0.24)" stroke-width="1"/>
+  <polygon points="310.00,143.80 471.18,228.94 459.18,408.13 310.00,512.08 165.96,405.16 150.53,229.93" fill="url(#radarFill)" stroke="#6EA8FE" stroke-width="2.2"/>
+  <polygon points="310.00,143.80 471.18,228.94 459.18,408.13 310.00,512.08 165.96,405.16 150.53,229.93" fill="#2F6FEB" opacity="0.18" filter="url(#radarGlow)"/>
+  <circle cx="310.00" cy="143.80" r="5" fill="#EAF4FF"/>
+<circle cx="471.18" cy="228.94" r="5" fill="#EAF4FF"/>
+<circle cx="459.18" cy="408.13" r="5" fill="#EAF4FF"/>
+<circle cx="310.00" cy="512.08" r="5" fill="#EAF4FF"/>
+<circle cx="165.96" cy="405.16" r="5" fill="#EAF4FF"/>
+<circle cx="150.53" cy="229.93" r="5" fill="#EAF4FF"/>
+  <text x="310.00" y="82.00" fill="#C9D1D9" font-size="14" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Arial, sans-serif">Frontend</text>
+<text x="517.85" y="202.00" fill="#C9D1D9" font-size="14" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Arial, sans-serif">Backend</text>
+<text x="517.85" y="442.00" fill="#C9D1D9" font-size="14" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Arial, sans-serif">AI</text>
+<text x="310.00" y="562.00" fill="#C9D1D9" font-size="14" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Arial, sans-serif">Automation</text>
+<text x="102.15" y="442.00" fill="#C9D1D9" font-size="14" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Arial, sans-serif">Infra</text>
+<text x="102.15" y="202.00" fill="#C9D1D9" font-size="14" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Arial, sans-serif">Integration</text>
+</svg>
