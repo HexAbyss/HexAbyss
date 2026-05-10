@@ -217,9 +217,6 @@ Systems are built by combining domains under architectural control, not by choos
 		<td align="center">
 			<img src="https://streak-stats.demolab.com?user=HexAbyss&theme=github-dark-blue&hide_border=true" height="170" alt="GitHub streak" />
 		</td>
-		<td align="center">
-			<img src="https://github-readme-stats.vercel.app/api?username=HexAbyss&show_icons=true&hide_title=true&rank_icon=github&theme=github_dark&hide_border=true" height="170" alt="GitHub stats" />
-		</td>
 	</tr>
 </table>
 
