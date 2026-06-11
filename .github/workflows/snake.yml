@@ -22,10 +22,10 @@ jobs:
 
     steps:
       - name: Checkout main branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Checkout output branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: output
           path: output-branch
@@ -53,7 +53,7 @@ jobs:
         uses: HexAbyss/snk@main
         with:
           github_user_name: ${{ github.repository_owner }}
-          github_token: ${{ secrets.PROFILE_SNAKE_TOKEN }}
+          github_token: ${{ secrets.PROFILE_SNAKE_TOKEN || github.token }}
           contribution_scope: ${{ vars.PROFILE_SNAKE_SCOPE || 'public' }}
           outputs: |
             dist/github-snake.svg?palette=github-light&color_snake=#2f6feb&color_dots=#dce9fb,#bfd6f6,#8dbdff,#64a1f4,#2f6feb
