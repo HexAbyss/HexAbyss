@@ -221,7 +221,7 @@ Systems are built by combining domains under architectural control, not by choos
 </table>
 
 <p align="center">
-	<img src="https://github.com/HexAbyss/HexAbyss/blob/output/github-snake-dark.svg" width="100%" alt="Contribution snake" />
+	<img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/github-snake-dark.svg" width="100%" alt="Contribution snake" />
 </p>
 
 ---
