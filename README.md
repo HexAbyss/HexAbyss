@@ -212,13 +212,9 @@ Systems are built by combining domains under architectural control, not by choos
 
 ## GitHub Analytics
 
-<table align="center">
-	<tr>
-		<td align="center">
-			<img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/streak-stats.svg" height="170" alt="GitHub streak" />
-		</td>
-	</tr>
-</table>
+<p align="center">
+	<img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/streak-stats.svg" height="170" alt="GitHub streak" />
+</p>
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/github-snake-dark.svg" width="100%" alt="Contribution snake" />

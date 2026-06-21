@@ -285,48 +285,36 @@ function buildStreakStatsSvg(stats, login, includesPrivate) {
     return start === end ? formatDate(start) : `${formatDate(start)} - ${formatDate(end)}`;
   };
 
-  const columns = [
-    {
-      value: stats.totalContributions.toLocaleString("en-US"),
-      label: "Total Contributions",
-      range: formatRange(stats.totalRangeStart, stats.totalRangeEnd),
-      accent: "#6EA8FE",
-    },
-    {
-      value: String(stats.currentStreak),
-      label: "Current Streak",
-      range: formatRange(stats.currentStreakStart, stats.currentStreakEnd),
-      accent: "#F6D365",
-      flame: stats.currentStreak > 0,
-    },
-    {
-      value: String(stats.longestStreak),
-      label: "Longest Streak",
-      range: formatRange(stats.longestStreakStart, stats.longestStreakEnd),
-      accent: "#2F6FEB",
-    },
-  ];
+  const totalCx = columnWidth * 0.5;
+  const currentCx = columnWidth * 1.5;
+  const longestCx = columnWidth * 2.5;
 
   const dividers = [1, 2]
-    .map((index) => `<line x1="${index * columnWidth}" y1="28" x2="${index * columnWidth}" y2="${height - 28}" stroke="rgba(110,168,254,0.18)" stroke-width="1"/>`)
+    .map((index) => `<line x1="${index * columnWidth}" y1="30" x2="${index * columnWidth}" y2="${height - 30}" stroke="rgba(110,168,254,0.18)" stroke-width="1"/>`)
     .join("\n  ");
 
-  const blocks = columns
-    .map((column, index) => {
-      const cx = columnWidth * index + columnWidth / 2;
-      const flame = column.flame
-        ? `<path d="M${cx} 50c-7 9-11 15-11 22a11 11 0 0022 0c0-4-1-7-3-11 1 4-1 7-3 7-3 0-3-3-3-6 0-5-2-8-2-12Z" fill="#F6D365" opacity="0.9"/>`
-        : "";
+  const totalBlock = `
+  <text x="${totalCx}" y="66" fill="#6EA8FE" font-size="26" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle">${stats.totalContributions.toLocaleString("en-US")}</text>
+  <text x="${totalCx}" y="112" fill="#6EA8FE" font-size="13" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle">Total Contributions</text>
+  <text x="${totalCx}" y="130" fill="#8B949E" font-size="11.5" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">${formatRange(stats.totalRangeStart, stats.totalRangeEnd)}</text>`;
 
-      return `
-  <g>
-    ${flame}
-    <text x="${cx}" y="92" fill="${column.accent}" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle">${column.value}</text>
-    <text x="${cx}" y="118" fill="#E6F1FF" font-size="13" font-family="Segoe UI, Arial, sans-serif" font-weight="600" text-anchor="middle">${column.label}</text>
-    <text x="${cx}" y="138" fill="#8B949E" font-size="11.5" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">${column.range}</text>
-  </g>`;
-    })
-    .join("\n");
+  const ringRadius = 27;
+  const ringCy = 60;
+  const flameY = ringCy - ringRadius - 7;
+
+  const currentBlock = `
+  <g transform="translate(${currentCx} ${flameY})">
+    <path d="M0 -12c3.2 4.1 5.2 7.1 5.2 10.4a5.2 5.2 0 01-10.4 0c0-2 .5-3.6 1.4-5.3-.4 2-.1 3.6 1 3.6 1.3 0 1.3-1.6 1.3-2.9 0-2.3-.7-4.1 1.5-5.8Z" fill="#9ECFFF"/>
+  </g>
+  <circle cx="${currentCx}" cy="${ringCy}" r="${ringRadius}" fill="none" stroke="#2F6FEB" stroke-width="3"/>
+  <text x="${currentCx}" y="${ringCy + 6}" fill="#2F6FEB" font-size="19" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle">${stats.currentStreak}</text>
+  <text x="${currentCx}" y="112" fill="#2F6FEB" font-size="13" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle">Current Streak</text>
+  <text x="${currentCx}" y="130" fill="#8B949E" font-size="11.5" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">${formatRange(stats.currentStreakStart, stats.currentStreakEnd)}</text>`;
+
+  const longestBlock = `
+  <text x="${longestCx}" y="66" fill="#9ECFFF" font-size="26" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle">${stats.longestStreak}</text>
+  <text x="${longestCx}" y="112" fill="#9ECFFF" font-size="13" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle">Longest Streak</text>
+  <text x="${longestCx}" y="130" fill="#8B949E" font-size="11.5" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">${formatRange(stats.longestStreakStart, stats.longestStreakEnd)}</text>`;
 
   return `
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -337,9 +325,11 @@ function buildStreakStatsSvg(stats, login, includesPrivate) {
     </linearGradient>
   </defs>
   <rect width="${width}" height="${height}" rx="18" fill="url(#streakBg)" stroke="rgba(158,207,255,0.14)"/>
-  <text x="${width / 2}" y="20" fill="#9ECFFF" font-size="11" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">${escapeXml(scopeLabel)} · ${escapeXml(login)}</text>
+  <text x="${width / 2}" y="18" fill="#9ECFFF" font-size="10.5" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">${escapeXml(scopeLabel)} · ${escapeXml(login)}</text>
   ${dividers}
-  ${blocks}
+  ${totalBlock}
+  ${currentBlock}
+  ${longestBlock}
 </svg>`.trimStart();
 }
 
