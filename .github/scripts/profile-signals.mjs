@@ -19,11 +19,14 @@ const contributionDays = await getContributionDays(owner, token);
 const repositories = await getRepositories(owner, token, hasUserToken);
 const languageStats = await getLanguageStats(owner, token, hasUserToken, languageScope);
 
-const latest84Days = normalizeContributionDays(contributionDays).slice(-84);
+const allDays = normalizeContributionDays(contributionDays);
+const latest84Days = allDays.slice(-84);
 const weeklyTotals = buildWeeklyTotals(latest84Days, 12);
+const streakStats = computeStreakStats(allDays);
 
 await fs.writeFile(path.join(mediaDir, "constellation-graph.svg"), buildConstellationSvg(latest84Days, owner));
 await fs.writeFile(path.join(mediaDir, "neural-pulse.svg"), buildNeuralPulseSvg(weeklyTotals, owner));
+await fs.writeFile(path.join(mediaDir, "streak-stats.svg"), buildStreakStatsSvg(streakStats, owner, hasUserToken));
 await fs.writeFile(path.join(mediaDir, "architecture-radar.svg"), buildArchitectureRadarSvg(owner));
 await fs.writeFile(path.join(mediaDir, "system-domains-map.svg"), buildSystemDomainsMapSvg(owner));
 await fs.writeFile(path.join(mediaDir, "system-domains-moons-legend.svg"), buildSystemDomainsMoonLegendSvg());
@@ -207,6 +210,137 @@ function buildWeeklyTotals(days, numberOfWeeks) {
   }
 
   return totals;
+}
+
+function computeStreakStats(days) {
+  const sorted = [...days]
+    .filter((day) => day.date)
+    .sort((left, right) => new Date(left.date) - new Date(right.date));
+
+  const totalContributions = sorted.reduce((sum, day) => sum + day.contributionCount, 0);
+
+  let longestStreak = 0;
+  let longestStreakStart = null;
+  let longestStreakEnd = null;
+  let runStart = null;
+  let runLength = 0;
+
+  for (const day of sorted) {
+    if (day.contributionCount > 0) {
+      if (runLength === 0) {
+        runStart = day.date;
+      }
+      runLength += 1;
+      if (runLength > longestStreak) {
+        longestStreak = runLength;
+        longestStreakStart = runStart;
+        longestStreakEnd = day.date;
+      }
+    } else {
+      runLength = 0;
+    }
+  }
+
+  let currentStreak = 0;
+  let currentStreakStart = null;
+  let currentStreakEnd = null;
+
+  for (let index = sorted.length - 1; index >= 0; index -= 1) {
+    const day = sorted[index];
+    if (day.contributionCount > 0) {
+      if (currentStreak === 0) {
+        currentStreakEnd = day.date;
+      }
+      currentStreak += 1;
+      currentStreakStart = day.date;
+    } else if (index === sorted.length - 1) {
+      // today has not registered a contribution yet, it should not break the streak
+      continue;
+    } else {
+      break;
+    }
+  }
+
+  return {
+    totalContributions,
+    totalRangeStart: sorted[0]?.date || null,
+    totalRangeEnd: sorted[sorted.length - 1]?.date || null,
+    currentStreak,
+    currentStreakStart,
+    currentStreakEnd,
+    longestStreak,
+    longestStreakStart,
+    longestStreakEnd,
+  };
+}
+
+function buildStreakStatsSvg(stats, login, includesPrivate) {
+  const width = 700;
+  const height = 170;
+  const columnWidth = width / 3;
+  const scopeLabel = includesPrivate ? "Public + private contributions" : "Public contributions only";
+
+  const formatRange = (start, end) => {
+    if (!start || !end) return "No streak yet";
+    return start === end ? formatDate(start) : `${formatDate(start)} - ${formatDate(end)}`;
+  };
+
+  const columns = [
+    {
+      value: stats.totalContributions.toLocaleString("en-US"),
+      label: "Total Contributions",
+      range: formatRange(stats.totalRangeStart, stats.totalRangeEnd),
+      accent: "#6EA8FE",
+    },
+    {
+      value: String(stats.currentStreak),
+      label: "Current Streak",
+      range: formatRange(stats.currentStreakStart, stats.currentStreakEnd),
+      accent: "#F6D365",
+      flame: stats.currentStreak > 0,
+    },
+    {
+      value: String(stats.longestStreak),
+      label: "Longest Streak",
+      range: formatRange(stats.longestStreakStart, stats.longestStreakEnd),
+      accent: "#2F6FEB",
+    },
+  ];
+
+  const dividers = [1, 2]
+    .map((index) => `<line x1="${index * columnWidth}" y1="28" x2="${index * columnWidth}" y2="${height - 28}" stroke="rgba(110,168,254,0.18)" stroke-width="1"/>`)
+    .join("\n  ");
+
+  const blocks = columns
+    .map((column, index) => {
+      const cx = columnWidth * index + columnWidth / 2;
+      const flame = column.flame
+        ? `<path d="M${cx} 50c-7 9-11 15-11 22a11 11 0 0022 0c0-4-1-7-3-11 1 4-1 7-3 7-3 0-3-3-3-6 0-5-2-8-2-12Z" fill="#F6D365" opacity="0.9"/>`
+        : "";
+
+      return `
+  <g>
+    ${flame}
+    <text x="${cx}" y="92" fill="${column.accent}" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle">${column.value}</text>
+    <text x="${cx}" y="118" fill="#E6F1FF" font-size="13" font-family="Segoe UI, Arial, sans-serif" font-weight="600" text-anchor="middle">${column.label}</text>
+    <text x="${cx}" y="138" fill="#8B949E" font-size="11.5" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">${column.range}</text>
+  </g>`;
+    })
+    .join("\n");
+
+  return `
+<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="streakBg" x1="0" y1="0" x2="${width}" y2="${height}" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#08101A"/>
+      <stop offset="1" stop-color="#102A43"/>
+    </linearGradient>
+  </defs>
+  <rect width="${width}" height="${height}" rx="18" fill="url(#streakBg)" stroke="rgba(158,207,255,0.14)"/>
+  <text x="${width / 2}" y="20" fill="#9ECFFF" font-size="11" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">${escapeXml(scopeLabel)} · ${escapeXml(login)}</text>
+  ${dividers}
+  ${blocks}
+</svg>`.trimStart();
 }
 
 function buildConstellationSvg(days, login) {

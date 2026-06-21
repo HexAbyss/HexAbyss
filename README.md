@@ -215,7 +215,7 @@ Systems are built by combining domains under architectural control, not by choos
 <table align="center">
 	<tr>
 		<td align="center">
-			<img src="https://streak-stats.demolab.com?user=HexAbyss&theme=github-dark-blue&hide_border=true" height="170" alt="GitHub streak" />
+			<img src="https://raw.githubusercontent.com/HexAbyss/HexAbyss/output/media/streak-stats.svg" height="170" alt="GitHub streak" />
 		</td>
 	</tr>
 </table>
