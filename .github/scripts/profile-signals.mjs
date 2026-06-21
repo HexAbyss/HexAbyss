@@ -304,17 +304,31 @@ function buildStreakStatsSvg(stats, login) {
   <text x="${totalCx}" y="${labelY}" fill="${accentMain}" font-size="13" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle">Total Contributions</text>
   <text x="${totalCx}" y="${rangeY}" fill="#8B949E" font-size="11.5" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">${formatRange(stats.totalRangeStart, stats.totalRangeEnd)}</text>`;
 
-  const ringRadius = 26;
+  const ringRadius = 29;
   const ringCy = valueY - 6;
-  const flameScale = 0.78;
-  const flameCenterY = ringCy - ringRadius - 2;
+  const flameScale = 0.8;
+  const flameCenterY = ringCy - ringRadius + 3;
+
+  const halfGapDeg = 24;
+  const toRad = (deg) => (deg * Math.PI) / 180;
+  const startAngle = -90 + halfGapDeg;
+  const endAngle = -90 - halfGapDeg;
+  const ringStart = {
+    x: currentCx + ringRadius * Math.cos(toRad(startAngle)),
+    y: ringCy + ringRadius * Math.sin(toRad(startAngle)),
+  };
+  const ringEnd = {
+    x: currentCx + ringRadius * Math.cos(toRad(endAngle)),
+    y: ringCy + ringRadius * Math.sin(toRad(endAngle)),
+  };
+  const ringArc = `<path d="M ${ringStart.x.toFixed(2)} ${ringStart.y.toFixed(2)} A ${ringRadius} ${ringRadius} 0 1 1 ${ringEnd.x.toFixed(2)} ${ringEnd.y.toFixed(2)}" fill="none" stroke="${accentStreak}" stroke-width="3" stroke-linecap="round"/>`;
 
   const currentBlock = `
   <g transform="translate(${currentCx} ${flameCenterY}) scale(${flameScale}) translate(-12 -12)">
     <path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z" fill="${flameColor}"/>
   </g>
-  <circle cx="${currentCx}" cy="${ringCy}" r="${ringRadius}" fill="none" stroke="${accentStreak}" stroke-width="3"/>
-  <text x="${currentCx}" y="${ringCy + 6}" fill="${accentStreak}" font-size="19" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle">${stats.currentStreak}</text>
+  ${ringArc}
+  <text x="${currentCx}" y="${ringCy + 9}" fill="${accentStreak}" font-size="26" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle">${stats.currentStreak}</text>
   <text x="${currentCx}" y="${labelY}" fill="${accentStreak}" font-size="13" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle">Current Streak</text>
   <text x="${currentCx}" y="${rangeY}" fill="#8B949E" font-size="11.5" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">${formatRange(stats.currentStreakStart, stats.currentStreakEnd)}</text>`;
 
