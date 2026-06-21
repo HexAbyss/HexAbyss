@@ -308,7 +308,7 @@ function buildStreakStatsSvg(stats, login) {
   <text x="${totalCx}" y="${rangeY}" fill="#8B949E" font-size="11.5" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">${formatRange(stats.totalRangeStart, stats.totalRangeEnd)}</text>`;
 
   const flameScale = 0.8;
-  const flameCenterY = ringCy - ringRadius + 3;
+  const flameCenterY = ringCy - ringRadius - 4;
 
   const halfGapDeg = 24;
   const toRad = (deg) => (deg * Math.PI) / 180;
