@@ -1,0 +1,33 @@
+<svg width="700" height="170" viewBox="0 0 700 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="streakBg" x1="0" y1="0" x2="700" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#08101A"/>
+      <stop offset="1" stop-color="#102A43"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="170" rx="18" fill="url(#streakBg)" stroke="rgba(158,207,255,0.14)"/>
+  <text x="350" y="20" fill="#9ECFFF" font-size="11" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">Public + private contributions · HexAbyss</text>
+  <line x1="233.33333333333334" y1="28" x2="233.33333333333334" y2="142" stroke="rgba(110,168,254,0.18)" stroke-width="1"/>
+  <line x1="466.6666666666667" y1="28" x2="466.6666666666667" y2="142" stroke="rgba(110,168,254,0.18)" stroke-width="1"/>
+  
+  <g>
+    
+    <text x="116.66666666666667" y="92" fill="#6EA8FE" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle">216</text>
+    <text x="116.66666666666667" y="118" fill="#E6F1FF" font-size="13" font-family="Segoe UI, Arial, sans-serif" font-weight="600" text-anchor="middle">Total Contributions</text>
+    <text x="116.66666666666667" y="138" fill="#8B949E" font-size="11.5" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">Jun 22 - Jun 21</text>
+  </g>
+
+  <g>
+    <path d="M350 50c-7 9-11 15-11 22a11 11 0 0022 0c0-4-1-7-3-11 1 4-1 7-3 7-3 0-3-3-3-6 0-5-2-8-2-12Z" fill="#F6D365" opacity="0.9"/>
+    <text x="350" y="92" fill="#F6D365" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle">6</text>
+    <text x="350" y="118" fill="#E6F1FF" font-size="13" font-family="Segoe UI, Arial, sans-serif" font-weight="600" text-anchor="middle">Current Streak</text>
+    <text x="350" y="138" fill="#8B949E" font-size="11.5" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">Jun 16 - Jun 21</text>
+  </g>
+
+  <g>
+    
+    <text x="583.3333333333334" y="92" fill="#2F6FEB" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle">11</text>
+    <text x="583.3333333333334" y="118" fill="#E6F1FF" font-size="13" font-family="Segoe UI, Arial, sans-serif" font-weight="600" text-anchor="middle">Longest Streak</text>
+    <text x="583.3333333333334" y="138" fill="#8B949E" font-size="11.5" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">Apr 19 - Apr 29</text>
+  </g>
+</svg>
