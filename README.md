@@ -37,18 +37,18 @@ My focus is not just shipping features, but structuring products that are scalab
 <table>
 	<tr>
 		<td width="33%" valign="top">
-			<h3 align="center">Project N.O.U.S</h3>
-			<p align="center"><strong>AI Platform · Agent Ecosystem</strong></p>
+			<h3 align="center">Lyzandra</h3>
+			<p align="center"><strong>Network Infrastructure · Autonomous Automation</strong></p>
 			<p align="center">
-				<img src="https://img.shields.io/badge/Private%20Repository-2a0d16?style=flat-square&logoColor=ffb3c1" alt="Private Repository" />
+				<img src="https://img.shields.io/badge/Private%20Infrastructure-2a0d16?style=flat-square&logoColor=ffb3c1" alt="Private Infrastructure" />
 			</p>
 			<p>
-				A modular ecosystem of personal AI agents built around real-time conversation, semantic memory, local authentication and assisted automation — the architectural core connecting Sophya, voice pipelines and deployable infrastructure.
+				The network infrastructure server that hosts and orchestrates the automation stack — connecting services, control loops and integrations that give Sophya real-world presence and autonomous operational behavior across the environment.
 			</p>
 			<p>
-				<img src="https://img.shields.io/badge/AI%20Platform-103A63?style=flat-square" alt="AI Platform" />
-				<img src="https://img.shields.io/badge/Agent%20Ecosystem-1A5A8C?style=flat-square" alt="Agent Ecosystem" />
-				<img src="https://img.shields.io/badge/Real--Time%20Voice-1F6FEB?style=flat-square" alt="Real-Time Voice" />
+				<img src="https://img.shields.io/badge/Infrastructure%20Server-103A63?style=flat-square" alt="Infrastructure Server" />
+				<img src="https://img.shields.io/badge/Automation%20Stack-1A5A8C?style=flat-square" alt="Automation Stack" />
+				<img src="https://img.shields.io/badge/Network%20Orchestration-1F6FEB?style=flat-square" alt="Network Orchestration" />
 			</p>
 		</td>
 		<td width="33%" valign="top">
@@ -67,18 +67,18 @@ My focus is not just shipping features, but structuring products that are scalab
 			</p>
 		</td>
 		<td width="33%" valign="top">
-			<h3 align="center">Waker</h3>
-			<p align="center"><strong>Homelab Infrastructure · Network Automation</strong></p>
+			<h3 align="center">The Homelab Pantheon</h3>
+			<p align="center"><strong>Heimdall · Mnemosyne · iFrost · Waker</strong></p>
 			<p align="center">
-				<img src="https://img.shields.io/badge/Private%20Repository-2a0d16?style=flat-square&logoColor=ffb3c1" alt="Private Repository" />
+				<img src="https://img.shields.io/badge/Private%20Repositories-2a0d16?style=flat-square&logoColor=ffb3c1" alt="Private Repositories" />
 			</p>
 			<p>
-				A production Wake-on-LAN platform for a self-hosted homelab, running as a host-networked backend service with API tokens and usage statistics, with a roadmap toward ARP-based discovery and network mapping.
+				A constellation of small self-hosted services deployed under one shared architectural pattern on Lyzandra — a gatekeeper dashboard, a memory/logging layer, a monitoring watchtower and a Wake-on-LAN controller, each named after what it guards. Together they form the operational nervous system of the homelab.
 			</p>
 			<p>
-				<img src="https://img.shields.io/badge/Infrastructure-103A63?style=flat-square" alt="Infrastructure" />
-				<img src="https://img.shields.io/badge/Network%20Automation-1A5A8C?style=flat-square" alt="Network Automation" />
-				<img src="https://img.shields.io/badge/Production%20Deploy-1F6FEB?style=flat-square" alt="Production Deploy" />
+				<img src="https://img.shields.io/badge/Distributed%20Services-103A63?style=flat-square" alt="Distributed Services" />
+				<img src="https://img.shields.io/badge/Self--Hosted%20Suite-1A5A8C?style=flat-square" alt="Self-Hosted Suite" />
+				<img src="https://img.shields.io/badge/Shared%20Deploy%20Pattern-1F6FEB?style=flat-square" alt="Shared Deploy Pattern" />
 			</p>
 		</td>
 	</tr>
