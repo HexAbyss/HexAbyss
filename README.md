@@ -38,76 +38,94 @@ My focus is not just shipping features, but structuring products that are scalab
 	<tr>
 		<td width="33%" valign="top">
 			<h3 align="center">Project N.O.U.S</h3>
-			<p align="center"><strong>AI Platform · Distributed Architecture</strong></p>
+			<p align="center"><strong>AI Platform · Agent Ecosystem</strong></p>
+			<p align="center">
+				<img src="https://img.shields.io/badge/Private%20Repository-2a0d16?style=flat-square&logoColor=ffb3c1" alt="Private Repository" />
+			</p>
 			<p>
-				A modular intelligent system structured around distributed services, interface orchestration and an operational architecture designed to connect Sophya, frontend workflows and deployable infrastructure.
+				A modular ecosystem of personal AI agents built around real-time conversation, semantic memory, local authentication and assisted automation — the architectural core connecting Sophya, voice pipelines and deployable infrastructure.
 			</p>
 			<p>
 				<img src="https://img.shields.io/badge/AI%20Platform-103A63?style=flat-square" alt="AI Platform" />
-				<img src="https://img.shields.io/badge/Distributed%20Services-1A5A8C?style=flat-square" alt="Distributed Services" />
-				<img src="https://img.shields.io/badge/Operational%20Architecture-1F6FEB?style=flat-square" alt="Operational Architecture" />
+				<img src="https://img.shields.io/badge/Agent%20Ecosystem-1A5A8C?style=flat-square" alt="Agent Ecosystem" />
+				<img src="https://img.shields.io/badge/Real--Time%20Voice-1F6FEB?style=flat-square" alt="Real-Time Voice" />
 			</p>
 		</td>
 		<td width="33%" valign="top">
 			<h3 align="center">Sophya</h3>
-			<p align="center"><strong>Remote AI · Atlas Integration</strong></p>
-			<p>
-				A remote intelligence component built to extend Atlas with higher-level reasoning, external connectivity and coordinated system behavior.
+			<p align="center"><strong>AI Backend · Reasoning & Voice</strong></p>
+			<p align="center">
+				<img src="https://img.shields.io/badge/Private%20Repository-2a0d16?style=flat-square&logoColor=ffb3c1" alt="Private Repository" />
 			</p>
 			<p>
-				<img src="https://img.shields.io/badge/Remote%20AI-103A63?style=flat-square" alt="Remote AI" />
-				<img src="https://img.shields.io/badge/Integration%20Layer-1A5A8C?style=flat-square&logo=apachekafka&logoColor=C6E6FF" alt="Integration Layer" />
-				<img src="https://img.shields.io/badge/Distributed%20Logic-1F6FEB?style=flat-square" alt="Distributed Logic" />
+				A layered AI backend that powers N.O.U.S's reasoning, memory and real-time voice — a WebSocket + AudioWorklet audio pipeline, PostgreSQL-backed state and Coolify-based deployment.
+			</p>
+			<p>
+				<img src="https://img.shields.io/badge/AI%20Backend-103A63?style=flat-square" alt="AI Backend" />
+				<img src="https://img.shields.io/badge/Real--Time%20Voice-1A5A8C?style=flat-square" alt="Real-Time Voice" />
+				<img src="https://img.shields.io/badge/PostgreSQL-1F6FEB?style=flat-square&logo=postgresql&logoColor=C6E6FF" alt="PostgreSQL" />
 			</p>
 		</td>
 		<td width="33%" valign="top">
-			<h3 align="center">Atlas</h3>
-			<p align="center"><strong>Local Agent · System Automation</strong></p>
-			<p>
-				A local intelligence layer designed to execute routines, orchestrate tasks and automate interactions across the operating environment.
+			<h3 align="center">Waker</h3>
+			<p align="center"><strong>Homelab Infrastructure · Network Automation</strong></p>
+			<p align="center">
+				<img src="https://img.shields.io/badge/Private%20Repository-2a0d16?style=flat-square&logoColor=ffb3c1" alt="Private Repository" />
 			</p>
 			<p>
-				<img src="https://img.shields.io/badge/Local%20Agent-103A63?style=flat-square" alt="Local Agent" />
-				<img src="https://img.shields.io/badge/Automation-1A5A8C?style=flat-square&logo=githubactions&logoColor=C6E6FF" alt="Automation" />
-				<img src="https://img.shields.io/badge/System%20Control-1F6FEB?style=flat-square" alt="System Control" />
+				A production Wake-on-LAN platform for a self-hosted homelab, running as a host-networked backend service with API tokens and usage statistics, with a roadmap toward ARP-based discovery and network mapping.
+			</p>
+			<p>
+				<img src="https://img.shields.io/badge/Infrastructure-103A63?style=flat-square" alt="Infrastructure" />
+				<img src="https://img.shields.io/badge/Network%20Automation-1A5A8C?style=flat-square" alt="Network Automation" />
+				<img src="https://img.shields.io/badge/Production%20Deploy-1F6FEB?style=flat-square" alt="Production Deploy" />
 			</p>
 		</td>
 	</tr>
 	<tr>
 		<td width="33%" valign="top">
-			<h3 align="center">Lyzandra</h3>
-			<p align="center"><strong>Network Infrastructure · Control Server</strong></p>
-			<p>
-				A dedicated infrastructure control server built to manage network behavior, centralize operational routines and provide a reliable orchestration point for connected services.
+			<h3 align="center">NoxQR</h3>
+			<p align="center"><strong>Visual Encoding · Design Systems</strong></p>
+			<p align="center">
+				<a href="https://github.com/HexAbyss/NoxQR"><img src="https://img.shields.io/badge/Public%20Repository-0d2a1a?style=flat-square&logo=github&logoColor=b7ffd9" alt="Public Repository" /></a>
 			</p>
 			<p>
-				<img src="https://img.shields.io/badge/Infrastructure%20Server-103A63?style=flat-square" alt="Infrastructure Server" />
-				<img src="https://img.shields.io/badge/Network%20Control-1A5A8C?style=flat-square" alt="Network Control" />
-				<img src="https://img.shields.io/badge/Operations-1F6FEB?style=flat-square" alt="Operations" />
-			</p>
-		</td>
-		<td width="33%" valign="top">
-			<h3 align="center">Logic App</h3>
-			<p align="center"><strong>Logic Interface · Decision Flow</strong></p>
-			<p>
-				A lightweight logic-driven application created to translate structured reasoning into a direct interface, emphasizing clarity, flow control and practical interaction design.
+				A visual encoding engine for artistic, structured and scannable QR codes — turning a strict technical format into a design surface without breaking scannability.
 			</p>
 			<p>
-				<img src="https://img.shields.io/badge/Logic%20Interface-103A63?style=flat-square" alt="Logic Interface" />
-				<img src="https://img.shields.io/badge/Decision%20Flow-1A5A8C?style=flat-square" alt="Decision Flow" />
-				<img src="https://img.shields.io/badge/Interaction%20Design-1F6FEB?style=flat-square" alt="Interaction Design" />
+				<img src="https://img.shields.io/badge/Visual%20Encoding-103A63?style=flat-square" alt="Visual Encoding" />
+				<img src="https://img.shields.io/badge/QR%20Generation-1A5A8C?style=flat-square" alt="QR Generation" />
+				<img src="https://img.shields.io/badge/Design%20Systems-1F6FEB?style=flat-square" alt="Design Systems" />
 			</p>
 		</td>
 		<td width="33%" valign="top">
-			<h3 align="center">Enigma das Tres Caixas</h3>
-			<p align="center"><strong>Interactive Experience · Narrative Logic</strong></p>
-			<p>
-				An interactive project focused on puzzle structure, user flow and narrative logic, built to turn abstract reasoning into a clear, engaging digital experience.
+			<h3 align="center">Gemini Realtime Voice Studio</h3>
+			<p align="center"><strong>Real-Time Voice · Next.js + FastAPI</strong></p>
+			<p align="center">
+				<a href="https://github.com/HexAbyss/gemini-realtime-voice-studio"><img src="https://img.shields.io/badge/Public%20Repository-0d2a1a?style=flat-square&logo=github&logoColor=b7ffd9" alt="Public Repository" /></a>
 			</p>
 			<p>
-				<img src="https://img.shields.io/badge/Interactive%20System-103A63?style=flat-square" alt="Interactive System" />
-				<img src="https://img.shields.io/badge/Puzzle%20Design-1A5A8C?style=flat-square" alt="Puzzle Design" />
-				<img src="https://img.shields.io/badge/Narrative%20Logic-1F6FEB?style=flat-square" alt="Narrative Logic" />
+				A full-stack real-time voice conversation platform built on Google's Gemini Live API — Next.js frontend and FastAPI backend, streaming audio without WebRTC.
+			</p>
+			<p>
+				<img src="https://img.shields.io/badge/Real--Time%20Voice-103A63?style=flat-square" alt="Real-Time Voice" />
+				<img src="https://img.shields.io/badge/Next.js%20%2B%20FastAPI-1A5A8C?style=flat-square" alt="Next.js + FastAPI" />
+				<img src="https://img.shields.io/badge/Streaming%20Audio-1F6FEB?style=flat-square" alt="Streaming Audio" />
+			</p>
+		</td>
+		<td width="33%" valign="top">
+			<h3 align="center">Logic Circuit</h3>
+			<p align="center"><strong>Interactive Simulator · Digital Logic</strong></p>
+			<p align="center">
+				<a href="https://github.com/HexAbyss/logic-circuit"><img src="https://img.shields.io/badge/Public%20Repository-0d2a1a?style=flat-square&logo=github&logoColor=b7ffd9" alt="Public Repository" /></a>
+			</p>
+			<p>
+				An interactive logic circuit simulator with draggable components, live signal propagation and a bilingual Portuguese/English interface, turning abstract digital logic into a hands-on visual tool.
+			</p>
+			<p>
+				<img src="https://img.shields.io/badge/Interactive%20Simulator-103A63?style=flat-square" alt="Interactive Simulator" />
+				<img src="https://img.shields.io/badge/Digital%20Logic-1A5A8C?style=flat-square" alt="Digital Logic" />
+				<img src="https://img.shields.io/badge/Bilingual%20UI-1F6FEB?style=flat-square" alt="Bilingual UI" />
 			</p>
 		</td>
 	</tr>
