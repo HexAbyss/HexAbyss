@@ -23,57 +23,57 @@
 <line x1="54" y1="136.67" x2="906" y2="136.67" stroke="rgba(110,168,254,0.12)" stroke-width="1"/>
 <line x1="54" y1="201.33" x2="906" y2="201.33" stroke="rgba(110,168,254,0.12)" stroke-width="1"/>
 <line x1="54" y1="266.00" x2="906" y2="266.00" stroke="rgba(110,168,254,0.12)" stroke-width="1"/>
-  <path d="M 54.00 216.59 L 131.45 205.50 L 208.91 156.09 L 286.36 84.00 L 363.82 152.57 L 441.27 97.61 L 518.73 169.20 L 596.18 191.39 L 673.64 182.81 L 751.09 172.23 L 828.55 228.19 L 906.00 249.36 L 906.00 266.00 L 54.00 266.00 Z" fill="url(#pulseArea)"/>
-  <path d="M 54.00 216.59 L 131.45 205.50 L 208.91 156.09 L 286.36 84.00 L 363.82 152.57 L 441.27 97.61 L 518.73 169.20 L 596.18 191.39 L 673.64 182.81 L 751.09 172.23 L 828.55 228.19 L 906.00 249.36" stroke="url(#pulseLine)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
-  <path d="M 54.00 216.59 L 131.45 205.50 L 208.91 156.09 L 286.36 84.00 L 363.82 152.57 L 441.27 97.61 L 518.73 169.20 L 596.18 191.39 L 673.64 182.81 L 751.09 172.23 L 828.55 228.19 L 906.00 249.36" stroke="#EAF4FF" stroke-opacity="0.75" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 54.00 221.61 L 131.45 191.87 L 208.91 191.87 L 286.36 84.00 L 363.82 157.69 L 441.27 125.73 L 518.73 184.77 L 596.18 214.95 L 673.64 174.11 L 751.09 206.07 L 828.55 230.49 L 906.00 253.57 L 906.00 266.00 L 54.00 266.00 Z" fill="url(#pulseArea)"/>
+  <path d="M 54.00 221.61 L 131.45 191.87 L 208.91 191.87 L 286.36 84.00 L 363.82 157.69 L 441.27 125.73 L 518.73 184.77 L 596.18 214.95 L 673.64 174.11 L 751.09 206.07 L 828.55 230.49 L 906.00 253.57" stroke="url(#pulseLine)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  <path d="M 54.00 221.61 L 131.45 191.87 L 208.91 191.87 L 286.36 84.00 L 363.82 157.69 L 441.27 125.73 L 518.73 184.77 L 596.18 214.95 L 673.64 174.11 L 751.09 206.07 L 828.55 230.49 L 906.00 253.57" stroke="#EAF4FF" stroke-opacity="0.75" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
   
-    <circle cx="54.00" cy="216.59" r="5.5" fill="#EAF4FF" opacity="0.95"/>
-    <circle cx="54.00" cy="216.59" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
-  
-
-    <circle cx="131.45" cy="205.50" r="5.5" fill="#EAF4FF" opacity="0.95"/>
-    <circle cx="131.45" cy="205.50" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+    <circle cx="54.00" cy="221.61" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="54.00" cy="221.61" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
   
 
-    <circle cx="208.91" cy="156.09" r="5.5" fill="#EAF4FF" opacity="0.95"/>
-    <circle cx="208.91" cy="156.09" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+    <circle cx="131.45" cy="191.87" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="131.45" cy="191.87" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+  
+
+    <circle cx="208.91" cy="191.87" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="208.91" cy="191.87" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
   
 
     <circle cx="286.36" cy="84.00" r="5.5" fill="#EAF4FF" opacity="0.95"/>
     <circle cx="286.36" cy="84.00" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
   
 
-    <circle cx="363.82" cy="152.57" r="5.5" fill="#EAF4FF" opacity="0.95"/>
-    <circle cx="363.82" cy="152.57" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+    <circle cx="363.82" cy="157.69" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="363.82" cy="157.69" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
   
 
-    <circle cx="441.27" cy="97.61" r="5.5" fill="#EAF4FF" opacity="0.95"/>
-    <circle cx="441.27" cy="97.61" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+    <circle cx="441.27" cy="125.73" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="441.27" cy="125.73" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
   
 
-    <circle cx="518.73" cy="169.20" r="5.5" fill="#EAF4FF" opacity="0.95"/>
-    <circle cx="518.73" cy="169.20" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+    <circle cx="518.73" cy="184.77" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="518.73" cy="184.77" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
   
 
-    <circle cx="596.18" cy="191.39" r="5.5" fill="#EAF4FF" opacity="0.95"/>
-    <circle cx="596.18" cy="191.39" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+    <circle cx="596.18" cy="214.95" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="596.18" cy="214.95" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
   
 
-    <circle cx="673.64" cy="182.81" r="5.5" fill="#EAF4FF" opacity="0.95"/>
-    <circle cx="673.64" cy="182.81" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+    <circle cx="673.64" cy="174.11" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="673.64" cy="174.11" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
   
 
-    <circle cx="751.09" cy="172.23" r="5.5" fill="#EAF4FF" opacity="0.95"/>
-    <circle cx="751.09" cy="172.23" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+    <circle cx="751.09" cy="206.07" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="751.09" cy="206.07" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
   
 
-    <circle cx="828.55" cy="228.19" r="5.5" fill="#EAF4FF" opacity="0.95"/>
-    <circle cx="828.55" cy="228.19" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+    <circle cx="828.55" cy="230.49" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="828.55" cy="230.49" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
   
 
-    <circle cx="906.00" cy="249.36" r="5.5" fill="#EAF4FF" opacity="0.95"/>
-    <circle cx="906.00" cy="249.36" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
+    <circle cx="906.00" cy="253.57" r="5.5" fill="#EAF4FF" opacity="0.95"/>
+    <circle cx="906.00" cy="253.57" r="14" fill="#2F6FEB" opacity="0.16" filter="url(#glow)"/>
   
   <text x="52" y="286" fill="#C9D1D9" font-size="13" font-family="Segoe UI, Arial, sans-serif">12-week pulse window</text>
-  <text x="782" y="286" fill="#6EA8FE" font-size="13" font-family="Segoe UI, Arial, sans-serif">peak intensity: 361</text>
+  <text x="782" y="286" fill="#6EA8FE" font-size="13" font-family="Segoe UI, Arial, sans-serif">peak intensity: 410</text>
 </svg>
