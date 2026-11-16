@@ -84,18 +84,18 @@ My focus is not just shipping features, but structuring products that are scalab
 	</tr>
 	<tr>
 		<td width="33%" valign="top">
-			<h3 align="center">NoxQR</h3>
-			<p align="center"><strong>Visual Encoding · Design Systems</strong></p>
+			<h3 align="center">Thymbre</h3>
+			<p align="center"><strong>Voice Biometrics · Speaker Identification</strong></p>
 			<p align="center">
-				<a href="https://github.com/HexAbyss/NoxQR"><img src="https://img.shields.io/badge/Public%20Repository-0d2a1a?style=flat-square&logo=github&logoColor=b7ffd9" alt="Public Repository" /></a>
+				<a href="https://github.com/HexAbyss/Thymbre"><img src="https://img.shields.io/badge/Public%20Repository-0d2a1a?style=flat-square&logo=github&logoColor=b7ffd9" alt="Public Repository" /></a>
 			</p>
 			<p>
-				A visual encoding engine for artistic, structured and scannable QR codes — turning a strict technical format into a design surface without breaking scannability.
+				A self-hosted voice biometrics system that enrolls a voice once and then identifies who is speaking from a microphone or an audio file — FastAPI, SpeechBrain and pgvector behind a Next.js interface, with no raw audio stored.
 			</p>
 			<p>
-				<img src="https://img.shields.io/badge/Visual%20Encoding-103A63?style=flat-square" alt="Visual Encoding" />
-				<img src="https://img.shields.io/badge/QR%20Generation-1A5A8C?style=flat-square" alt="QR Generation" />
-				<img src="https://img.shields.io/badge/Design%20Systems-1F6FEB?style=flat-square" alt="Design Systems" />
+				<img src="https://img.shields.io/badge/Voice%20Biometrics-103A63?style=flat-square" alt="Voice Biometrics" />
+				<img src="https://img.shields.io/badge/Speaker%20Identification-1A5A8C?style=flat-square" alt="Speaker Identification" />
+				<img src="https://img.shields.io/badge/Self--Hosted-1F6FEB?style=flat-square" alt="Self-Hosted" />
 			</p>
 		</td>
 		<td width="33%" valign="top">
@@ -114,18 +114,18 @@ My focus is not just shipping features, but structuring products that are scalab
 			</p>
 		</td>
 		<td width="33%" valign="top">
-			<h3 align="center">Logic Circuit</h3>
-			<p align="center"><strong>Interactive Simulator · Digital Logic</strong></p>
+			<h3 align="center">NoxQR</h3>
+			<p align="center"><strong>Visual Encoding · Design Systems</strong></p>
 			<p align="center">
-				<a href="https://github.com/HexAbyss/logic-circuit"><img src="https://img.shields.io/badge/Public%20Repository-0d2a1a?style=flat-square&logo=github&logoColor=b7ffd9" alt="Public Repository" /></a>
+				<a href="https://github.com/HexAbyss/NoxQR"><img src="https://img.shields.io/badge/Public%20Repository-0d2a1a?style=flat-square&logo=github&logoColor=b7ffd9" alt="Public Repository" /></a>
 			</p>
 			<p>
-				An interactive logic circuit simulator with draggable components, live signal propagation and a bilingual Portuguese/English interface, turning abstract digital logic into a hands-on visual tool.
+				A visual encoding engine for artistic, structured and scannable QR codes — turning a strict technical format into a design surface without breaking scannability.
 			</p>
 			<p>
-				<img src="https://img.shields.io/badge/Interactive%20Simulator-103A63?style=flat-square" alt="Interactive Simulator" />
-				<img src="https://img.shields.io/badge/Digital%20Logic-1A5A8C?style=flat-square" alt="Digital Logic" />
-				<img src="https://img.shields.io/badge/Bilingual%20UI-1F6FEB?style=flat-square" alt="Bilingual UI" />
+				<img src="https://img.shields.io/badge/Visual%20Encoding-103A63?style=flat-square" alt="Visual Encoding" />
+				<img src="https://img.shields.io/badge/QR%20Generation-1A5A8C?style=flat-square" alt="QR Generation" />
+				<img src="https://img.shields.io/badge/Design%20Systems-1F6FEB?style=flat-square" alt="Design Systems" />
 			</p>
 		</td>
 	</tr>
